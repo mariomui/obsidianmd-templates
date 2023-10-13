@@ -2,7 +2,7 @@
 ## ⏰ Dive Deep Later List <% } %> <% if (colorName === "yellow") { %>
 # ---Transient Local Citations <% } %>
 <% for (const annot of annotations) { %>
-## LR--citation--Page-<%= annot.pageLabel + "-" + annot.text.substring(0,30)%>
+## LR--citation--Page-<%= annot.pageLabel + "-" + annot.blockID + " " + annot.text.substring(0,30)%>
 
 <%~ include("annotation", annot) %>
 <% } %> <% } %> <% } %>
