@@ -1,10 +1,10 @@
 ---
 alias:
 TEMPLATE_VERSION: v1.0.4_video-note-taking
-DOC_VERSION: v0.0.1
+DOC_VERSION: v0.0.2
 CREATION_DATE: 2022-08-05
 tag: _wip
-UMID: 
+UMID:
 ---
 
 # -
@@ -23,11 +23,14 @@ task where file.name = this.file.name and completed
 
 - [ ] Remove buttons as a dependency from code.
 - [ ] Does this deprecate [[~deprecated_button-for-ytranscript]]?
-### References
-* https://www.youtube.com/example
-* [[√-LEADERSHIP-LAB-Writing-Beyond-the-Academy-1-23-15-YouTube-https-www-youtube-com-watch-v=aFwVf5a3pZM]] has some code to properly include the Youtube Transcripting Code without running into dataview issues.   
+
+### Reference
+
+- https://www.youtube.com/example
+- [[√-LEADERSHIP-LAB-Writing-Beyond-the-Academy-1-23-15-YouTube-https-www-youtube-com-watch-v=aFwVf5a3pZM]] has some code to properly include the Youtube Transcripting Code without running into dataview issues.
 
 # =
+
 ## Transcript Control
 
 ```dataviewjs
@@ -36,7 +39,7 @@ const {default: obs} = this.app.plugins.plugins['templater-obsidian'].templater.
 
 const {workspace,metadataCache, vault} = this.app;
 const {container} = this;
-
+const priority_prefix = "√"
 
 const getCurrentVersion = (ctx) => {
   const source_path = ctx.currentFilePath
@@ -50,32 +53,46 @@ const getCurrentVersion = (ctx) => {
 const VERSION = getCurrentVersion(this);
 let $buttonRef = null;
 
-const prefix = 'https://www.youtube.com';
+//https://youtu.be/pT2bSZlfQq0?si=VMhewAPAMuTK5TFy
+const prefixes = ['https://www.youtube.com', 'https://youtu.be'];
 
 const {plugins} = this.app.plugins;
 const {createButton} = plugins["buttons"]
 const yt = plugins['ytranscript'];
 
 const makeOpenBtn = (container, url, name) => {
-  return createButton({ 
-    app, 
-    el: container, 
-    args: { 
+  return createButton({
+    app,
+    el: container,
+    args: {
       name,
     },
     clickOverride: {
       click: openView.bind(this),
-      params: [{ 
-        url, 
+      params: [{
+        url,
         getYtTabEl: getYtTabEl.bind(this),
-        yt 
+        yt
       }],
     },
   })
-} 
+}
 
+//bootstrap
 workspace.onLayoutReady(bootstrap.bind(this));
 
+/**
+ * Represents a URL context.
+ * @typedef {Object} Link
+ * @property {string} text
+ */
+/**
+ * Represents a URL context.
+ * @typedef {Object} UrlContext
+ * @property {string} domain - The domain of the URL.
+ * @property {Link} link - The domain of the URL.
+ * @property {string} domain - The domain of the URL.
+ */
 function bootstrap() {
   makeOpenBtn(container, "", "Refresh " + VERSION);
   (async function(ctx) {
@@ -87,33 +104,38 @@ function bootstrap() {
     if (!listItems) return;
 
     const texts = getAllTextsFromListItems(
-      listItems, 
+      listItems,
       cr
     );
-    const url = findUrl(texts, prefix);
 
-    // dv.paragraph(prefix + url)
-
-    if (url?.length) {
-      return main.call(ctx, prefix + url);
+    /**
+    * @type {number}
+    */
+    const urlContext = findUrl(texts, prefixes);
+    if (urlContext !== null) {
+      return main.call(ctx, urlContext);
     }
   })(this)
 }
 
 
 
-function main(url) {
+function main(urlContext) {
   container.style = 'border: 3px solid lightblue;margin: .5em 0;'
   const row1 = [
     'YTranscript',
     '。。。。',
-    makeOpenBtn.call(this, container,url, 'Open')
+    makeOpenBtn.call(this, container,urlContext, 'Open')
   ];
   $buttonRef = row1[2];
 
   const md = dv.markdownTable('*,*,*'.split(","),[row1])
-  //dv.paragraph(md);
-  dv.paragraph(`\`\`\`timestamp-url\n${url}\n\`\`\``)
+  const {link, domain, urlPath} = urlContext
+  const _url = (domain + urlPath).trim()
+  //getMarkdownALinkByUrl(url.trim())
+  workspace.onLayoutReady(() => {
+    dv.paragraph(`\`\`\`timestamp-url\n${_url}\n\`\`\``)
+  })
 }
 
 function getAllTextsFromListItems(listItems,cr) {
@@ -123,21 +145,43 @@ function getAllTextsFromListItems(listItems,cr) {
     const startLineIdx = listItem?.position?.start?.line
     const endLineIdx = listItem?.position?.end?.line
     const listItemTexts = crlines
-      .slice(startLineIdx, endLineIdx + 1);  
+      .slice(startLineIdx, endLineIdx + 1);
     listItemTextsMatrix.push(
       {text: listItemTexts.join("")}
     );
   }
   return listItemTextsMatrix;
 }
-function findUrl(links, sep) {
-
-  const found = links?.findLast(
-    (link) => {
-      return link?.text?.contains(sep)
+function findUrl(links, domains) {
+  const tuples = [];
+  for (let link of links) {
+    for (const domain of domains) {
+      if (link?.text?.contains(domain)) {
+        tuples.push({link,domain})
+      }
+    }
+  }
+  const tuple = tuples.findLast(
+    ({link,domain}) => {
+      // return link?.text.match(new RegExp("\\b" "s*\\*\\s*" + "\\b" + priority_prefix,"g"));
+      // #_todo/to_document/on-coding/regarding-dynamic-regex
+      const dynamicRegex = new RegExp(`\\s*\\*\\s*${priority_prefix}`, "g");
+      const result = link?.text?.match(dynamicRegex);
+      return result;
+      //return link?.text.match(new RegExp(`\s*\*\s*${priority_prefix}`, "g"));
     }
   );
-  return found?.text?.split(sep)[1];
+  if (!tuple) {
+    return null
+  }
+  const {domain, link} = tuple;
+  const urlPath =  link?.text?.split(domain)[1];
+  const parsed_infos = [link, urlPath, domain]
+  console.log({parsed_infos})
+  if (!parsed_infos.every(Boolean)) {
+    return null;
+  }
+  return {link, urlPath, domain};
 }
 
 
@@ -151,16 +195,16 @@ function openView({url, yt, getYtTabEl}) {
     ytTab.tabHeaderCloseEl.click()
     $buttonRef.innerText = 'Open';
     return;
-  } 
-  
+  }
+
   $buttonRef.innerText = 'Close';
   yt.openView(url)
 
-}  
+}
 
 function getYtTabEl() {
   return workspace.rightSplit.children[0]
-    ?.children.find(findViewPredicate)   
+    ?.children.find(findViewPredicate)
 }
 
 function findViewPredicate({tabHeaderEl}) {
@@ -173,505 +217,18 @@ function parseFrontmatter(frontmatter, key) {
   }
   return frontmatter[key] ?? "";
 }
+
+function getMarkdownALinkByUrl(url) {
+  if (!url) return "";
+  return `[](${url})`
+}
 ```
 
 # ---Transient
 
-## v1
-```js
-~~~dataviewjs
-const {vault, metadataCache} = this.app;
-let $buttonRef = null;
-const {file: {lists} }= dv.current();
-const links = lists.values;
-const source_path = this.currentFilePath
-const sourcedAbstractFile = vault
-  .getAbstractFileByPath(source_path);
-const {frontmatter} = metadataCache.getFileCache(sourcedAbstractFile);
-
-function parseFrontmatter(frontmatter, key) {
-  if (!Object.keys(frontmatter)?.length) {
-    return;
-  }
-  return frontmatter[key] ?? "";
-}
-const VERSION = parseFrontmatter(frontmatter, "VERSION");
-const prefix = 'https://www.youtube.com';
-const url = findUrl(links, prefix)
-console.log({url})
-function findUrl(links, sep) {
-    const found = links?.findLast((link) => {
-        return link?.text?.contains(sep)
-    })
-    return found?.text?.split(sep)[1];
-}
-
-
-const {plugins} = this.app.plugins
-const {createButton} = plugins["buttons"]
-const yt = plugins['ytranscript'];
-
-const makeOpenBtn = (container, url, name) => createButton({ 
-    app, 
-    el: container, 
-    args: { 
-        name,
-    },
-    clickOverride: {
-        click: openView.bind(this),
-        params: [{ 
-            url, 
-            getYtTabEl: getYtTabEl.bind(this),
-            yt 
-        }],
-    },
-}) 
-
-makeOpenBtn(
-  this.container,
-  "", 
-  `Refresh ${VERSION}`
-);
-
-if (url?.length) {
-    console.log({url})
-    ubermain(
-        main.bind(this), prefix + url)
-}
-
-
-
-function ubermain(main, url) {
-    console.log({url})
-    main(url);
-}
-
-function main(url) {
-    this.container.style = 'border: 3px solid lightblue;margin: .5em 0;'
-    const row1 = [
-        'YTranscript',
-        '。。。。',
-        makeOpenBtn(this.container,url, 'Open')
-    ];
-    $buttonRef = row1[2]
-    dv.table(
-        '',
-        [
-            row1,
-        ],
-    )
-
-    
-
-}
-function openView({url, yt, getYtTabEl}) {
-
-    const ytTab = getYtTabEl()
-    if (!$buttonRef) {
-      return;
-    }
-    if (ytTab?.tabHeaderCloseEl) {
-        ytTab.tabHeaderCloseEl.click()
-        $buttonRef.innerText = 'Open';
-        return;
-    }
-    
-    $buttonRef.innerText = 'Close';
-    yt.openView(url)
-}  
-function getYtTabEl() {
-    return this.app.workspace.rightSplit
-        .children[0]
-        ?.children
-        .find(findViewPredicate)   
-}
-function findViewPredicate({tabHeaderEl}) {
-    return tabHeaderEl
-            ?.dataset?.type 
-                === 'transcript-view'
-}
-~~~
-```
-
----
-## v2
-
-- [ ] Do a diff betweeen v1 and v2 and see if they are the same.
-```js
-
-~~~
-dataviewjs
-let $buttonRef = null;
-const links = dv.current().file.lists.values;
-console.log({links})
-
-const prefix = 'https://www.youtube.com';
-const url = findUrl(links, prefix)
-function findUrl(links, sep) {
-    const found = links?.findLast((link) => {
-        return link?.text?.contains(sep)
-    })
-    return found?.text?.split(sep)[1];
-}
-
-
-const {plugins} = this.app.plugins
-const {createButton} = plugins["buttons"]
-const yt = plugins['ytranscript'];
-
-const makeOpenBtn = (container, url, name) => createButton({ 
-    app, 
-    el: container, 
-    args: { 
-        name,
-    },
-    clickOverride: {
-        click: openView.bind(this),
-        params: [{ 
-            url, 
-            getYtTabEl: getYtTabEl.bind(this),
-            yt 
-        }],
-    },
-}) 
-
-makeOpenBtn.call(this,this.container, "", "Refresh");
-if (url?.length) {
-    console.log({url})
-    ubermain(
-        main.bind(this), prefix + url)
-}
-
-
-
-function ubermain(main, url) {
-    console.log({url})
-    main(url);
-}
-
-function main(url) {
-    this.container.style = 'border: 3px solid lightblue;margin: .5em 0;'
-    const row1 = [
-        'YTranscript',
-        '。。。。',
-        makeOpenBtn(this.container,url, 'Open')
-    ];
-    $buttonRef = row1[2]
-    dv.table(
-        '',
-        [
-            row1,
-        ],
-    )
-
-    
-
-}
-function openView({url, yt, getYtTabEl}) {
-
-    const ytTab = getYtTabEl()
-    console.log(this.container, 'button')
-    if (ytTab?.tabHeaderCloseEl) {
-        ytTab.tabHeaderCloseEl.click()
-        $buttonRef.innerText = 'Open';
-console.log($buttonRef.previousSibling);
-    } else {
-        $buttonRef.innerText = 'Close';
-        yt.openView(url)
-    }
-}  
-function getYtTabEl() {
-    return this.app.workspace.rightSplit
-        .children[0]
-        ?.children
-        .find(findViewPredicate)   
-}
-function findViewPredicate({tabHeaderEl}) {
-    return tabHeaderEl
-            ?.dataset?.type 
-                === 'transcript-view'
-}
-
-~~~
-```
-
-## v3
-
-```js
-~~~dataviewjs
-
-let $buttonRef = null;
-const links = dv.current().file.lists.values;
-console.log({links})
-
-const prefix = 'https://www.youtube.com';
-const url = findUrl(links, prefix)
-function findUrl(links, sep) {
-    const found = links?.findLast((link) => {
-        return link?.text?.contains(sep)
-    })
-    return found?.text?.split(sep)[1];
-}
-
-
-const {plugins} = this.app.plugins
-const {createButton} = plugins["buttons"]
-const yt = plugins['ytranscript'];
-
-const makeOpenBtn = (container, url, name) => createButton({ 
-    app, 
-    el: container, 
-    args: { 
-        name,
-    },
-    clickOverride: {
-        click: openView.bind(this),
-        params: [{ 
-            url, 
-            getYtTabEl: getYtTabEl.bind(this),
-            yt 
-        }],
-    },
-}) 
-
-makeOpenBtn(this.container, "", "Refresh");
-if (url?.length) {
-    console.log({url})
-    ubermain(
-        main.bind(this), prefix + url)
-}
-
-
-
-function ubermain(main, url) {
-    console.log({url})
-    main(url);
-}
-
-function main(url) {
-    this.container.style = 'border: 3px solid lightblue;margin: .5em 0;'
-    const row1 = [
-        'YTranscript',
-        '。。。。',
-        makeOpenBtn(this.container,url, 'Open')
-    ];
-    $buttonRef = row1[2]
-    dv.table(
-        '',
-        [
-            row1,
-        ],
-    )
-
-    
-
-}
-function openView({url, yt, getYtTabEl}) {
-
-    const ytTab = getYtTabEl()
-    console.log(this.container, 'button')
-    if (ytTab?.tabHeaderCloseEl) {
-        ytTab.tabHeaderCloseEl.click()
-        $buttonRef.innerText = 'Open';
-console.log($buttonRef.previousSibling);
-    } else {
-        $buttonRef.innerText = 'Close';
-        yt.openView(url)
-    }
-}  
-function getYtTabEl() {
-    return this.app.workspace.rightSplit
-        .children[0]
-        ?.children
-        .find(findViewPredicate)   
-}
-function findViewPredicate({tabHeaderEl}) {
-    return tabHeaderEl
-            ?.dataset?.type 
-                === 'transcript-view'
-}
-~~~
-```
-
-## v4 (i know this one works)
-
-I took an old back up just to make sure i didn't eff up.
-```js
-~~~dataviewjs
-let $buttonRef = null;
-const links = dv.current().file.lists.values;
-
-const prefix = "https://www.youtube.com";
-
-const url = findUrl(links, prefix);
-function findUrl(links, sep) {
-  const found = links?.findLast((link) => {
-    return link?.text?.contains(sep);
-  });
-  return found?.text?.split(sep)[1];
-}
-
-const { plugins } = this.app.plugins;
-const { createButton } = plugins["buttons"];
-const yt = plugins["ytranscript"];
-
-const makeOpenBtn = (container, url, name) =>
-  createButton({
-    app,
-    el: container,
-    args: {
-      name,
-    },
-    clickOverride: {
-      click: openView.bind(this),
-      params: [
-        {
-          url,
-          getYtTabEl: getYtTabEl.bind(this),
-          yt,
-        },
-      ],
-    },
-  });
-makeOpenBtn(this.container, "", "♻");
-if (url?.length) {
-  console.log({ url });
-  ubermain(main.bind(this), prefix + url);
-}
-
-function ubermain(main, url) {
-  console.log({ url });
-  main(url);
-}
-
-function main(url) {
-  this.container.style = "border: 3px solid lightblue;margin: .5em 0;";
-  const row1 = [
-    "YTranscript",
-    "。。。。",
-    makeOpenBtn(this.container, url, "Open"),
-  ];
-  $buttonRef = row1[2];
-  dv.table("", [row1]);
-}
-function openView({ url, yt, getYtTabEl }) {
-  const ytTab = getYtTabEl();
-  console.log(this.container, "button");
-  if (ytTab?.tabHeaderCloseEl) {
-    ytTab.tabHeaderCloseEl.click();
-    $buttonRef.innerText = "Open";
-    console.log($buttonRef.previousSibling);
-  } else {
-    $buttonRef.innerText = "Close";
-    yt.openView(url);
-  }
-}
-function getYtTabEl() {
-  return this.app.workspace.rightSplit.children[0]?.children.find(
-    findViewPredicate,
-  );
-}
-function findViewPredicate({ tabHeaderEl }) {
-  return tabHeaderEl?.dataset?.type === "transcript-view";
-}
-~~~
-```
-
-
-# ---Transient v2023-06-08
-
-
-```js
-~~~dataviewjs
-let $buttonRef = null;
-const links = dv.current().file.lists.values;
-
-
-const prefix = 'https://www.youtube.com';
-const url = findUrl(links, prefix)
-function findUrl(links, sep) {
-    const found = links?.findLast((link) => {
-        return link?.text?.contains(sep)
-    })
-    return found?.text?.split(sep)[1];
-}
-
-
-const {plugins} = this.app.plugins
-const {createButton} = plugins["buttons"]
-const yt = plugins['ytranscript'];
-
-const makeOpenBtn = (container, url, name) => createButton({ 
-    app, 
-    el: container, 
-    args: { 
-        name,
-    },
-    clickOverride: {
-        click: openView.bind(this),
-        params: [{ 
-            url, 
-            getYtTabEl: getYtTabEl.bind(this),
-            yt 
-        }],
-    },
-}) 
-
-if (url?.length) {
-    console.log({url})
-    ubermain(
-        main.bind(this), prefix + url)
-}
-
-
-
-function ubermain(main, url) {
-    main(url);
-}
-
-function main(url) {
-    this.container.style = 'border: 3px solid lightblue;margin: .5em 0;'
-    const row1 = [
-        'YTranscript',
-        '。。。。',
-        makeOpenBtn(this.container,url, 'Open')
-    ];
-    $buttonRef = row1[2]
-    dv.table(
-        '',
-        [
-            row1,
-        ],
-    )
-
-    
-
-}
-function openView({url, yt, getYtTabEl}) {
-
-    const ytTab = getYtTabEl()
-    console.log(this.container, 'button')
-    if (ytTab?.tabHeaderCloseEl) {
-        ytTab.tabHeaderCloseEl.click()
-        $buttonRef.innerText = 'Open';
-console.log($buttonRef.previousSibling);
-    } else {
-        $buttonRef.innerText = 'Close';
-        yt.openView(url)
-    }
-}  
-function getYtTabEl() {
-    return this.app.workspace.rightSplit
-        .children[0]
-        ?.children
-        .find(findViewPredicate)   
-}
-function findViewPredicate({tabHeaderEl}) {
-    return tabHeaderEl
-            ?.dataset?.type 
-                === 'transcript-view'
-}
-~~~
-```
-
-# ---Transient Commitlog
+# ---Transient Doc Log
+
+- v0.0.2
+  - Archive prototype list
+- ## Versioned Prototypes
+  - [[list-of-prototypes,ad-finem-Video-notetaking,vis-Noteshippo]]
