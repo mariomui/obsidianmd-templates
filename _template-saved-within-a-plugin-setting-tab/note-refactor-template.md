@@ -45,7 +45,7 @@ task where file.name = this.file.name and completed
 
 See [[callouts-ala-obsidianmd]] for help with which callouts to use to help aid this note.
 
-This [[Libary-note-dataum]] belongs to  list-of-note-templates,util-Templater-plugin,ad-finem-Note-Taking designed to template extracted content.
+This [[Library-note-dataum]] belongs to  list-of-note-templates,util-Templater-plugin,ad-finem-Note-Taking designed to template extracted content.
 #_todo/priority-low/to-extract/on-a-codelet/regarding-its-proper-place 
 ```dataviewjs
 //toolboxes

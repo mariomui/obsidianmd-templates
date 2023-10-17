@@ -11,7 +11,7 @@ RHK-HC-COMMITS: [
 
 # -
 
-This [[Partial-dataview,vis-Noteshippo]] is designed to provide a list ot hotkey/shortcuts of used by  [[B_obsidianMD-plugins|_list-of-obsidianMD-plugins]].
+This [[Partial-dataview,vis-Noteshippo]] is designed to provide a list ot hotkey/shortcuts of used by  [[inbox-list-of-obsidian-plugins,et-alia|_list-of-obsidianMD-plugins]].
 
 - [ ] Refactor code to use the improved  transclusion parameter design rather than by user prompt.
 

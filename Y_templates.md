@@ -12,6 +12,12 @@ tag: _nts-v1/structural-note
 
 # = 
 
+* ## 10s Macros
+  * These templates behave as macros. They populate the entire page. There is no intermediate force accessing these templates except the user.
+* 20s
+  * these templates are tied to an plugin. 
+* 90s 
+
 %% Begin Waypoint %%
 - **[[_template-saved-within-a-plugin-setting-tab]]**
 - **💀archive**
@@ -22,7 +28,7 @@ tag: _nts-v1/structural-note
 - [[10--default-template]]
 - [[20--default-meta-template]]
 - [[20--evergreen_template]]
-- [[20--fleeting_notes_template]]
+- [[20--fleeting-notes-template]]
 - [[20--sourced-book-template]]
 - [[90--bootup]]
 - [[folder-page-template]]
