@@ -3,7 +3,7 @@ alias:
 CREATION_DATE: <% await tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.0
 MUID: <% await app.insertIncrementalId('MUID')%>
-tag: 
+tags: 
   - _wip
 TEMPLATE_VERSION: v1.0.5_default-template
 UMID: 
