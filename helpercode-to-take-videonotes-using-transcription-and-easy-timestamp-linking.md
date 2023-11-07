@@ -61,6 +61,7 @@ const {createButton} = plugins["buttons"]
 const yt = plugins['ytranscript'];
 
 const makeOpenBtn = (container, url, name) => {
+  console.log({url})
   return createButton({
     app,
     el: container,
@@ -112,7 +113,9 @@ function bootstrap() {
     * @type {number}
     */
     const urlContext = findUrl(texts, prefixes);
+    console.log({urlContext}, 'in bootstrap')
     if (urlContext !== null) {
+
       return main.call(ctx, urlContext);
     }
   })(this)
@@ -121,23 +124,75 @@ function bootstrap() {
 
 
 function main(urlContext) {
-  container.style = 'border: 3px solid lightblue;margin: .5em 0;'
-  const row1 = [
-    'YTranscript',
-    '。。。。',
-    makeOpenBtn.call(this, container,urlContext, 'Open')
-  ];
-  $buttonRef = row1[2];
+  (function(ctx, createUiEngine, dv) {
+    ctx.container.style = 'border: 3px solid lightblue;margin: .5em 0;'
+    console.log({urlContext}, 'in main')
+    const row1 = [
+      'YTranscript',
+      '。。。。',
+      makeOpenBtn.call(ctx, container,urlContext, 'Open')
+    ];
+    $buttonRef = row1[2];
+    const md = dv.markdownTable('*,*,*'.split(","),[row1])
+    const {link, domain, urlPath, link_desc} = urlContext
+    
+    const markdownLink = `[${link_desc}](${urlPath})`
 
-  const md = dv.markdownTable('*,*,*'.split(","),[row1])
-  const {link, domain, urlPath} = urlContext
-  const _url = (domain + urlPath).trim()
-  //getMarkdownALinkByUrl(url.trim())
-  workspace.onLayoutReady(() => {
-    dv.paragraph(`\`\`\`timestamp-url\n${_url}\n\`\`\``)
-  })
+    
+    workspace.onLayoutReady(innerMain.bind(this))
+    function innerMain() {
+      (doUiMain.bind(this))()
+      function doUiMain() {
+        const ui = createUiEngine()
+        ui.renderMarkdownLink(markdownLink)
+        ui.renderParagraph(`\`\`\`timestamp-url\n${urlPath}\n\`\`\``)
+      }
+    }
+  })(this, createUiEngine.bind(this), dv)
 }
 
+// ui
+
+function createUiEngine() {
+
+  return (function (ctx) {
+    const pkg = {
+        renderParagraph: renderParagraph.bind(this),
+        genRenderMarkdownLink,
+        renderMarkdownLink,
+    };
+    function renderParagraph(...args) {
+        return dv.paragraph(...args)
+    }
+    async function genRenderMarkdownLink(...args) {
+      return await obs.MarkdownRenderer.render.call(
+        ctx, ctx.app, args.first() || "N/A", ctx.container, ""
+      );
+    };
+    function renderMarkdownLink(markdownLink) {
+      (async function(manuUiToolBoxInstance) {
+        await manuUiToolBoxInstance
+          .genRenderMarkdownLink(markdownLink)
+      })(pkg)
+    };
+
+    return pkg
+  }.bind(this))(this)
+}
+
+
+
+// logic
+function parseMarkdownLink(markdown_link) {
+  const href = markdown_link.replace(/.*\((.*)\).*/g,"$1")
+  const text = markdown_link.replace(/.*\[(.*)\].*/g,"$1")
+  
+  const parsedContext = {
+    text,
+    href
+  }
+  return parsedContext
+}
 function getAllTextsFromListItems(listItems,cr) {
   const crlines = cr.split('\n');
   const listItemTextsMatrix = [];
@@ -152,42 +207,55 @@ function getAllTextsFromListItems(listItems,cr) {
   }
   return listItemTextsMatrix;
 }
+
+/**
+* @return {UrlContext} 
+**/
 function findUrl(links, domains) {
   const tuples = [];
   for (let link of links) {
     for (const domain of domains) {
       if (link?.text?.contains(domain)) {
+      
         tuples.push({link,domain})
       }
     }
   }
+  console.log({tuples})
   const tuple = tuples.findLast(
     ({link,domain}) => {
-      // return link?.text.match(new RegExp("\\b" "s*\\*\\s*" + "\\b" + priority_prefix,"g"));
-      // #_todo/to_document/on-coding/regarding-dynamic-regex
-      const dynamicRegex = new RegExp(`\\s*\\*\\s*${priority_prefix}`, "g");
+      // #_todo/to_document/on-coding/regarding-dynamic-regex/regarding-using-escapes-to-interpolate-properly
+      const dynamicRegex = new RegExp(`^(\s*[-*] ${priority_prefix} .*)$`, "g");
       const result = link?.text?.match(dynamicRegex);
       return result;
-      //return link?.text.match(new RegExp(`\s*\*\s*${priority_prefix}`, "g"));
     }
   );
   if (!tuple) {
     return null
   }
   const {domain, link} = tuple;
-  const urlPath =  link?.text?.split(domain)[1];
+  const urlPath = link?.text.replace(/.*\((.*?)\).*/g,"$1")
+  const [link_desc] =  link?.text?.split(domain);
   const parsed_infos = [link, urlPath, domain]
-  console.log({parsed_infos})
+
   if (!parsed_infos.every(Boolean)) {
     return null;
   }
-  return {link, urlPath, domain};
+  const _link_desc = link_desc.replace(/.*?\[(.*?(?![\(]))\].*?$/g, "$1");
+    console.log({parsed_infos,link_desc, _link_desc})
+  return {
+    link, 
+    urlPath, 
+    domain, 
+    link_desc: _link_desc
+  };
 }
 
 
 function openView({url, yt, getYtTabEl}) {
   new Notice( $buttonRef ? 'has' : 'nope')
   const ytTab = getYtTabEl()
+  console.log({url, yt, getYtTabEl})
   if (!$buttonRef) {
     return;
   }
@@ -198,7 +266,10 @@ function openView({url, yt, getYtTabEl}) {
   }
 
   $buttonRef.innerText = 'Close';
-  yt.openView(url)
+  // const regex = /\(([^)]+)\)/;
+  // const regexed_url = url.link.text.replace(regex, "$1");
+  console.log({urlSuppliedToYTranscript: url})
+  yt.openView(url.urlPath)
 
 }
 
@@ -232,3 +303,7 @@ function getMarkdownALinkByUrl(url) {
   - Archive prototype list
 - ## Versioned Prototypes
   - [[list-of-prototypes,ad-finem-Video-notetaking,vis-Noteshippo]]
+
+
+* Bossfight
+  * Boss counterattack all techniques

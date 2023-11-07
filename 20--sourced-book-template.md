@@ -54,6 +54,6 @@ TASK where file.name = this.file.name and completed
 
 # ---Transient
 
-[[~interim_view-for-recent-reference-link-to-note-title-transform]]
+[[~view-for-recent-reference-link-to-note-title-transform]]
 
 ## Ω

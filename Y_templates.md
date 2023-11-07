@@ -1,6 +1,6 @@
 ---
 Aliases: ["__README__templates", templates]
-tag: _nts-v1/structural-note
+tag: _noteshippo/structural-note
 ---
 
 # -
@@ -34,10 +34,13 @@ tag: _nts-v1/structural-note
 - [[folder-page-template]]
 - [[helpercode-to-take-videonotes-using-transcription-and-easy-timestamp-linking]]
 - [[macro-for-callout-like-detail]]
+- [[macro-for-citations]]
 - [[macro-for-eec-tline]]
 - [[macro-for-local-page-tasks]]
 - [[macro-for-vocabulary-details,by-emoji]]
 - [[merge_template]]
+- **obsidian-canvas**
+
 - [[wip_literature-note-template]]
 - [[wip_viewfn-to-recall-hot-key]]
 - **zotero**

@@ -2,7 +2,7 @@
 TEMPLATE_VERSION: v1.0.7_note-refactor-template
 MUID: <% await app.insertIncrementalId('MUID') %>
 CREATION_DATE: {{date}} 
-tag: _wip 
+tags: _wip 
 UMID: 
 ---
 # -
@@ -40,12 +40,13 @@ task where file.name = this.file.name and completed
 # ---Startup Code
 
 > [!info] Place all meta data below this heading.
-> Because it lies outside of the Templater ecosystem, the normal commenting out using templater code does not work.
+> Because Note Refactor lies outside of the Templater ecosystem, the normal commenting out using templater code does not work.
+> Note Refactor does not have a commenting out system in its templating engine.
 
 
-See [[callouts-ala-obsidianmd]] for help with which callouts to use to help aid this note.
+See [[callouts,vis-ObsidianMD-app,]] for help with which callouts to use to help aid this note.
 
-This [[Library-note-dataum]] belongs to  list-of-note-templates,util-Templater-plugin,ad-finem-Note-Taking designed to template extracted content.
+This [[Library-datum-spec,ad-finem-Noteshippo-taxonomy,]] belongs to  list-of-note-templates,util-Templater-plugin,ad-finem-Note-Taking designed to template extracted content.
 #_todo/priority-low/to-extract/on-a-codelet/regarding-its-proper-place 
 ```dataviewjs
 //toolboxes
@@ -154,5 +155,6 @@ function showNotice(el) {
 
 > [!warning] Do not use this template with Templater plugin directly. It only serves as an external backup to the internal settings specified in Note Refactor.
 
-- [ ] Is there a way to change the task archiving template so that I can add in local tasks?
-- [ ] Is there a way to group up a task list by their first tag? This is so i can group up the archived tasks by their tag
+- [x] TLINE: This is an example of a improperly worded task. Task archiving template should have been linked. months later, i have no idea what this task means.
+  - Is there a way to change the task archiving template so that I can add in local tasks? ✅ 2023-10-29
+    - 🔑 The problem with writing quickly is the fact that I have no idea that we have task archiving template. 

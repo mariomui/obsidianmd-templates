@@ -1,10 +1,10 @@
 ---
-aliases: []
+aliases:
 CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD")%>
 MUID: <% await app.insertIncrementalId('MUID')%>
 tags:
   - _wip
-TEMPLATE_VERSION: v0.0.2_litnote-template
+TEMPLATE_VERSION: v0.0.3_litnote-template
 UMID: 
 DOC_VERSION: v0.0.0
 ---
@@ -24,7 +24,7 @@ TASK WHERE file.name = this.file.name AND completed
 This [[Definition-spec,ad-finem-Noteshippo-taxonomy,]]'s contains...
 
 
-> [!info] [[~interim_view-for-recent-reference-link-to-note-title-transform#Normalized Reference|Hover over me and copy the properly formatted note title]]
+> [!info] [[~view-for-recent-reference-link-to-note-title-transform#Normalized Reference|Hover over me and copy the properly formatted note title]]
 > *Make sure that reference † is populated*
 ### Reference
 
@@ -48,6 +48,7 @@ This [[Definition-spec,ad-finem-Noteshippo-taxonomy,]]'s contains...
 
 
 
-<%=/**
-* v0.02 Update headings to be compatible with  [[~viewfn-for-creating-absolute-links-for-citations]]
-**/ %>
+<%* /**
+* v0.03_litnote-template Update template with proper templater commenting out tags
+* v0.02_litnote-template Update headings to be compatible with  [[~viewfn-for-creating-absolute-links-for-citations]]
+**/ -%>
