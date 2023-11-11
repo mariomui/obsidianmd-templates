@@ -1,8 +1,9 @@
 ---
-TEMPLATE_VERSION: "v1.0.7_sourced-book-template"
+TEMPLATE_VERSION: "v1.0.8_sourced-book-template"
 <%*
 /*
 TEMPLATE_COMMITS: [
+    "1.0.8" Update template to use transient jobs system
     "1.0.7 Rename template"
     "1.0.5 BUGFIX: Banner plugin to stupid to understand quoteless yaml",
     "1.0.4 Update template to nts_v1",
@@ -41,19 +42,37 @@ TASK where file.name = this.file.name and !completed
 TASK where file.name = this.file.name and completed
 ```
 
-## Reference
+## About
+
+> [!info] Hover over me [[~view-for-recent-reference-link-to-note-title-transform]] and copy normalized note title.
+
+### Reference
+
 * ∫ 
 
-## Cover
 
-![cover|150]({{coverUrl}})
 
 # =
 
 
 
-# ---Transient
 
-[[~view-for-recent-reference-link-to-note-title-transform]]
+# ---Transient Jobs
 
-## Ω
+![[~viewfn-for-creating-absolute-links-for-citations#=|?search_term=---Transient Local&t=nlknoui-scroll]]
+
+# ---Transient Local Citations
+
+---
+
+
+
+---
+
+# ---Transient Local Resources
+
+
+
+
+
+

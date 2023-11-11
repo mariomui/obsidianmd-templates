@@ -1,9 +1,9 @@
 ---
 alias:
 CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD")%>
-DOC_VERSION: v0.0.0
+DOC_VERSION: v0.0.1
 MUID: <% await app.insertIncrementalId('MUID')%>
-tag: _wip 
+tags: _wip 
 TEMPLATE_VERSION: v1.0.4_blank-template
 UMID: 
 ---
@@ -21,6 +21,7 @@ UMID:
 
 <%* /**
 * COMMIT LOG
+  * v1.0.5 change front matter tag to tags to fit obsidian convention
   * v1.0.4
     * Conform the frontmatter to the other templates
   * v1.0.3

@@ -1,7 +1,7 @@
 ---
 alias:
 CREATION_DATE: <% await tp.file.creation_date("YYYY-MM-DD")%>
-DOC_VERSION: v0.0.0
+DOC_VERSION: v0.0.1
 MUID: <% await app.insertIncrementalId('MUID')%>
 tags: 
   - _wip
@@ -26,6 +26,7 @@ TASK WHERE file.name = this.file.name AND completed
 ### Reference
 
 ![[~view-for-referencing-current-jumpid#=|nlk]]
+
 * † 
 
 # =
@@ -35,4 +36,11 @@ TASK WHERE file.name = this.file.name AND completed
 
 
 
-# ---Transient
+# ---Transient Commit Log
+
+<%* /**
+
+v0.0.1 Add a new line after jumpid codelet for better contrast on reflink
+
+
+**/-%>
