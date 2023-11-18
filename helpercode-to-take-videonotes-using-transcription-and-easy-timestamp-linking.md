@@ -27,7 +27,7 @@ task where file.name = this.file.name and completed
 ### Reference
 
 - https://www.youtube.com/example
-- [[√-LEADERSHIP-LAB-Writing-Beyond-the-Academy-1-23-15-YouTube-https-www-youtube-com-watch-v=aFwVf5a3pZM]] has some code to properly include the Youtube Transcripting Code without running into dataview issues.
+- [[√-LEADERSHIP-LAB-Writing-Beyond-the-Academy-1-23-15-YouTube]] has some code to properly include the Youtube Transcripting Code without running into dataview issues.
 
 # =
 

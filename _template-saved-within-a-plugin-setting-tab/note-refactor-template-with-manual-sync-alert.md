@@ -1,7 +1,7 @@
 ---
 TEMPLATE_VERSION: v1.0.7_note-refactor-template
 MUID: <% await app.insertIncrementalId('MUID') %>
-CREATION_DATE: {{date}} 
+CREATION_DATE: {{date:YYYY-MM-DD}}
 tags: _wip 
 UMID: 
 ---

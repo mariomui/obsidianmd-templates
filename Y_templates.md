@@ -65,10 +65,18 @@ DOC_VERSION: v0.0.1
 # ---Transient Local Waypoints
 
 %% Begin Waypoint %%
+- **_macros**
+	- [[macro-for-callout-like-detail]]
+	- [[macro-for-citations]]
+	- [[macro-for-eec-tline]]
+	- [[macro-for-local-page-tasks]]
+	- [[macro-for-vocabulary-details,by-emoji]]
 - **[[_template-saved-within-a-plugin-setting-tab]]**
 - **💀archive**
 	- [[💀hbstemplate-ibook-import-ibook-csv-with-bullet]]
+	- [[deprecated_folder-page-template]]
 	- [[deprecating_tag-page-template]]
+	- [[merge_template]]
 - [[10--alias-spec-template]]
 - [[10--blank-template]]
 - [[10--default-template]]
@@ -77,18 +85,12 @@ DOC_VERSION: v0.0.1
 - [[20--fleeting-notes-template]]
 - [[20--sourced-book-template]]
 - [[90--bootup]]
-- [[folder-page-template]]
 - [[helpercode-to-take-videonotes-using-transcription-and-easy-timestamp-linking]]
-- [[macro-for-callout-like-detail]]
-- [[macro-for-citations]]
-- [[macro-for-eec-tline]]
-- [[macro-for-local-page-tasks]]
-- [[macro-for-vocabulary-details,by-emoji]]
-- [[merge_template]]
 - **obsidian-canvas**
 
-- [[wip_literature-note-template]]
-- [[wip_viewfn-to-recall-hot-key]]
+- **wip**
+	- [[wip_literature-note-template]]
+	- [[wip_viewfn-to-recall-hot-key]]
 - **zotero**
 	- **archived**
 		- [[zt-annot.eta.prev]]

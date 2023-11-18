@@ -8,7 +8,7 @@ UMID:
 
 # -
 
-- [ ] Archive this structural note code into learnings. Not useful. Also does not belong in [[folder-page-template]] as it has caused me to avoid using the the template. #_todo/to-extract/on-a-codelet
+- [ ] Archive this structural note code into learnings. Not useful. Also does not belong in [[deprecated_folder-page-template]] as it has caused me to avoid using the the template. #_todo/to-extract/on-a-codelet
 
 ## About
 
