@@ -6,7 +6,7 @@
 <% } %>
 <% if (it.colorName === "red") { %>
 [!DANGER] %%FAKE TITLE HERE%%
-<% } %>  <%= typeof it?.dateAdded?.split[" "] === "function" && it?.dateAdded?.split[" "](0) %>
+<% } %>  <%= typeof it?.dateAdded?.split[" "] === "function" ? it?.dateAdded?.split[" "](0) : "" %>
 <% if (it.imgEmbed) { %>
 - <%= it.imgEmbed %>
 <% } %>
