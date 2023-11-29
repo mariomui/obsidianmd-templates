@@ -4,4 +4,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false
   },
+  "files.associations": {
+    "*.eta.md": "html"
+  }
 }

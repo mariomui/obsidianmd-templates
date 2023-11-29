@@ -1,12 +1,12 @@
 ---
-alias:
 CREATION_DATE: <% await tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.1
 MUID: <% await app.insertIncrementalId('MUID')%>
-tags: 
-  - _wip
 TEMPLATE_VERSION: v1.0.5_default-template
-UMID: 
+UMID: <% await app.templaterAddOnFig.addUuid() %>
+alias: 
+tags:
+  - _wip
 ---
 
 # -
@@ -19,6 +19,7 @@ TASK WHERE file.name = this.file.name AND !completed
 ```dataview
 TASK WHERE file.name = this.file.name AND completed
 ```
+
 ## About
 
 * Hover over me and snatch the output of note title algorithm:[[~view-for-recent-reference-link-to-note-title-transform]]
@@ -27,14 +28,12 @@ TASK WHERE file.name = this.file.name AND completed
 
 ![[~view-for-referencing-current-jumpid#=|nlk]]
 
-* † 
+* †
 
 # =
 
 *`= this.file.name`*
 ![[~view-for-calculating-reading-time#=|olk ui-noscroll]]
-
-
 
 # ---Transient Commit Log
 
@@ -42,5 +41,4 @@ TASK WHERE file.name = this.file.name AND completed
 
 v0.0.1 Add a new line after jumpid codelet for better contrast on reflink
 
-
-**/-%>
+**/ -%>

@@ -21,22 +21,19 @@ TASK WHERE file.name = this.file.name AND completed
 ```
 
 ## About
-This [[Definition-spec,ad-finem-Noteshippo-taxonomy,]]'s contains...
-
+This [[Definition-spec,vis-Noteshippo-taxonomy,]]'s contains...
 
 > [!info] [[~view-for-recent-reference-link-to-note-title-transform#Normalized Reference|Hover over me and copy the properly formatted note title]]
 > *Make sure that reference † is populated*
 ### Reference
 
 ![[~view-for-referencing-current-jumpid#=|nlk]]
-* † 
-
+* †
 
 # =
 
 *`= this.file.name`*
 ![[~view-for-calculating-reading-time#=|olk ui-noscroll]]
-
 
 # ---Transient 010 Local Sorted Citations
 
@@ -45,8 +42,6 @@ This [[Definition-spec,ad-finem-Noteshippo-taxonomy,]]'s contains...
 # ---Transient Local Citations
 
 ## LC--citation--
-
-
 
 <%* /**
 * v0.03_litnote-template Update template with proper templater commenting out tags

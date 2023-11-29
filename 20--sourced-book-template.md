@@ -1,33 +1,27 @@
 ---
-TEMPLATE_VERSION: "v1.0.8_sourced-book-template"
-<%*
-/*
-TEMPLATE_COMMITS: [
-    "1.0.8" Update template to use transient jobs system
-    "1.0.7 Rename template"
-    "1.0.5 BUGFIX: Banner plugin to stupid to understand quoteless yaml",
-    "1.0.4 Update template to nts_v1",
-    "1.0.3: standardization to dashes",
-    "1.0.2: Unify extraneous template data fields, intro commits, conform template look",
-]
-*/
-%>
-MUID: "<% await app.insertIncrementalId('MUID') %>"
-CREATION_DATE: "<% tp.file.creation_date("YYYY-MM-DD") %>" 
-tag:
-  - _wip
-  - _book
-UMID: null
-title: "{{title}}"
-author: ["{{author}}"]
+BANNER:
+  - "{{coverUrl}}"
+CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD") %>
+MUID: <% await app.insertIncrementalId("MUID") %>
+PERSONAL_RATING: 
+STATUS: unread
+TEMPLATE_VERSION: v1.0.9
+TEMPLATE_SOURCE: "[[20--sourced-book-template]]"
+UMID: 
+author:
+  - "{{author}}"
+category: "{{category}}"
+isbn:
+  - "{{isbn10}}"
+  - "{{isbn13}}"
 publisher: "{{publisher}}"
 publish: "{{publishDate}}"
-total: "{{totalPage}}"
-isbn: ["{{isbn10}}", "{{isbn13}}"]
-BANNER: "{{coverUrl}}"
-STATUS: "unread"
-category: "{{category}}"
 subtitle: "{{subtitle}}"
+tags:
+  - _wip
+  - _book
+title: "{{title}}"
+total: "{{totalPage}}"
 ---
 
 # -
@@ -46,16 +40,13 @@ TASK where file.name = this.file.name and completed
 
 > [!info] Hover over me [[~view-for-recent-reference-link-to-note-title-transform]] and copy normalized note title.
 
+> [!info] See [[guide-to-personal-rating,cf.-Kepano]] to understand the rating system behind PERSONAL_RATING in frontmatter.
+>
 ### Reference
 
-* ∫ 
-
-
+* ∫
 
 # =
-
-
-
 
 # ---Transient Jobs
 
@@ -65,14 +56,20 @@ TASK where file.name = this.file.name and completed
 
 ---
 
-
-
 ---
 
 # ---Transient Local Resources
 
-
-
-
-
-
+<%*
+/*
+- "1.0.9"
+  - Separate template version and source template
+  - Sort frontmatter alphabetically
+- "1.0.8" Update template to use transient jobs system
+- "1.0.7 Rename template"
+- "1.0.5 BUGFIX: Banner plugin to stupid to understand quoteless yaml",
+- "1.0.4 Update template to nts_v1",
+- "1.0.3: standardization to dashes",
+- "1.0.2: Unify extraneous template data fields, intro commits, conform template look",
+*/
+%>
