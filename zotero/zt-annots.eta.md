@@ -40,7 +40,9 @@
 <%-       if (colorName === "yellow") { %>
 <%-       } %>
 <%-       for (let annot of annotations) { %>
-## LC--<%= colorName?.substring(0,3)%>-citation--Page-<%= annot.pageLabel + "-" + (annot?.text?.substring(0,30) || annot.comment)%>
+<%-         const lcTitle = (annot?.text?.substring(0,30) || [])%>
+<%-         const _lcTitle = lcTitle.split("	").filter(Boolean).join(" ")%> 
+## LC--<%= colorName?.substring(0,3)%>-citation--Page-<%= annot.pageLabel + "--" + (_lcTitle || annot.comment)%>
 
 <%~         include("annotation", annot) %>
 <%        } %>
