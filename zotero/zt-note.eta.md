@@ -10,9 +10,9 @@
 # =
 
 
-# ---Transient 010 Sorted Citations
+# ---Transient Jobs
 
-![[~viewfn-for-creating-absolute-links-for-citations#=|?search_term=---Transient Local Citations&t=nlk]]
+![[~viewfn-for-sluicing-header-links-for-citations-MUID-1560#=|?search_term=---Transient Local&t=nlk]]
 
 [Zotero](<%= it.backlink %>) <%= it.fileLink %>
 <%~ include("annots", it.annotations) %>

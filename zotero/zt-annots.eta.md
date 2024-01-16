@@ -1,3 +1,4 @@
+
 # ---Transient Local Citations
 
 <%-    for (const colorName of ["orange" ]) { %>
@@ -40,9 +41,13 @@
 <%-       if (colorName === "yellow") { %>
 <%-       } %>
 <%-       for (let annot of annotations) { %>
-<%-         const lcTitle = (annot?.text?.substring(0,30) || [])%>
-<%-         const _lcTitle = lcTitle.split("	").filter(Boolean).join(" ")%> 
-## LC--<%= colorName?.substring(0,3)%>-citation--Page-<%= annot.pageLabel + "--" + (_lcTitle || annot.comment)%>
+<%-         const annotTextLength = annot?.text?.length || Infinity %>
+<%-         const displayLength = Math.min(45, annotTextLength) %>
+<%-         const lcTitle = annot?.text?.substring(0,displayLength) || ""; %>
+<%-         const _lcTitle = lcTitle?.split("	")?.filter(Boolean).join(" ") %> 
+<%-         const pageLabel = annot.pageLabel ?? ""; %>
+
+## LC--<%= colorName?.substring(0,3)%>-citum--Page-<%= pageLabel?.padStart(4,"0") + "--" + (_lcTitle || annot.comment)%>
 
 <%~         include("annotation", annot) %>
 <%        } %>
