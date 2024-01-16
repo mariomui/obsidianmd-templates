@@ -29,12 +29,15 @@ tags: _noteshippo/v1/structural-note
 # ---Transient Waypoints
 
 %% Begin Waypoint %%
-
 - [[macro-for-callout-like-detail]]
 - [[macro-for-citations]]
 - [[macro-for-eec-tline]]
 - [[macro-for-local-page-tasks]]
+- [[macro-for-note-seeds]]
+- [[macro-for-rating-books]]
 - [[macro-for-sluicing-links-into-jobs]]
+- [[macro-for-sluicing-out-waypoints]]
+- [[macro-for-stratagem-details]]
 - [[macro-for-vocabulary-details,by-emoji]]
 
 %% End Waypoint %%
