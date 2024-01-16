@@ -1,17 +1,11 @@
 ---
-<%* /*
-HC-VERSION: v1.0.2-RHK
-DESC: User prompted hotkey lister 
-RHK-HC-COMMITS: [
-    "v1.0.2: Add runtime prompt for plugin name to obtain dynamic output"
-    "v1.0.1: Better prompt",
-   " v1.0.0: Pump out hotkeys for timestamp note plugin"
-] */%>
+tags: wip
 ---
+
 
 # -
 
-This [[Partial-dataview,vis-Noteshippo]] is designed to provide a list ot hotkey/shortcuts of used by  [[inbox-list-of-plugins,b.t.-ObsidianMD-app,etc|_list-of-obsidianMD-plugins]].
+This [[Partial-dataview,vis-Noteshippo,]] is designed to provide a list ot hotkey/shortcuts of used by  [[inbox-list-of-plugins,b.t.-ObsidianMD-app,etc|_list-of-obsidianMD-plugins]].
 
 - [ ] Refactor code to use the improved  transclusion parameter design rather than by user prompt.
 
@@ -85,4 +79,11 @@ dv.table(
 
 ```
 
-
+<%*/*
+HC-VERSION: v1.0.2-RHK
+DESC: User prompted hotkey lister
+RHK-HC-COMMITS: [
+    "v1.0.2: Add runtime prompt for plugin name to obtain dynamic output"
+    "v1.0.1: Better prompt",
+   " v1.0.0: Pump out hotkeys for timestamp note plugin"
+] */%>

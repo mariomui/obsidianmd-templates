@@ -13,7 +13,7 @@ This template is not connected to  [[tag-wrangler-plugin,b.t.-ObsidianMD,]]. Tag
 
 - [ ] Document exactly what is going on with this tag page. #_todo/to-process/on-a-codelet/regarding-dataviewjs/regarding-reasons-for-its-deprecation
   - Why is the [[#Dashboard For Current Tag Only Notes]] not being used?
-    - The dashboard is now  [[Partial-dataview,vis-Noteshippo]] powered.
+    - The dashboard is now  [[Partial-dataview,vis-Noteshippo,]] powered.
       - See [[~view-for-exact-tag-file-listing#-]] for details.
 
 * ⚙ The tag ( `= this.file.aliases[0] ` ) will be for:

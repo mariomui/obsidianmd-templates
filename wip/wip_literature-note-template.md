@@ -37,7 +37,7 @@ This [[Definition-spec,vis-Noteshippo-taxonomy,]]'s contains...
 
 # ---Transient 010 Local Sorted Citations
 
-![[~viewfn-for-creating-absolute-links-for-citations#=|?search_term=---Transient Local Citations&t=nlk]]
+![[~viewfn-for-sluicing-header-links-for-citations-MUID-1560#=|?search_term=---Transient Local Citations&t=nlk]]
 
 # ---Transient Local Citations
 
@@ -45,5 +45,5 @@ This [[Definition-spec,vis-Noteshippo-taxonomy,]]'s contains...
 
 <%* /**
 * v0.03_litnote-template Update template with proper templater commenting out tags
-* v0.02_litnote-template Update headings to be compatible with  [[~viewfn-for-creating-absolute-links-for-citations]]
+* v0.02_litnote-template Update headings to be compatible with  [[~viewfn-for-sluicing-header-links-for-citations-MUID-1560]]
 **/ -%>
