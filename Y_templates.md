@@ -54,7 +54,7 @@ DOC_VERSION: v0.0.1
   * [[zt-note.etab]]
   * [[readme]]
   * [[zt-annot.eta]]
-  * [[zt-annots.eta]]
+  * [[Y_templates/zotero/zt-annots.eta]]
   * [[zt-annots.v1.1.2.eta]]
   * [[zt-cite.eta]]
   * [[zt-colored.eta]]
@@ -71,14 +71,15 @@ DOC_VERSION: v0.0.1
 - **[[_macros]]**
 - **[[_template-saved-within-a-plugin-setting-tab]]**
 - **💀archive**
-  - [[💀hbstemplate-ibook-import-ibook-csv-with-bullet]]
-  - [[deprecated_folder-page-template]]
-  - [[deprecating_tag-page-template]]
-  - [[merge_template]]
+	- [[💀hbstemplate-ibook-import-ibook-csv-with-bullet]]
+	- [[deprecated_folder-page-template]]
+	- [[deprecating_tag-page-template]]
+	- [[merge_template]]
 - [[10--alias-spec-template]]
 - [[10--blank-template]]
 - [[10--default-template]]
 - [[10--youtube-litnote-template]]
+- [[10-bridge-spec-template]]
 - [[20--default-meta-template]]
 - [[20--evergreen_template]]
 - [[20--fleeting-notes-template]]
@@ -88,27 +89,27 @@ DOC_VERSION: v0.0.1
 - **obsidian-canvas**
 
 - **wip**
-  - [[wip_literature-note-template]]
-  - [[wip_viewfn-to-recall-hot-key]]
+	- [[wip_literature-note-template]]
+	- [[wip_viewfn-to-recall-hot-key]]
 - **zotero**
-  - **archived**
-    - [[zt-annot.eta.prev]]
-    - [[zt-annot.etab]]
-    - [[zt-annot.new.eta]]
-    - [[zt-annots.etab]]
-    - [[zt-annots.new.eta]]
-    - [[zt-annots.prev.eta]]
-    - [[zt-cite2.eta]]
-    - [[zt-note.etab]]
-  - [[orange.eta]]
-  - [[readme]]
-  - [[zt-annot.eta]]
-  - [[zt-annots.eta]]
-  - [[zt-annots.v1.1.2.eta]]
-  - [[zt-cite.eta]]
-  - [[zt-colored.eta]]
-  - [[zt-field.eta]]
-  - [[zt-note.eta]]
+	- **archived**
+		- [[zt-annot.eta.prev]]
+		- [[zt-annot.etab]]
+		- [[zt-annot.new.eta]]
+		- [[zt-annots.etab]]
+		- [[zt-annots.new.eta]]
+		- [[zt-annots.prev.eta]]
+		- [[zt-annots.v1.1.2.eta]]
+		- [[zt-cite2.eta]]
+		- [[zt-note.etab]]
+	- [[orange.eta]]
+	- [[readme]]
+	- [[zt-annot.eta]]
+	- [[zt-annots.eta]]
+	- [[zt-cite.eta]]
+	- [[zt-colored.eta]]
+	- [[zt-field.eta]]
+	- [[zt-note.eta]]
 
 %% End Waypoint %%
 

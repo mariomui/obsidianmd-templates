@@ -1,9 +1,9 @@
 ---
 CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.0
-MUID: <% /** await app.insertIncrementalId('MUID') **/%>
+MUID: <% await app.insertIncrementalId('MUID') %>
 SOURCE_TEMPLATE: '[[10--alias-spec-template]]'
-TEMPLATE_VERSION: v1.0.7
+TEMPLATE_VERSION: v1.0.8
 UMID:
 alias: 
 tags: _wip

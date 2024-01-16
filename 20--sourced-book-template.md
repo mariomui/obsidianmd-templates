@@ -5,7 +5,7 @@ CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD") %>
 MUID: <% await app.insertIncrementalId("MUID") %>
 PERSONAL_RATING: 
 STATUS: unread
-TEMPLATE_VERSION: v1.0.9
+TEMPLATE_VERSION: v1.0.10
 TEMPLATE_SOURCE: "[[20--sourced-book-template]]"
 UMID: 
 author:
@@ -14,7 +14,8 @@ category: "{{category}}"
 isbn:
   - "{{isbn10}}"
   - "{{isbn13}}"
-publisher: "{{publisher}}"
+publisher:
+  - "{{publisher}}"
 publish: "{{publishDate}}"
 subtitle: "{{subtitle}}"
 tags:
@@ -25,6 +26,8 @@ total: "{{totalPage}}"
 ---
 
 # -
+
+## Meta
 
 ![[~view-for-local-tasks-using-a-progress-bar-MUID-698#=|nlk]]
 
@@ -50,7 +53,7 @@ TASK where file.name = this.file.name and completed
 
 # ---Transient Jobs
 
-![[~viewfn-for-creating-absolute-links-for-citations#=|?search_term=---Transient Local&t=nlknoui-scroll]]
+![[~viewfn-for-sluicing-header-links-for-citations-MUID-1560#=|?search_term=---Transient Local&t=nlknoui-scroll]]
 
 # ---Transient Local Citations
 
@@ -62,6 +65,8 @@ TASK where file.name = this.file.name and completed
 
 <%*
 /*
+- "1.0.10"
+  - Add Meta H2
 - "1.0.9"
   - Separate template version and source template
   - Sort frontmatter alphabetically

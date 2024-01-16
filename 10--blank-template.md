@@ -1,11 +1,13 @@
 ---
-alias:
 CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.1
 MUID: <% await app.insertIncrementalId('MUID')%>
-tags: _wip 
-TEMPLATE_VERSION: v1.0.4_blank-template
-UMID: 
+TEMPLATE_VERSION: v1.0.4
+TEMPLATE_SOURCE: '[[10--blank-template]]'
+UMID:
+aliases:
+tags:
+  - _wip
 ---
 
 # -
@@ -15,7 +17,6 @@ UMID:
 # =
 
 **filename:** `=this.file.path`
-
 
 # ---Transient Local Resources
 

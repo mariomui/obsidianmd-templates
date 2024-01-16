@@ -1,15 +1,18 @@
 ---
 CREATION_DATE: <% await tp.file.creation_date("YYYY-MM-DD")%>
-DOC_VERSION: v0.0.1
+DOC_VERSION: v0.0.0
 MUID: <% await app.insertIncrementalId('MUID')%>
-TEMPLATE_VERSION: v1.0.5_default-template
+TEMPLATE_VERSION: v1.0.6
+TEMPLATE_SOURCE: "[[10--default-template]]"
 UMID: <% await app.templaterAddOnFig.addUuid() %>
-alias: 
+aliases: 
 tags:
   - _wip
 ---
 
 # -
+
+## Meta
 
 ![[~view-for-local-tasks-using-a-progress-bar-MUID-698#=|olk]]
 
@@ -22,23 +25,31 @@ TASK WHERE file.name = this.file.name AND completed
 
 ## About
 
-* Hover over me and snatch the output of note title algorithm:[[~view-for-recent-reference-link-to-note-title-transform]]
-
+> [!info] Hover over me [[~view-for-recent-reference-link-to-note-title-transform]] and copy normalized note title.
 ### Reference
 
-![[~view-for-referencing-current-jumpid#=|nlk]]
+> [!info] Hover over [[~view-for-referencing-current-jumpid]] for jumpid alias
 
 * †
 
 # =
 
-*`= this.file.name`*
-![[~view-for-calculating-reading-time#=|olk ui-noscroll]]
+**filepath**: *`= this.file.path`*
+
+
 
 # ---Transient Commit Log
 
 <%* /**
 
-v0.0.1 Add a new line after jumpid codelet for better contrast on reflink
+* v1.0.6 
+  * Add template source into metadata
+  * Revert the DOC_VERSION to v0.0.0
+  * Update filename to filepath in the public api
+  * Conform tasks to be under the Meta h2
+  * Remove the reading time partial dataview
+  * Update the note title transform ~dataview to use callouts
+  * Update the reference jumpid ~dataview to use callouts
+* v1.0.5 Add a new line after jumpid codelet for better contrast on reflink
 
 **/ -%>
