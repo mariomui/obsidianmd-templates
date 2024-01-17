@@ -22,7 +22,7 @@ tags:
 
 <%* /**
 * COMMIT LOG
-  * v1.0.5 
+  * v1.0.5
     * change front matter tag to tags to fit obsidian convention
     * Change the doc version from starting at 0.0.1 to 0.0.0
   * v1.0.4
