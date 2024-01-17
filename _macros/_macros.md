@@ -24,7 +24,7 @@ tags: _noteshippo/v1/structural-note
 
 # ---Transient 010 Jobs
 
-![[~viewfn-sluicing-out-unprocessed-links-MUID-1643#=|?search_term=---Transient Waypoints&t=nlkno-uiscroll]]
+![[~viewfn-sluicing-out-waypoint-like-unprocessed-links-MUID-1643#=|?search_term=---Transient Waypoints&t=nlkno-uiscroll]]
 
 # ---Transient Waypoints
 

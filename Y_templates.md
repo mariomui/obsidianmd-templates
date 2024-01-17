@@ -42,7 +42,7 @@ DOC_VERSION: v0.0.1
   * [[macro-for-local-page-tasks]]
   * [[macro-for-vocabulary-details,by-emoji]]
   * [[merge_template]]
-  * [[wip_literature-note-template]]
+  * [[interim_literature-note-template]]
   * [[wip_viewfn-to-recall-hot-key]]
   * [[zt-annot.eta.prev]]
   * [[zt-annot.etab]]
@@ -63,7 +63,8 @@ DOC_VERSION: v0.0.1
 
 # ---Transient Jobs
 
-![[~viewfn-sluicing-out-unprocessed-links-MUID-1643#=|?search_term=---Transient Local Waypoints&t=nlk]]
+
+![[~viewfn-sluicing-out-waypoint-like-unprocessed-links-MUID-1643#=|?search_term=---Transient Local Waypoints&t=nlk]]
 
 # ---Transient Local Waypoints
 
@@ -89,7 +90,7 @@ DOC_VERSION: v0.0.1
 - **obsidian-canvas**
 
 - **wip**
-	- [[wip_literature-note-template]]
+	- [[interim_literature-note-template]]
 	- [[wip_viewfn-to-recall-hot-key]]
 - **zotero**
 	- **archived**

@@ -11,6 +11,8 @@ DOC_VERSION: v0.0.0
 
 # -
 
+## Meta
+
 ![[~view-for-local-tasks-using-a-progress-bar-MUID-698#=|olk]]
 
 ```dataview
@@ -27,7 +29,8 @@ This [[Definition-spec,vis-Noteshippo-taxonomy,]]'s contains...
 > *Make sure that reference † is populated*
 ### Reference
 
-![[~view-for-referencing-current-jumpid#=|nlk]]
+> [!info] Hover over me and copy the [[~view-for-referencing-current-jumpid#=|jumpid]]
+
 * †
 
 # =
