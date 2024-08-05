@@ -1,15 +1,20 @@
 ---
-tags: wip
+tags: _wip
 ---
 
 
 # -
 
-This [[Partial-dataview,vis-Noteshippo,]] is designed to provide a list ot hotkey/shortcuts of used by  [[inbox-list-of-plugins,b.t.-ObsidianMD-app,etc|_list-of-obsidianMD-plugins]].
+## About
 
-- [ ] Refactor code to use the improved  transclusion parameter design rather than by user prompt.
+This [[Partial-dataview,vis-Noteshippo,]] is designed to provide a list ot hotkey/shortcuts of used by  [[inbox-list-of-plugins,bt.-ObsidianMD-app,etc|_list-of-obsidianMD-plugins]].
+
+- [ ] Refactor code to use the improved  transclusion parameter design rather than by user prompt. #_todo/to-code/upon-codelet
 
 # =
+
+- ! Transclusion has not been implemented
+  - 🤔 so far this is a macro.
 
 ```dataviewjs
 const keyToSymbolMap = {

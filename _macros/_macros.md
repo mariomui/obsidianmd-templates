@@ -29,15 +29,23 @@ tags: _noteshippo/v1/structural-note
 # ---Transient Waypoints
 
 %% Begin Waypoint %%
+- **[[_longform]]**
+- [[macro-for-automatic-toc]]
 - [[macro-for-callout-like-detail]]
 - [[macro-for-citations]]
+- [[macro-for-citum]]
+- [[macro-for-commonly-used-file-and-filepaths-inserts]]
 - [[macro-for-eec-tline]]
+- [[macro-for-file-basename]]
+- [[macro-for-iherdc-template,vis-Characterization]]
+- [[macro-for-lcsh-heading-field-query-and-scrape-v1.0.1]]
 - [[macro-for-local-page-tasks]]
-- [[macro-for-note-seeds]]
 - [[macro-for-rating-books]]
-- [[macro-for-sluicing-links-into-jobs]]
 - [[macro-for-sluicing-out-waypoints]]
+- [[macro-for-sluicing-waypoint-links-into-jobs]]
 - [[macro-for-stratagem-details]]
+- [[macro-for-targetting-note-seeds]]
+- [[macro-for-targetting-Subject-seeds]]
 - [[macro-for-vocabulary-details,by-emoji]]
 
 %% End Waypoint %%

@@ -12,9 +12,10 @@
 <% if (it.imgEmbed) { %>
 - <%= it.imgEmbed %>
 <% } %>
+
 <%-= ""%>**file**: <%= it.docItem?.citekey %>
-<% if (it.comment) { %>
-- <% if (it.comment.startsWith('todo ')) { %>[ ] **<%= it?.comment?.substring(5) %>:**<% } else { %>**<%= it.comment %>:**<% } %>  
+<% if (it?.comment) { %>
+- <% if (it.comment?.startsWith('todo ')) { %>[ ] **<%= it?.comment?.substring(5) %>:**<% } else { %>**<%= it.comment %>:**<% } %>  
   - <%= it.text %> [p. <%= it.pageLabel %>](zotero://open-pdf/library/items/<%= it.parentItem %>?page=<%= it.pageLabel %>&annotation=<%= it.key %>) <% if (it.tags && it.tags.length > 0) { %> <% = it.tags.map(tag => '#' + tag.name).join(", ") %><% } %>  
 <% } else if (it.text) { %>
 <%= it.text %> [p. <%= it.pageLabel %>](zotero://open-pdf/library/items/<%= it.parentItem %>?page=<%= it.pageLabel %>&annotation=<%= it.key %>) <% if (it.tags && it.tags.length > 0) { %> <% = it.tags.map(tag => '#' + tag.name).join(", ") %><% } %>  

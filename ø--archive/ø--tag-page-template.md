@@ -1,17 +1,18 @@
 ---
 MUID: <% await app.insertIncrementalId('MUID') %>
-tag: [_meta/a-tag-page]
+tag:
+  - _meta/a-tag-page
 TEMPLATE_VERSION: v1.0.8_tag-page
 ---
 # -
 
 ## About
 
-This template is not connected to  [[tag-wrangler-plugin,b.t.-ObsidianMD,]]. Tag wrangler offers no integrated way to use this [[templater-plugin,b.t.-ObsidianMD-app,]] when a new [[Tag-page,uti-Tag-Wrangler,]] is created.
+This template is not connected to  [[tag-wrangler-plugin,b.t.-ObsidianMD,]]. Tag wrangler offers no integrated way to use this [[templater-plugin,bt.-ObsidianMD-app,]] when a new [[Tag-page,uti-Tag-Wrangler,]] is created.
 
  > [!warn] It seems like this template is out of date, and is only used in a handful of older tag-pages.
 
-- [ ] Document exactly what is going on with this tag page. #_todo/to-process/on-a-codelet/regarding-dataviewjs/regarding-reasons-for-its-deprecation
+- [ ] Document exactly what is going on with this tag page. #_todo/to-process/upon-codelet/regarding-dataviewjs/regarding-reasons-for-its-deprecation
   - Why is the [[#Dashboard For Current Tag Only Notes]] not being used?
     - The dashboard is now  [[Partial-dataview,vis-Noteshippo,]] powered.
       - See [[~view-for-exact-tag-file-listing#-]] for details.
@@ -78,3 +79,4 @@ function createDashboard(alias = "#_") {
 # ---Transient
 
 [[interim_tag-page-template-commit-history]]
+

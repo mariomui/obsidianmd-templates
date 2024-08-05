@@ -1,0 +1,55 @@
+- ### CORE
+  - pic: 
+  - Name:
+  - Short description:
+  - Age + Birthday:
+  - Occupation:
+  - Motivation:
+  - Favorite color:
+  - Blood type:
+  - Parents:
+  - Siblings + Family:
+  - Major relationships:
+  - Fears:
+  - Quirks + Mannerisms:
+  - Hobbies:
+  - Ambitions:
+  - Philosophy in life:
+  - Positive qualities + traits:
+  - Negative qualities + traits:
+  - Attitude + Temperament:
+  - Self opinion:
+  - Opinion of others:
+  - How does this character advance the plot?
+  - Where do they live?
+  - What do they eat?
+  - What do they wear?
+  - What is something unique about them?
+  - What is something they keep hidden?
+- ### Likes and Dislikes
+  - Likes:
+  - Dislikes:
+- ### Physical Appearance
+  - Height:
+  - Weight:
+  - Type of body:
+  - Any birthmarks or scars:
+  - Posture:
+  - Unique mannerisms/gestures/sounds of voice:
+  - Scars or handicaps (physical, mental, and emotional):
+  - Complexion:
+  - Eye color:
+  - Jawline:
+  - Lips:
+  - Mouth:
+  - Eyebrows:
+  - Face:
+  - Ears:
+  - Nose:
+  - Neck:
+  - Teeth:
+  - Hands:
+  - Fingers:
+  - Shoulders:
+  - Hips:
+  - Waist:

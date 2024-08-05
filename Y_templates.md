@@ -1,6 +1,6 @@
 ---
 Aliases: ["__README__templates", templates]
-tags: _noteshippo/structural-note
+tags: _noteshippo/v1/structural-note
 DOC_VERSION: v0.0.1
 ---
 
@@ -14,13 +14,26 @@ DOC_VERSION: v0.0.1
 
 # =
 
-* ## 10s Macros
+* [[deprecated_folder-page-template]]
+* [[Desue--folder-page-template]]
+* [[DESUE--hbstemplate-ibook-import-ibook-csv-with-bullet]]
+* [[dESUE--tag-page-template]]
+* [[interim--definition-note-template]]
+* [[wip--viewfn-to-recall-hot-key]]
 
+* [[_macros]]
+
+---
+
+* ## 10s Macros
   * 💁
     * These templates behave as macros. They populate the entire page. There is no intermediate force accessing these templates except the user.
   * [[10--alias-spec-template]]
-  * [[10--blank-template]]
-  * [[10--default-template]]
+  * [[10--youtube-litnote-template]]
+  * [[10--blank-no-api-template]]
+  * [[10--bridge-spec-template]]
+  * [[10--nascent-spec-template]]
+  * [[10--UMID-template]]
 * 20s
   * these templates are tied to an plugin.
   * [[20--default-meta-template]]
@@ -34,7 +47,7 @@ DOC_VERSION: v0.0.1
   * [[💀hbstemplate-ibook-import-ibook-csv-with-bullet]]
   * [[deprecating_tag-page-template]]
 * MISC
-  * [[folder-page-template]]
+  * [[Desue--folder-page-template]]
   * [[helpercode-to-take-videonotes-using-transcription-and-easy-timestamp-linking]]
   * [[macro-for-callout-like-detail]]
   * [[macro-for-citations]]
@@ -42,24 +55,29 @@ DOC_VERSION: v0.0.1
   * [[macro-for-local-page-tasks]]
   * [[macro-for-vocabulary-details,by-emoji]]
   * [[merge_template]]
-  * [[interim_literature-note-template]]
+  * [[interim--litnote-template]]
   * [[wip_viewfn-to-recall-hot-key]]
-  * [[zt-annot.eta.prev]]
-  * [[zt-annot.etab]]
-  * [[zt-annot.new.eta]]
-  * [[zt-annots.etab]]
-  * [[zt-annots.new.eta]]
-  * [[zt-annots.prev.eta]]
-  * [[zt-cite2.eta]]
-  * [[zt-note.etab]]
-  * [[readme]]
-  * [[zt-annot.eta]]
-  * [[Y_templates/zotero/zt-annots.eta]]
-  * [[zt-annots.v1.1.2.eta]]
-  * [[zt-cite.eta]]
-  * [[zt-colored.eta]]
-  * [[zt-field.eta]]
-  * [[zt-note.eta]]
+  * # Zotlit
+    * ## Archive
+      * [[zt-annot.eta.prev]]
+      * [[zt-annot.etab]]
+      * [[zt-annots.etab]]
+      * [[zt-annot.new.eta]]
+      * [[zt-annots.new.eta]]
+      * [[zt-note.etab]]
+      * [[zt-annots.prev.eta]]
+      * * [[zt-annots.v1.1.2.eta]]
+      * [[readme]]
+      * [[zt-cite2.eta]]
+    * ## In use
+      * [[zt-field.eta]]
+      * [[zt-cite.eta]]
+      * [[zt-note.eta]]
+      * [[zt-colored.eta]]
+      *  [[orange.eta]]
+      * [[zt-annots.eta]]
+      * [[zt-annot.eta]]
+
 
 # ---Transient Jobs
 
@@ -71,27 +89,31 @@ DOC_VERSION: v0.0.1
 %% Begin Waypoint %%
 - **[[_macros]]**
 - **[[_template-saved-within-a-plugin-setting-tab]]**
-- **💀archive**
-	- [[💀hbstemplate-ibook-import-ibook-csv-with-bullet]]
-	- [[deprecated_folder-page-template]]
-	- [[deprecating_tag-page-template]]
-	- [[merge_template]]
 - [[10--alias-spec-template]]
-- [[10--blank-template]]
-- [[10--default-template]]
+- [[10--blank-no-api-template]]
+- [[10--bridge-spec-template]]
+- [[10--nascent-spec-template]]
+- [[10--UMID-template]]
 - [[10--youtube-litnote-template]]
-- [[10-bridge-spec-template]]
 - [[20--default-meta-template]]
 - [[20--evergreen_template]]
 - [[20--fleeting-notes-template]]
 - [[20--sourced-book-template]]
 - [[90--bootup]]
-- [[helpercode-to-take-videonotes-using-transcription-and-easy-timestamp-linking]]
+- **ø--archive**
+	- [[Desue--folder-page-template]]
+	- [[DESUE--hbstemplate-ibook-import-ibook-csv-with-bullet]]
+	- [[helpercode-to-take-videonotes-using-transcription-and-easy-timestamp-linking]]
+	- [[merge_template]]
+	- [[ø--tag-page-template]]
 - **obsidian-canvas**
 
-- **wip**
-	- [[interim_literature-note-template]]
-	- [[wip_viewfn-to-recall-hot-key]]
+- **staged**
+	- **interim**
+		- [[definition-note-template]]
+		- [[interim--litnote-template]]
+	- **wip**
+		- [[wip--viewfn-to-recall-hot-key]]
 - **zotero**
 	- **archived**
 		- [[zt-annot.eta.prev]]

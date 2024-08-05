@@ -41,7 +41,7 @@ TASK where file.name = this.file.name and completed
 
 ## About
 
-> [!info] Hover over me [[~view-for-recent-reference-link-to-note-title-transform]] and copy normalized note title.
+> [!info] Hover over me [[~view-for-recent-reference-link-to-note-title-transform,nb.-MUID-115]] and copy normalized note title.
 
 > [!info] See [[guide-to-personal-rating,cf.-Kepano]] to understand the rating system behind PERSONAL_RATING in frontmatter.
 >

@@ -2,7 +2,7 @@
 CREATION_DATE: <% await tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.0
 MUID: <% await app.insertIncrementalId('MUID')%>
-TEMPLATE_VERSION: v1.0.4
+TEMPLATE_VERSION: v1.0.5
 TEMPLATE_SOURCE: "[[10--youtube-litnote-template]]"
 UMID: 
 aliases: 
@@ -17,7 +17,7 @@ tags:
 * This [[,aka-reference-specced-note|aka-literature-specced-note]] collects citations. It is combined with an Analysis portion that works as a temporary [[,aka-index-specced-note]] giving us some context to the information, namely what was collected, and how it relates to other notes, as well as other concepts in the same [[literature-note,etc]]
 
 
-> [!info] Hover over me [[~view-for-recent-reference-link-to-note-title-transform]] and copy normalized note title.
+> [!info] Hover over me [[~view-for-recent-reference-link-to-note-title-transform,nb.-MUID-115]] and copy normalized note title.
 
 ### Reference
 
@@ -32,6 +32,11 @@ tags:
 
 # =
 
+**base_filepath**: *`= this.file.path`* *doc-`=this.DOC_VERSION`*
+
+---
+
+
 
 ## Control
 
@@ -39,6 +44,9 @@ tags:
 
 
 ## Analysis
+
+**file_basename**: *`= this.file.name`* *doc-`=this.DOC_VERSION`*
+**is-using-latest-template**: `= (([[10--youtube-litnote-template]].TEMPLATE_VERSION)=(this.file.frontmatter.TEMPLATE_VERSION)) `
 
 * # Youtube Link
   * [[10--youtube-litnote-template#LR--Youtube Timestamp Notes Link|LR--Youtube Timestamp Notes Link]]
@@ -72,6 +80,8 @@ tags:
 
 <%*
 /* Template Version Commit Log
+* v1.0.5
+  * Replace commonly used file base paths with one that includes doc version
 * "1.0.4"
   * conform to a simpler header for LR notes link
 - "1.0.3"

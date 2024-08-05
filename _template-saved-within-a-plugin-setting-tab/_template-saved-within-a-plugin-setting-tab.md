@@ -2,7 +2,7 @@
 aliases: ["__README___manually-placed"]
 TEMPLATE_VERSION: v1.0.0-folder-page
 CREATION_DATE: 2023-06-17 
-tags: _meta _noteshippo/structural-note
+tags: _meta _noteshippo/v1/structural-note
 UMID: 
 ---
 
@@ -17,7 +17,7 @@ task where file.name = this.file.name and !completed
 
 ## About
 
-- [ ] Does changing a folder page's name require also updating the aliases? #_todo/to-muse/on-noteshippo 
+- [ ] Does changing a folder page's name require also updating the aliases? #_todo/to-muse/_upon-noteshippo 
 
 # =
 

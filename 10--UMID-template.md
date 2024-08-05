@@ -2,8 +2,8 @@
 CREATION_DATE: <% await tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.0
 MUID: <% await app.insertIncrementalId('MUID')%>
-TEMPLATE_VERSION: v1.0.6
-TEMPLATE_SOURCE: "[[10--default-template]]"
+TEMPLATE_VERSION: v1.0.8
+TEMPLATE_SOURCE: "[[10--UMID-template]]"
 UMID: <% await app.templaterAddOnFig.addUuid() %>
 aliases: 
 tags:
@@ -25,7 +25,7 @@ TASK WHERE file.name = this.file.name AND completed
 
 ## About
 
-> [!info] Hover over me [[~view-for-recent-reference-link-to-note-title-transform]] and copy normalized note title.
+> [!info] Hover over me [[~view-for-recent-reference-link-to-note-title-transform,nb.-MUID-115]] and copy normalized note title.
 ### Reference
 
 > [!info] Hover over [[~view-for-referencing-current-jumpid]] for jumpid alias
@@ -34,14 +34,21 @@ TASK WHERE file.name = this.file.name AND completed
 
 # =
 
-**filepath**: *`= this.file.path`*
+**base_filepath**: *`= this.file.path`* *doc-`=this.DOC_VERSION`*
+
+---
+
+**file_basename**: *`= this.file.name`* *doc-`=this.DOC_VERSION`*
 
 
 
 # ---Transient Commit Log
 
 <%* /**
-
+- v1.0.8
+  - add commonly used macro that shows filepath and doc version
+* v1.07
+  * change the name to show that this template is a template that has UMID In it, meant for big projects.
 * v1.0.6 
   * Add template source into metadata
   * Revert the DOC_VERSION to v0.0.0
