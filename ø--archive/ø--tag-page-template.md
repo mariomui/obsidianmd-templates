@@ -1,14 +1,14 @@
 ---
 MUID: <% await app.insertIncrementalId('MUID') %>
 tag:
-  - _meta/a-tag-page
+  - _meta/tag-page
 TEMPLATE_VERSION: v1.0.8_tag-page
 ---
 # -
 
 ## About
 
-This template is not connected to  [[tag-wrangler-plugin,b.t.-ObsidianMD,]]. Tag wrangler offers no integrated way to use this [[templater-plugin,bt.-ObsidianMD-app,]] when a new [[Tag-page,uti-Tag-Wrangler,]] is created.
+This template is not connected to  [[tag-wrangler-plugin,bt-ObsidianMD-app,]]. Tag wrangler offers no integrated way to use this [[templater-plugin,bt.-ObsidianMD-app,]] when a new [[Tag-page,uti-Tag-Wrangler,]] is created.
 
  > [!warn] It seems like this template is out of date, and is only used in a handful of older tag-pages.
 
@@ -29,7 +29,7 @@ Because this
 
 ## Dashboard For Current Tag Only Notes
 
-See [[external-guide-to-creating-dataview-plugin-powered-codelets#Ways to Create a Cta Button]]
+See [[list-of-codelets,by-x,nb.-Dataview-plugin-powered--ObsidianMD-app#Ways to Create a Cta Button]]
 
 ~~~javascript
 ` // ⚙ Wrap codeblock with single tick to trigger syntax highlights
@@ -78,5 +78,5 @@ function createDashboard(alias = "#_") {
 
 # ---Transient
 
-[[interim_tag-page-template-commit-history]]
+[[ø--tag-page-template-commit-history]]
 

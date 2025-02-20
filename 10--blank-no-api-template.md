@@ -2,7 +2,7 @@
 CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.0
 MUID: <% await app.insertIncrementalId('MUID')%>
-TEMPLATE_VERSION: v1.0.8
+TEMPLATE_VERSION: v1.0.9
 TEMPLATE_SOURCE: "[[10--blank-no-api-template]]"
 UMID: 
 aliases: 
@@ -12,15 +12,16 @@ tags:
 
 # -
 
-## About
+## 10-About
 
 > [!info] %%  %% Goal
 > 
 
 # =
 
-**file_basename**: *`= this.file.name`* *doc-`=this.DOC_VERSION`*
-**is-using-latest-template**: `= (([[10--blank-no-api-template]].TEMPLATE_VERSION)=(this.file.frontmatter.TEMPLATE_VERSION)) `
+**base_filepath-v0.0.3**: *`= this.file.path`* doc-`= this.DOC_VERSION` / ids: `= this.MUID`,`= this.UMID` / lcsh: `= this.heading`
+
+
 
 
 
@@ -37,6 +38,9 @@ tags:
 
 <%* /**
 - # ---Transient Template Commit Log
+  * v1.0.9 *2025-02-19*
+    * Normalize About api
+    * Normalize base filepath info
   * v1.0.8
     * Replace "filepath" with "base_filepath ([[internal-guide-to-naming-filepaths,cf.-Kanzi]])
   * v1.0.7

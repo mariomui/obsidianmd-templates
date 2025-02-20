@@ -47,7 +47,26 @@
 		{"id":"a31ba6ff4e482420","type":"text","text":"     ","x":480,"y":-60,"width":225,"height":120,"color":"6"},
 		{"id":"d665a7795ada452d","type":"text","text":"     ","x":480,"y":80,"width":225,"height":120,"color":"6"},
 		{"id":"6f9785165bc90ae4","type":"text","text":"     ","x":480,"y":220,"width":225,"height":120,"color":"6"},
-		{"id":"2084b7eed6002545","type":"text","text":"     ","x":480,"y":360,"width":225,"height":120,"color":"6"}
+		{"id":"2084b7eed6002545","type":"text","text":"     ","x":480,"y":360,"width":225,"height":120,"color":"6"},
+		{"id":"486236e3cb99115f","type":"text","text":"\n[[citation-of-elements-of-romance,cf.-Robin-Lovett,#7 The Fall|The Fall]]","x":760,"y":135,"width":225,"height":120,"color":"5"},
+		{"id":"648ad19e3cfab0f4","type":"text","text":"[[citation-of-elements-of-romance,cf.-Robin-Lovett,#8 Dark moment - The Break Up|Dark Moment - The Breakup]]","x":760,"y":275,"width":225,"height":120,"color":"5"},
+		{"id":"d5f7136c034db0fa","type":"text","text":"[[citation-of-elements-of-romance,cf.-Robin-Lovett,#9 The Sacrifice|The Sacrifice]]","x":760,"y":415,"width":225,"height":126,"color":"5"},
+		{"id":"a4b5e5e9e541d115","type":"text","text":"[[citation-of-elements-of-romance,cf.-Robin-Lovett,#10 Declaration|Declaration]]","x":760,"y":555,"width":225,"height":120,"color":"5"},
+		{"id":"3473e2145d68b22f","type":"text","text":"\n[[citation-of-elements-of-romance,cf.-Robin-Lovett,#11 Denouement / The HEA.|Denouement/HEA]]","x":760,"y":695,"width":225,"height":120,"color":"5"},
+		{"id":"e775e1a0ff8eab80","type":"text","text":"Ordinary World     ","x":760,"y":-845,"width":225,"height":120,"color":"5"},
+		{"id":"27709a9c6568bda0","type":"text","text":"Call To Adventure     ","x":760,"y":-705,"width":225,"height":120,"color":"5"},
+		{"id":"dde06e862a0203c9","type":"text","text":"[[citation-of-elements-of-romance,cf.-Robin-Lovett,#2 Refusal of the Call - Rejection of the Relationship|Refusal of the Call - Rejection of the Relationship]]","x":760,"y":-565,"width":225,"height":120,"color":"5"},
+		{"id":"2dc73421793d8819","type":"text","text":"[[citation-of-elements-of-romance,cf.-Robin-Lovett,#3 Acceptance of the Quest - Giving the relationship a chance|Acceptance of Quest - Give Relationship A Chance]]","x":760,"y":-425,"width":225,"height":120,"color":"5"},
+		{"id":"4e1dc4650507aa5a","type":"text","text":"[[citation-of-elements-of-romance,cf.-Robin-Lovett,#4 Trials and Temptations--Three Dates|Trials And Tempations 3 Dates]]","x":760,"y":-285,"width":225,"height":120,"color":"5"},
+		{"id":"27260acef93ab8bc","type":"text","text":"[[citation-of-elements-of-romance,cf.-Robin-Lovett,#5 Midpoint Crisis--I-need-you-but-can’t-have-you|MID - I need you but can't be with you]]\n\n* first kiss","x":760,"y":-145,"width":225,"height":120,"color":"5"},
+		{"id":"afd929e4e3f4fc2c","type":"text","text":"[[seven-point-structure-plotting,cf.-Dan-Wells,vis-Writing,#010 Hook (Intro Or Act 1)|Hook]]","x":1000,"y":-845,"width":225,"height":120,"color":"5"},
+		{"id":"77247d3162e6c4fd","type":"text","text":"[[seven-point-structure-plotting,cf.-Dan-Wells,vis-Writing,#020 Plot Turn 1|PT1]]","x":1000,"y":-705,"width":225,"height":120,"color":"5"},
+		{"id":"a3cdcd0e7ddff397","type":"text","text":"[[seven-point-structure-plotting,cf.-Dan-Wells,vis-Writing,#030 Pinch 1 (Confrontation Or Act 2)|Pinch 1]]","x":1020,"y":-280,"width":225,"height":120,"color":"5"},
+		{"id":"5ab6d001b9c1bcf4","type":"text","text":"\n[[citation-of-elements-of-romance,cf.-Robin-Lovett,#6 The Road Back--Pulling Back Together|The Road Back / Pulling Back Together]]","x":760,"y":-17,"width":225,"height":127,"color":"5"},
+		{"id":"4f80d32e01f5473c","type":"text","text":"[[seven-point-structure-plotting,cf.-Dan-Wells,vis-Writing,#Resolution|Resolution]]\nopposite of hook","x":1020,"y":528,"width":225,"height":124,"color":"5"},
+		{"id":"3d5d176e512e3fa9","type":"text","text":"[[seven-point-structure-plotting,cf.-Dan-Wells,vis-Writing,#050 Pinch 2|Pinch 2]]","x":1020,"y":266,"width":225,"height":120,"color":"5"},
+		{"id":"70c17d1262e2d1b8","type":"text","text":"[[seven-point-structure-plotting,cf.-Dan-Wells,vis-Writing,#Plot Turn 2|Plot Turn 2]]","x":1020,"y":395,"width":225,"height":124,"color":"5"},
+		{"id":"a7658d2d2c97810e","type":"text","text":"[[seven-point-structure-plotting,cf.-Dan-Wells,vis-Writing,#040 Midpoint|Midpoint]]","x":1020,"y":135,"width":225,"height":120,"color":"5"}
 	],
 	"edges":[]
 }

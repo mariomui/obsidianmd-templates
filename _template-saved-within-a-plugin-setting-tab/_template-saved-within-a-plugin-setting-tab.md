@@ -2,7 +2,7 @@
 aliases: ["__README___manually-placed"]
 TEMPLATE_VERSION: v1.0.0-folder-page
 CREATION_DATE: 2023-06-17 
-tags: _meta _noteshippo/v1/structural-note
+tags: _meta _noteshippo/v1/_structural-spec
 UMID: 
 ---
 

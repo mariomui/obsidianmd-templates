@@ -2,23 +2,29 @@
 CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.0
 MUID: <% await app.insertIncrementalId('MUID')%>
-TEMPLATE_VERSION: v0.0.9
-TEMPLATE_SOURCE: "[[interim--litnote-template]]"
+TEMPLATE_VERSION: v0.1.2
+TEMPLATE_SOURCE: "[[10--litnote-template]]"
 UMID: 
 aliases: 
 tags:
   - _wip
+heading: 
+authors:
+---
+
 ---
 
 # -
 
 ## 00-Meta
 
-![[~view-for-local-tasks-using-a-progress-bar-MUID-698#=|olk]]
+> [!info]+ Progress Bar
+> > ![[~view-for-local-tasks-using-a-progress-bar,nb.-MUID-698#=|olk]]
 
 ```dataview
 TASK WHERE file.name = this.file.name AND !completed
 ```
+
 ```dataview
 TASK WHERE file.name = this.file.name AND completed
 ```
@@ -30,15 +36,27 @@ This [[,aka-reference-specced-note|aka-literature-specced-note]]'s contains...
 
 > [!info] [[~view-for-recent-reference-link-to-note-title-transform,nb.-MUID-115#Normalized Reference|Hover over me and copy the properly formatted note title]]
 > *Make sure that reference † is populated*
+
+This note should be prefixed with [[†,bt.-Noteshippo-title-level-affix,]]
 ### 11-Reference
 
 > [!info] Hover over me and copy the [[~view-for-referencing-current-jumpid#=|jumpid]]
 
 * †
 
+## 20-Inlink
+
+
+> [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.4)
+> * ℹ Commit/design logs are located in this [[π-lists-all-inlinks,nb.-MUID-128|experiment note]]. 
+> > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 20, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
+
+
+
 # =
 
-**file_basename**: *`= this.file.name`* doc-`=this.DOC_VERSION` `= this.MUID`
+**base_filepath-v0.0.3**: *`= this.file.path`* doc-`= this.DOC_VERSION` / ids: `= this.MUID`,`= this.UMID` / lcsh: `= this.heading`
+
 
 
 # ---Transient Jobs
@@ -58,6 +76,16 @@ This [[,aka-reference-specced-note|aka-literature-specced-note]]'s contains...
 # ---Transient
 
 <%* /**
+* v0.1.2 *2025-02-10*
+	* Add a hr line to avoid a bug where clicking untitled shifts the pageview
+* v0.1.1 *2025-01-30*
+  * add authors to yaml
+* v0.1.0 *2025-01-25*
+  * add inlinks view
+  * conform basepath view
+* v0.0.10
+	* remove interim beause it reached 10 update points
+	* add to file basename to have UMID and the heading so that it is easier to see what lcsh the file is by their preview
 * v0.0.9
   * add JD to the template
 * v0.0.8
@@ -78,3 +106,4 @@ This [[,aka-reference-specced-note|aka-literature-specced-note]]'s contains...
 * v0.03_litnote-template Update template with proper templater commenting out tags
 * v0.02_litnote-template Update headings to be compatible with  [[~viewfn-for-sluicing-header-links-for-citations-MUID-1560]]
 **/ -%>
+

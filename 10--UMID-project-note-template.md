@@ -2,8 +2,8 @@
 CREATION_DATE: <% await tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.0
 MUID: <% await app.insertIncrementalId('MUID')%>
-TEMPLATE_VERSION: v1.0.8
-TEMPLATE_SOURCE: "[[10--UMID-template]]"
+TEMPLATE_VERSION: v1.0.10
+TEMPLATE_SOURCE: "[[10--UMID-project-note-template]]"
 UMID: <% await app.templaterAddOnFig.addUuid() %>
 aliases: 
 tags:
@@ -12,9 +12,9 @@ tags:
 
 # -
 
-## Meta
+## 00-Meta
 
-![[~view-for-local-tasks-using-a-progress-bar-MUID-698#=|olk]]
+![[~view-for-local-tasks-using-a-progress-bar,nb.-MUID-698#=|olk]]
 
 ```dataview
 TASK WHERE file.name = this.file.name AND !completed
@@ -23,10 +23,15 @@ TASK WHERE file.name = this.file.name AND !completed
 TASK WHERE file.name = this.file.name AND completed
 ```
 
-## About
+## 10-About
 
 > [!info] Hover over me [[~view-for-recent-reference-link-to-note-title-transform,nb.-MUID-115]] and copy normalized note title.
-### Reference
+
+[[,aka-project-specced-note]]s have a desired product at the end, and a desired start and end date. 
+
+- ! DO NOT confuse UMIDs with project notes as UMIDS are only there to facilitate projects that require different files with different names to be organized under one roof.
+	- For instance, if i wanted to write a book, it would take in all the things tagged with a specific UMID. This way, I don't get bombarded.
+### 11-Reference
 
 > [!info] Hover over [[~view-for-referencing-current-jumpid]] for jumpid alias
 
@@ -34,17 +39,18 @@ TASK WHERE file.name = this.file.name AND completed
 
 # =
 
-**base_filepath**: *`= this.file.path`* *doc-`=this.DOC_VERSION`*
+**base_filepath**: *`= this.file.name`* doc-`=this.DOC_VERSION` `= this.MUID`/`=this.heading`/`=this.UMID`/
 
----
 
-**file_basename**: *`= this.file.name`* *doc-`=this.DOC_VERSION`*
+
 
 
 
 # ---Transient Commit Log
 
 <%* /**
+- v1.0.9
+	- add the term project note to UMID
 - v1.0.8
   - add commonly used macro that shows filepath and doc version
 * v1.07

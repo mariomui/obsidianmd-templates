@@ -1,8 +1,8 @@
 
-- 💁 See [[macro-view-for-calculating-fcdate-fcend-diff,nb.-v1.0.8]] for details
+- 💁 See [[macro-view-for-calculating-fcdate-fcend-diff,nb.-v1.0.9]] for details
 
 ```dataviewjs
-const MACRO_VERSION = italicize("v1.0.8")
+const MACRO_VERSION = italicize("v1.0.9")
 
 const {default: obs} = this.app.plugins.plugins['templater-obsidian'].templater.current_functions_object.obsidian;
 
@@ -63,9 +63,23 @@ function main() {
 
   // ### LOGIC
   const mapValueToField = (tuple) => {
-      const [a,b] = tuple;
-      return `* ${a}: ${Array.isArray(b) ? b.join(", ") : b}`;
+      const [k,v] = tuple;
+      const isValArray = Array.isArray(v);
+
+      let altedVal = null;
+      if (isValArray === true) {
+        altedVal = v.map((elem, idx) => {
+          return ((idx % 2) === 0) ? `*${elem}*` : elem;
+        })
+        return `* ${k}: ${altedVal.join(',')}`;
+      }
+      if (isValArray === false) {
+        return `* ${k}: ${v}*`
+      }
+      
+      return `* ${k}: ${v}*`
   };
+
   const createFilterWithUnwantedsAccess = ( UNWANTEDS , cb) => {
     return function filterBy(element) {
       return cb(UNWANTEDS, element);
@@ -130,6 +144,8 @@ function cls(style = {}) {
 
 
 <%* /** 
+- v1.0.9 *2024-08-04*
+  - alternate the italics on the array metadata values for easier viewing
 - v1.0.8 *2024-07-31*
   - onlayout to help queue with refreshing
   - 

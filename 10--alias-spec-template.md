@@ -3,7 +3,7 @@ CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.0
 MUID: <% await app.insertIncrementalId('MUID') %>
 TEMPLATE_SOURCE: "[[10--alias-spec-template]]"
-TEMPLATE_VERSION: v1.0.10
+TEMPLATE_VERSION: v1.0.11
 UMID: 
 aliases: 
 tags:
@@ -14,8 +14,8 @@ tags:
 
 # =
 
-**base_filepath**: *`= this.file.path`* *doc* *`=this.DOC_VERSION`*
-**is-using-latest-template**: `= (([[10--alias-spec-template]].TEMPLATE_VERSION)=(this.file.frontmatter.TEMPLATE_VERSION)) `
+**base_filepath**: *`= this.file.name`* doc-`=this.DOC_VERSION` `= this.MUID`/`=this.heading`/`=this.UMID`/
+
 
 ---
 
@@ -36,6 +36,8 @@ tags:
 
 <%* /**
 * # ---Transient Template Commit Log
+  * v1.0.12 *2025-01-11*
+    * Remove the template check because inline dataview is prone to fragility. Willing to live with template drift.
   * v1.0.11 *2024-05-28*
     * Add doc to versioning to explicitly state its usecase is to easily show that the consumed item comes from what version of the document not what version of the template.
   * v1.0.10 *2024-05-14*

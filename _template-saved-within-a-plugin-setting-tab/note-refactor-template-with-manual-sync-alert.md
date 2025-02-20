@@ -1,13 +1,17 @@
 ---
-TEMPLATE_VERSION: v1.0.7_note-refactor-template
-MUID: <% await app.insertIncrementalId('MUID') %>
-CREATION_DATE: {{date:YYYY-MM-DD}}
-tags: _wip 
+CREATION_DATE: "{{date:YYYY-MM-DD}}"
+MUID:
+TEMPLATE_VERSION: v1.0.9_note-refactor-template
 UMID: 
+tags:
+  - _wip
 ---
+
 # -
 
-![[~view-for-local-tasks-using-a-progress-bar-MUID-698#=|nlk]]
+## 00-Meta
+
+![[~view-for-local-tasks-using-a-progress-bar,nb.-MUID-698#=|nlk]]
 
 ```dataview
 task where file.name = this.file.name and !completed
@@ -17,19 +21,19 @@ task where file.name = this.file.name and !completed
 task where file.name = this.file.name and completed
 ```
 
-## About
+## 10-About
 
-### Reference
+### 11-Reference
 
 ![[~view-for-referencing-current-jumpid#=|nlk]]
 
 * †
 
+## 20-Inlink
+
 # =
 
-## = TITLE
-
-*`= this.file.name`*
+**base_filepath-v0.0.2**: *`= this.file.path`* doc-`= this.DOC_VERSION` / ids: `= this.MUID`,`= this.UMID` / lcsh: `= this.heading` / updated on: `= dateformat(this.file.mday, "yyyy-LL-dd")` / file-size: `= round(this.file.size/1024,2)` KB
 
 {{new_note_content}}
 
@@ -39,15 +43,16 @@ task where file.name = this.file.name and completed
 
 # ---Startup Code
 
+This note is tied to [[note-refactor-template-with-manual-sync-alert]]
+
 > [!info] Place all meta data below this heading.
 > Because Note Refactor lies outside of the Templater ecosystem, the normal commenting out using templater code does not work.
 > Note Refactor does not have a commenting out system in its templating engine.
 
-
 See [[callout-feature,vis-ObsidianMD-app,]] for help with which callouts to use to help aid this note.
 
 This [[Library-datum-spec,vis-Noteshippo-taxonomy,]] belongs to  list-of-note-templates,util-Templater-plugin,ad-finem-Note-Taking designed to template extracted content.
-#_todo/52-priority-low--/to-extract/on-a-codelet/regarding-its-proper-place 
+
 ```dataviewjs
 //toolboxes
 const { workspace, vault, plugins, metadataCache } = this.app;
@@ -151,10 +156,6 @@ function showNotice(el) {
 >The header [[#---Startup Code]] is intrinsic to how the file is extracted. Anything blow that anchor header is ignored in the sync check.
 
 >[!note]
->There is a codelet to sync the content inside of  [[#---Startup Code]] with the content in the settings tab of the [[note-refactor-plugin-for-obsidianmd]].
+>There is a codelet to sync the content inside of  [[#---Startup Code]] with the content in the settings tab of the [[note-refactor-plugin,bt.-ObsidianMD-app,]].
 
 > [!warning] Do not use this template with Templater plugin directly. It only serves as an external backup to the internal settings specified in Note Refactor.
-
-- [x] TLINE: This is an example of a improperly worded task. Task archiving template should have been linked. months later, i have no idea what this task means.
-  - Is there a way to change the task archiving template so that I can add in local tasks? ✅ 2023-10-29
-    - 🔑 The problem with writing quickly is the fact that I have no idea that we have task archiving template. 

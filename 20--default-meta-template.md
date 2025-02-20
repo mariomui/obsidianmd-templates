@@ -27,7 +27,7 @@ TEMPLATE_SOURCE: "[[20--default-meta-template]]"
 
 <%* /**
 
-![[~view-for-local-tasks-using-a-progress-bar-MUID-698#=|nlk]]
+![[~view-for-local-tasks-using-a-progress-bar,nb.-MUID-698#=|nlk]]
 
 ```dataview
 task where file.name = this.file.name and !completed

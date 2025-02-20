@@ -1,6 +1,6 @@
 ---
 Aliases: ["__README__templates", templates]
-tags: _noteshippo/v1/structural-note
+tags: _noteshippo/v1/_structural-note
 DOC_VERSION: v0.0.1
 ---
 
@@ -14,40 +14,43 @@ DOC_VERSION: v0.0.1
 
 # =
 
-* [[deprecated_folder-page-template]]
-* [[Desue--folder-page-template]]
-* [[DESUE--hbstemplate-ibook-import-ibook-csv-with-bullet]]
-* [[dESUE--tag-page-template]]
-* [[interim--definition-note-template]]
+* [[ø--hbstemplate-ibook-import-ibook-csv-with-bullet]]
 * [[wip--viewfn-to-recall-hot-key]]
 
 * [[_macros]]
 
 ---
 
-* ## 10s Macros
-  * 💁
-    * These templates behave as macros. They populate the entire page. There is no intermediate force accessing these templates except the user.
+* [[ø--tag-page-template]]
+* @ 10s Macros
+  * 💁These templates:
+    * behave as macros,
+    * populate the entire page,
+    * has no intermediate force (such as plugins) utilizing these templates
+    * are activated soley by the user, manually.
   * [[10--alias-spec-template]]
   * [[10--youtube-litnote-template]]
+  * [[10--definition-note-template]]
   * [[10--blank-no-api-template]]
   * [[10--bridge-spec-template]]
   * [[10--nascent-spec-template]]
-  * [[10--UMID-template]]
-* 20s
-  * these templates are tied to an plugin.
+  * [[10--UMID-project-note-template]]
+  * [[10--library-spec-template]]
+  * [[10--litnote-template]]
+* @ 20s
+  * 💁: *these templates are tied to an plugin.*
   * [[20--default-meta-template]]
   * [[20--evergreen_template]]
   * [[20--fleeting-notes-template]]
   * [[20--sourced-book-template]]
-* 90s
+  * [[20--folder-page-template]]
+* @ WIP
+  * [[wip--experimentnote-template]]
+* @ 90s
   * Misc
   * [[90--bootup]]
   * [[_template-saved-within-a-plugin-setting-tab]]
-  * [[💀hbstemplate-ibook-import-ibook-csv-with-bullet]]
-  * [[deprecating_tag-page-template]]
 * MISC
-  * [[Desue--folder-page-template]]
   * [[helpercode-to-take-videonotes-using-transcription-and-easy-timestamp-linking]]
   * [[macro-for-callout-like-detail]]
   * [[macro-for-citations]]
@@ -55,8 +58,6 @@ DOC_VERSION: v0.0.1
   * [[macro-for-local-page-tasks]]
   * [[macro-for-vocabulary-details,by-emoji]]
   * [[merge_template]]
-  * [[interim--litnote-template]]
-  * [[wip_viewfn-to-recall-hot-key]]
   * # Zotlit
     * ## Archive
       * [[zt-annot.eta.prev]]
@@ -74,15 +75,13 @@ DOC_VERSION: v0.0.1
       * [[zt-cite.eta]]
       * [[zt-note.eta]]
       * [[zt-colored.eta]]
-      *  [[orange.eta]]
+      * [[orange.eta]]
       * [[zt-annots.eta]]
       * [[zt-annot.eta]]
 
-
 # ---Transient Jobs
 
-
-![[~viewfn-sluicing-out-waypoint-like-unprocessed-links-MUID-1643#=|?search_term=---Transient Local Waypoints&t=nlk]]
+![[~viewfn-sluicing-out-waypoint-like-unprocessed-links,nb.-MUID-1643#=|?search_term=---Transient Local Waypoints&t=nlk]]
 
 # ---Transient Local Waypoints
 
@@ -92,26 +91,29 @@ DOC_VERSION: v0.0.1
 - [[10--alias-spec-template]]
 - [[10--blank-no-api-template]]
 - [[10--bridge-spec-template]]
+- [[10--definition-note-template]]
+- [[10--library-spec-template]]
+- [[10--litnote-template]]
 - [[10--nascent-spec-template]]
-- [[10--UMID-template]]
+- [[10--UMID-project-note-template]]
 - [[10--youtube-litnote-template]]
 - [[20--default-meta-template]]
 - [[20--evergreen_template]]
 - [[20--fleeting-notes-template]]
+- [[20--folder-page-template]]
 - [[20--sourced-book-template]]
 - [[90--bootup]]
+- **experiments**
+	- [[wip--experimentnote-template]]
 - **ø--archive**
-	- [[Desue--folder-page-template]]
-	- [[DESUE--hbstemplate-ibook-import-ibook-csv-with-bullet]]
 	- [[helpercode-to-take-videonotes-using-transcription-and-easy-timestamp-linking]]
 	- [[merge_template]]
+	- [[ø--hbstemplate-ibook-import-ibook-csv-with-bullet]]
 	- [[ø--tag-page-template]]
 - **obsidian-canvas**
 
 - **staged**
 	- **interim**
-		- [[definition-note-template]]
-		- [[interim--litnote-template]]
 	- **wip**
 		- [[wip--viewfn-to-recall-hot-key]]
 - **zotero**

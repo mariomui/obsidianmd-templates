@@ -3,14 +3,14 @@ aliases:
   - __README__{{FOLDER_PATH}}
   - "{{FOLDER_PATH}}"
 tags:
-  - _noteshippo/v1/structural-note
+  - _noteshippo/v1/_structural-spec
 TEMPLATE_SOURCE: "[[wip--folder-page-template-with-manual-sync-alert]]"
 TEMPLATE_VERSION: v0.0.0
 ---
 
 # -
 
-## About
+## 10-About
 
 Make sure that the folder page template is synced correctly so i dont have data drift
 
@@ -21,7 +21,7 @@ Make sure that the folder page template is synced correctly so i dont have data 
 
 # ---Transient 010 Jobs
 
-![[~viewfn-sluicing-out-waypoint-like-unprocessed-links-MUID-1643#=|&t=nlk?search_term=---Transient Local Waypoints]]
+![[~viewfn-sluicing-out-waypoint-like-unprocessed-links,nb.-MUID-1643#=|&t=nlk?search_term=---Transient Local Waypoints]]
 
 # ---Transient Local Waypoints
 
@@ -29,7 +29,7 @@ Make sure that the folder page template is synced correctly so i dont have data 
 
 # ---Transient
 
-- [ ] rework the codelet to apply for folder page plugin ➕ 2024-01-16
+* [ ] rework the codelet to apply for folder page plugin ➕ 2024-01-16
 ```
 //toolboxes
 const { workspace, vault, plugins, metadataCache } = this.app;

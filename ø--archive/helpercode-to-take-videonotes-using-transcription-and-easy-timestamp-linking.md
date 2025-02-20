@@ -9,7 +9,7 @@ UMID:
 
 # -
 
-![[~view-for-local-tasks-using-a-progress-bar-MUID-698#=|nlk]]
+![[~view-for-local-tasks-using-a-progress-bar,nb.-MUID-698#=|nlk]]
 
 ```dataview
 task where file.name = this.file.name and !completed
@@ -22,7 +22,7 @@ task where file.name = this.file.name and completed
 ## About
 
 - [ ] Remove buttons as a dependency from code.
-- [ ] Does this deprecate [[~deprecated_button-for-ytranscript]]?
+- [ ] Does this deprecate [[ø--~button-for-ytranscript]]?
 
 ### Reference
 
@@ -302,7 +302,7 @@ function getMarkdownALinkByUrl(url) {
 - v0.0.2
   - Archive prototype list
 - ## Versioned Prototypes
-  - [[list-of-prototypes,ad-finem-Video-notetaking,vis-Noteshippo]]
+  - [[list-of-prototypes,nb.-Video-notetaking,vis-Noteshippo]]
 
 
 * Bossfight

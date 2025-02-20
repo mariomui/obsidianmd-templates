@@ -2,7 +2,7 @@
 CREATION_DATE: <% await tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.0
 MUID: <% await app.insertIncrementalId('MUID')%>
-TEMPLATE_VERSION: v1.0.5
+TEMPLATE_VERSION: v1.0.6
 TEMPLATE_SOURCE: "[[10--youtube-litnote-template]]"
 UMID: 
 aliases: 
@@ -12,14 +12,14 @@ tags:
 
 # -
 
-## About
+## 10-About
 
 * This [[,aka-reference-specced-note|aka-literature-specced-note]] collects citations. It is combined with an Analysis portion that works as a temporary [[,aka-index-specced-note]] giving us some context to the information, namely what was collected, and how it relates to other notes, as well as other concepts in the same [[literature-note,etc]]
 
 
 > [!info] Hover over me [[~view-for-recent-reference-link-to-note-title-transform,nb.-MUID-115]] and copy normalized note title.
 
-### Reference
+### 11-Reference
 
 > [!info] Hover over [[~view-for-referencing-current-jumpid]] for jumpid alias
 
@@ -38,7 +38,7 @@ tags:
 
 
 
-## Control
+## 00-Control
 
 ![[helpercode-to-take-videonotes-using-transcription-and-easy-timestamp-linking#Transcript Control|nlk]]
 

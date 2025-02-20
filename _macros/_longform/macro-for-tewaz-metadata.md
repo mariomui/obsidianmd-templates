@@ -9,7 +9,7 @@ MACRO_SOURCE: "[[macro-for-tewaz-metadata]]"
 DOC_VERSION: v0.0.0
 ---
 
-- 💁 See [[macro-view-for-calculating-fcdate-fcend-diff,nb.-v1.0.8]] for details
+- 💁 See [[macro-view-for-calculating-fcdate-fcend-diff,nb.-v1.0.9]] for details
 
 ```dataviewjs
 const MACRO_VERSION = italicize("v1.0.8")
