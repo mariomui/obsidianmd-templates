@@ -4,7 +4,7 @@ MUID:
 TEMPLATE_VERSION: v1.0.9_note-refactor-template
 UMID: 
 tags:
-  - _wip
+  - _misc/_wip
 ---
 
 # -

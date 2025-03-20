@@ -7,7 +7,7 @@ TEMPLATE_SOURCE: "[[10--youtube-litnote-template]]"
 UMID: 
 aliases: 
 tags:
-  - _wip
+  - _misc/_wip
 ---
 
 # -
@@ -53,7 +53,7 @@ tags:
 
 # ---Transient Jobs
 
-![[~viewfn-for-sluicing-header-links-for-citations-MUID-1560#=|?search_term=---Transient Local&t=nlknoui-scroll]]
+![[~viewfn-for-sluicing-header-links-for-citations,nb.-MUID-1560#=|?search_term=---Transient Local&t=nlknoui-scroll]]
 
 # ---Transient Local Citations
 

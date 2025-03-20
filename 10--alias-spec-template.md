@@ -3,19 +3,18 @@ CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.0
 MUID: <% await app.insertIncrementalId('MUID') %>
 TEMPLATE_SOURCE: "[[10--alias-spec-template]]"
-TEMPLATE_VERSION: v1.0.11
+TEMPLATE_VERSION: v1.1.0
 UMID: 
 aliases: 
 tags:
-  - _wip
+  - _misc/_wip
 ---
 
 # -
 
 # =
 
-**base_filepath**: *`= this.file.name`* doc-`=this.DOC_VERSION` `= this.MUID`/`=this.heading`/`=this.UMID`/
-
+**base_filepath-v0.0.3**: *`= this.file.path`* doc-`= this.DOC_VERSION` / ids: `= this.MUID`,`= this.UMID` / lcsh: `= this.heading`
 
 ---
 
@@ -36,6 +35,8 @@ tags:
 
 <%* /**
 * # ---Transient Template Commit Log
+  * v1.1.0 *2025-02-26*
+    * update base filepath to v0.0.3
   * v1.0.12 *2025-01-11*
     * Remove the template check because inline dataview is prone to fragility. Willing to live with template drift.
   * v1.0.11 *2024-05-28*

@@ -1,6 +1,6 @@
 
 <%*
-const preamble = "## LC--citum"
+const preamble = "## §LC--"
 const mesos = [
   manuMeso(0, "fears"),
   manuMeso(1, "false beliefs"),

@@ -3,7 +3,7 @@ aliases:
   - __README__Y_templates/_macros/_longform
   - Y_templates/_macros/_longform
 tags:
-  - _noteshippo/v1/_structural-spec
+  - _noteshippo/∑≠--v1-spec/_structural
 ---
 
 # -

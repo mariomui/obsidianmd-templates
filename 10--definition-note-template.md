@@ -1,12 +1,12 @@
 ---
-TEMPLATE_VERSION: v1.0.10
+TEMPLATE_VERSION: v1.1.1
 MUID: <% await app.insertIncrementalId('MUID')%>
 CREATION_DATE: 2024-03-02
 tags:
-  - _wip
+  - _misc/_wip
 UMID: 
 TEMPLATE_SOURCE: "[[10--definition-note-template]]"
-DOC_VERSION: v.0.0.1
+DOC_VERSION: v0.0.1
 ---
 
 
@@ -22,29 +22,24 @@ DOC_VERSION: v.0.0.1
 
 ## 20-Inlink
 
-
-> [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.4)
+> [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.5)
 > * ℹ Commit/design logs are located in this [[π-lists-all-inlinks,nb.-MUID-128|experiment note]]. 
-> > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 20, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
+> > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 28, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
 
 
 # =
 
-**base_filepath-v0.0.2**: *`= this.file.path`* doc-`= this.DOC_VERSION` / ids: `= this.MUID`,`= this.UMID` / lcsh: `= this.heading` / updated on: `= dateformat(this.file.mday, "yyyy-LL-dd")` / file-size: `= round(this.file.size/1024,2)` KB
-
-
+**base_filepath-v0.0.6**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= link(this.heading)`
 
 ## Abstract
 
-**file_bn--v.0.0.3**: *`= this.file.name`* doc-`=this.DOC_VERSION` `= this.MUID`/`=this.heading`/`=this.UMID`/
+**file_bn--v0.0.4**: *`= this.file.name`* doc-`=this.DOC_VERSION` `= this.MUID`/`=this.heading`/`=this.UMID`/
 
 
 
 
-> [!tip] See [[#Elements]]
 
 
-## Elements
 
 
 
@@ -54,9 +49,9 @@ DOC_VERSION: v.0.0.1
 
 # ---Transient
 
-> [!info]+ Please use the following standard H2s as the apis.
+> [!info]- Expand me. Use the following standard H2s as apis.
 > * Additional apis can be found in [[internal-guide-to-definition-note-specification,vis-Noteshippo]]
-> > ## Elements
+> > ## Elements 
 > > ## Examples And Counter Examples
 > > ## Implementation
 > > ## Tradeoffs†
@@ -64,7 +59,16 @@ DOC_VERSION: v.0.0.1
 
 ---
 
-# ---Transient
+⤵ The following are emoji prefixed helper links to include in the abstract (should the apis exist)
+- ⚛ [[#Elements]]
+- 🔎 [[#Examples And Counter Examples]]
+- ⚙ [[#Implementation]]
+- *TRADEOFFS is an umbrella term housing the two api below. As such, a helper emoji isn't needed for it. Just include the following helpers individually.*
+- 📉 [[#Challenges]]
+- 📈 [[#Prospects]]
+---
+
+
 
 <%* /** 
 - # ---Transient Template About
@@ -78,6 +82,20 @@ DOC_VERSION: v.0.0.1
 
 <%* /** 
 - # ---Transient Template Commit Log
+  - v1.1.2 *2025-03-18*
+  - updte basefp to v0.0.6
+  - update filebasename to v0.0.4
+  - v1.1.1
+    - update basefp to v0.0.4
+    - replace wrong emoji pefix on prospects
+  - v1.1.0
+    - Change the helper api below transient to include Abstract link helpers (emoji-ed). These helper links serve to notify the user of existing apis. Non existent apis will not be there.
+    - collapse the H2 helper guide by default.
+  - v1.0.12 *2025-02-25*
+    - fix typo on the DOC VERSION
+  - v1.0.11 *2025-02-22*
+    - update 20-inlink api
+    - update base filepath
   - v1.0.10 *2025-02-08*
     - Rename Summary api to abstract api
     - Rename the endpoints under - with prefixed ordinality

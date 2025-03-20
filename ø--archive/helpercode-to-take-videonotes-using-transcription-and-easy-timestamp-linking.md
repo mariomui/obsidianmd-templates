@@ -3,7 +3,7 @@ alias:
 TEMPLATE_VERSION: v1.0.4_video-note-taking
 DOC_VERSION: v0.0.2
 CREATION_DATE: 2022-08-05
-tag: _wip
+tag: _misc/_wip
 UMID:
 ---
 
@@ -19,12 +19,12 @@ task where file.name = this.file.name and !completed
 task where file.name = this.file.name and completed
 ```
 
-## About
+## 10-About
 
 - [ ] Remove buttons as a dependency from code.
 - [ ] Does this deprecate [[ø--~button-for-ytranscript]]?
 
-### Reference
+## 11-Reference
 
 - https://www.youtube.com/example
 - [[√-LEADERSHIP-LAB-Writing-Beyond-the-Academy-1-23-15-YouTube]] has some code to properly include the Youtube Transcripting Code without running into dataview issues.

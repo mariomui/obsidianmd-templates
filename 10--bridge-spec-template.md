@@ -6,7 +6,7 @@ TEMPLATE_VERSION: v1.0.2
 TEMPLATE_SOURCE: "[[10--bridge-spec-template]]"
 UMID: 
 tags:
-  - _wip
+  - _misc/_wip
 ---
 
 # -

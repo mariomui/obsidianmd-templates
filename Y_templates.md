@@ -1,6 +1,6 @@
 ---
 Aliases: ["__README__templates", templates]
-tags: _noteshippo/v1/_structural-note
+tags: _noteshippo/∑≠--v1-spec/∑≠_structural-note
 DOC_VERSION: v0.0.1
 ---
 
@@ -14,15 +14,15 @@ DOC_VERSION: v0.0.1
 
 # =
 
-* [[ø--hbstemplate-ibook-import-ibook-csv-with-bullet]]
-* [[wip--viewfn-to-recall-hot-key]]
+**base_filepath-v0.0.5**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= this.heading`
 
-* [[_macros]]
+
+- @ Folder Pages
+	* [[_macros]]
+	* [[_hard-coded-within-plugin-setting-tab-templates]]
 
 ---
-
-* [[ø--tag-page-template]]
-* @ 10s Macros
+* @ 10s Macro-behaving templates
   * 💁These templates:
     * behave as macros,
     * populate the entire page,
@@ -34,7 +34,7 @@ DOC_VERSION: v0.0.1
   * [[10--blank-no-api-template]]
   * [[10--bridge-spec-template]]
   * [[10--nascent-spec-template]]
-  * [[10--UMID-project-note-template]]
+  * [[10--project-note-template]]
   * [[10--library-spec-template]]
   * [[10--litnote-template]]
 * @ 20s
@@ -45,39 +45,46 @@ DOC_VERSION: v0.0.1
   * [[20--sourced-book-template]]
   * [[20--folder-page-template]]
 * @ WIP
-  * [[wip--experimentnote-template]]
+  * [[∑--declarative-spec-template]]
+  * [[∑--experiment-template]]
 * @ 90s
-  * Misc
   * [[90--bootup]]
-  * [[_template-saved-within-a-plugin-setting-tab]]
-* MISC
-  * [[helpercode-to-take-videonotes-using-transcription-and-easy-timestamp-linking]]
+* @ Misc
+	* [[helpercode-to-take-videonotes-using-transcription-and-easy-timestamp-linking]]
+	* [[try.html]]
+* @ Macros
   * [[macro-for-callout-like-detail]]
   * [[macro-for-citations]]
   * [[macro-for-eec-tline]]
   * [[macro-for-local-page-tasks]]
   * [[macro-for-vocabulary-details,by-emoji]]
   * [[merge_template]]
-  * # Zotlit
-    * ## Archive
-      * [[zt-annot.eta.prev]]
-      * [[zt-annot.etab]]
-      * [[zt-annots.etab]]
-      * [[zt-annot.new.eta]]
-      * [[zt-annots.new.eta]]
-      * [[zt-note.etab]]
-      * [[zt-annots.prev.eta]]
-      * * [[zt-annots.v1.1.2.eta]]
-      * [[readme]]
-      * [[zt-cite2.eta]]
-    * ## In use
-      * [[zt-field.eta]]
-      * [[zt-cite.eta]]
-      * [[zt-note.eta]]
-      * [[zt-colored.eta]]
-      * [[orange.eta]]
-      * [[zt-annots.eta]]
-      * [[zt-annot.eta]]
+* @ Zotlit
+  * # Archive
+    * [[zt-annot.eta.prev]]
+    * [[zt-annot.etab]]
+    * [[zt-annots.etab]]
+    * [[zt-annot.new.eta]]
+    * [[zt-annots.new.eta]]
+    * [[zt-note.etab]]
+    * [[zt-annots.prev.eta]]
+    * [[zt-annots.v1.1.2.eta]]
+    * [[readme]]
+    * [[Y_templates/zotero/archived/zt-cite2.eta]]
+    * [[orange.eta]]
+    * [[zt-cite2.eta]]
+  * # In use
+    * [[zt-annot.eta]]
+    * [[zt-annots.eta]]
+    * [[zt-cite.eta]]
+    * [[zt-colored.eta]]
+    * [[zt-field.eta]]
+    * [[zt-note.eta]]
+* @ Canvas
+	* [[seven-pt-structure-plotting-canvas-template.canvas]]
+* @ Obsoleted Content
+	* [[ø--hbstemplate-import-ibook-csv-hbs-with-heading.hbs]]
+	* [[ø--tag-page-template]]
 
 # ---Transient Jobs
 
@@ -86,8 +93,8 @@ DOC_VERSION: v0.0.1
 # ---Transient Local Waypoints
 
 %% Begin Waypoint %%
+- **[[_hard-coded-within-plugin-setting-tab-templates]]**
 - **[[_macros]]**
-- **[[_template-saved-within-a-plugin-setting-tab]]**
 - [[10--alias-spec-template]]
 - [[10--blank-no-api-template]]
 - [[10--bridge-spec-template]]
@@ -95,7 +102,7 @@ DOC_VERSION: v0.0.1
 - [[10--library-spec-template]]
 - [[10--litnote-template]]
 - [[10--nascent-spec-template]]
-- [[10--UMID-project-note-template]]
+- [[10--project-note-template]]
 - [[10--youtube-litnote-template]]
 - [[20--default-meta-template]]
 - [[20--evergreen_template]]
@@ -104,18 +111,19 @@ DOC_VERSION: v0.0.1
 - [[20--sourced-book-template]]
 - [[90--bootup]]
 - **experiments**
-	- [[wip--experimentnote-template]]
+	- [[∑--experiment-template]]
 - **ø--archive**
 	- [[helpercode-to-take-videonotes-using-transcription-and-easy-timestamp-linking]]
 	- [[merge_template]]
 	- [[ø--hbstemplate-ibook-import-ibook-csv-with-bullet]]
 	- [[ø--tag-page-template]]
+	- [[try.html]]
+- [[ø--hbstemplate-import-ibook-csv-hbs-with-heading.hbs]]
 - **obsidian-canvas**
-
+	- [[seven-pt-structure-plotting-canvas-template.canvas]]
 - **staged**
-	- **interim**
 	- **wip**
-		- [[wip--viewfn-to-recall-hot-key]]
+		- [[∑--declarative-spec-template]]
 - **zotero**
 	- **archived**
 		- [[zt-annot.eta.prev]]
@@ -140,8 +148,9 @@ DOC_VERSION: v0.0.1
 
 # ---Transient Commit Log
 
+[[transient-commit-log-endpoint,bt.-Noteshippo-heading-api,]]
 <%* /**
-
-v0.0.1 Add jobs codelet to waypoints
-
+* DOC LOG
+	* v0.0.2 Clusterize the waypoints
+	* v0.0.1 Add jobs codelet to waypoints
 **/-%>

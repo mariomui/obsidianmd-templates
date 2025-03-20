@@ -3,7 +3,7 @@ aliases:
   - __README__{{FOLDER_PATH}}
   - "{{FOLDER_PATH}}"
 tags:
-  - _noteshippo/v1/_structural-spec
+  - _noteshippo/∑≠--v1-spec/_structural
 TEMPLATE_SOURCE: "[[wip--folder-page-template-with-manual-sync-alert]]"
 TEMPLATE_VERSION: v0.0.0
 ---
@@ -15,6 +15,8 @@ TEMPLATE_VERSION: v0.0.0
 Make sure that the folder page template is synced correctly so i dont have data drift
 
 # =
+
+**file_bn--v0.0.4**: *`= this.file.name`* doc-`=this.DOC_VERSION` `= this.MUID`/`=this.heading`/`=this.UMID`/
 
 > [!warning] This note is not yet ready to be used
 

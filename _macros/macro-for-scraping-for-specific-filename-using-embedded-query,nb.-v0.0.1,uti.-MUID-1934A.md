@@ -1,7 +1,7 @@
 
 # ---Transient Jobs
 
-![[~viewfn-for-sluicing-out-embedded-query-into-a-job-queue-copy-MUID-1934A#=|?t=nlk&search_term=[file: ...]]
+![[~viewfn-for-sluicing-out-embedded-query-into-a-job-queue,nb.-MUID-1934A#=|?t=nlk&search_term=[file: ...]]
 
 # ---Transient Local Resources
 

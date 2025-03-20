@@ -1,18 +1,19 @@
 ---
-TEMPLATE_VERSION: v1.0.10
-TEMPLATE_SOURCE: "[[10--nascent-spec-template]]"
-tags:
-  - _wip
-UMID: 
-MUID: 
 CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD") %>
+MUID: 
+PROJECT_PARENT: 
+TEMPLATE_SOURCE: "[[10--nascent-spec-template]]"
+TEMPLATE_VERSION: v1.0.11
+tags:
+  - _misc/_wip
 ---
 
 # -
 
-## 10-About
+## 00-Meta
+### 10-About
 
-## 11-Reference
+### 11-Reference
 
 ## 20-Inlink
 
@@ -23,20 +24,28 @@ CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD") %>
 
 # =
 
-**base_filepath-v0.0.3**: *`= this.file.path`* doc-`= this.DOC_VERSION` / ids: `= this.MUID`,`= this.UMID` / lcsh: `= this.heading`
+**base_filepath-v0.0.6**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= link(this.heading)`
+
+
 
 
 
 
 # ---Transient
 
-<%*/** ---Transient Commit Log
+<%* /** ---Transient Commit Log 
+By order of recency
+* v1.0.11 *2025-03-17*
+	* alphaSort frontmatter
+	* add project parent
+	* place about and reference inside of 00 meta
+	* Update base fp to v0.0.6
 * v1.0.10 *2025-02-20*
 	* update basefilepath
 	* update all inlink endpint
 * v1.0.9 *2025-01-23*
 	* Add v0.0.4 of [[macro-for-insert-of-all-inlink-endpoint,uti.-inline-dql,cf.-MUID-128]]
-	* Add v0.0.2 of [[macro-for-inserting-base-filepath-v0.0.3]]
+	* Add v0.0.2 of [[macro-for-inserting-base-filepath,nb.-v0.0.6]]
 	* Fully label The transient commit log to show it applies to macros and templates as well
 * v1.0.8 *2025-01-06*
 	* Add a creationdate to frontm
@@ -56,4 +65,4 @@ CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD") %>
   * Add wip tag
 * v1.0.0
   * add only the basic set of fields for nascent. Its purpose is to provide a template for notes that do not need a MUID such as notes affixed with [[interim,bt.-Noteshippo-title-level-flag,]]
-**/%>
+**/ -%>

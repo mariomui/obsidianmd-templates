@@ -2,14 +2,14 @@
 CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.0
 MUID: <% await app.insertIncrementalId('MUID')%>
-TEMPLATE_VERSION: v0.1.2
+PROJECT_PARENT: 
 TEMPLATE_SOURCE: "[[10--litnote-template]]"
-UMID: 
+TEMPLATE_VERSION: v0.1.4
 aliases: 
-tags:
-  - _wip
+authors: 
 heading: 
-authors:
+tags:
+  - _misc/_wip
 ---
 
 ---
@@ -30,9 +30,9 @@ TASK WHERE file.name = this.file.name AND completed
 ```
 
 
-## 10-About
+### 10-About
 
-This [[,aka-reference-specced-note|aka-literature-specced-note]]'s contains...
+- This [[,aka-reference-specced-note|aka-literature-specced-note]]'s contains ...
 
 > [!info] [[~view-for-recent-reference-link-to-note-title-transform,nb.-MUID-115#Normalized Reference|Hover over me and copy the properly formatted note title]]
 > *Make sure that reference † is populated*
@@ -46,36 +46,47 @@ This note should be prefixed with [[†,bt.-Noteshippo-title-level-affix,]]
 
 ## 20-Inlink
 
-
-> [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.4)
+> [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.5)
 > * ℹ Commit/design logs are located in this [[π-lists-all-inlinks,nb.-MUID-128|experiment note]]. 
-> > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 20, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
-
+> > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 28, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
 
 
 # =
 
-**base_filepath-v0.0.3**: *`= this.file.path`* doc-`= this.DOC_VERSION` / ids: `= this.MUID`,`= this.UMID` / lcsh: `= this.heading`
+**base_filepath-v0.0.6**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= link(this.heading)`
+
+
 
 
 
 # ---Transient Jobs
 
-![[~viewfn-for-sluicing-header-links-for-citations-MUID-1560#=|?search_term=---Transient Local&t=nlk]]
+![[~viewfn-for-sluicing-header-links-for-citations,nb.-MUID-1560#=|?search_term=---Transient Local&t=nlk]]
 
 # ---Transient Local Resources
 
 # ---Transient Local Citations
 
-## LC--citum--
+## LC--
 
-**file_basename**: *`= this.file.name`* *doc-`=this.DOC_VERSION`*
+**file_bn--v0.0.4**: *`= this.file.name`* doc-`=this.DOC_VERSION` `= this.MUID`/`=this.heading`/`=this.UMID`/
+
+
+
 
 
 
 # ---Transient
 
 <%* /**
+* v0.1.4 *2025-03-19*
+	* change content in About api to suit current writing style
+	* normalize meta to subsume about and reference
+	* Use v0.0.6 of macro citum
+	* update basefp to v0.0.6
+	* replace UMID with PROJECT_PARENT
+* v0.1.3 *2025-03-04*
+	* update inlink to v0.0.5
 * v0.1.2 *2025-02-10*
 	* Add a hr line to avoid a bug where clicking untitled shifts the pageview
 * v0.1.1 *2025-01-30*
@@ -104,6 +115,5 @@ This note should be prefixed with [[†,bt.-Noteshippo-title-level-affix,]]
   * Change LC--citations-- to LC--citum--
   * Remove Reading time partial
 * v0.03_litnote-template Update template with proper templater commenting out tags
-* v0.02_litnote-template Update headings to be compatible with  [[~viewfn-for-sluicing-header-links-for-citations-MUID-1560]]
+* v0.02_litnote-template Update headings to be compatible with  [[~viewfn-for-sluicing-header-links-for-citations,nb.-MUID-1560]]
 **/ -%>
-

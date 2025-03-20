@@ -7,7 +7,7 @@ TEMPLATE_SOURCE: "[[10--blank-no-api-template]]"
 UMID: 
 aliases: 
 tags:
-  - _wip
+  - _misc/_wip
 ---
 
 # -
@@ -42,7 +42,7 @@ tags:
     * Normalize About api
     * Normalize base filepath info
   * v1.0.8
-    * Replace "filepath" with "base_filepath ([[internal-guide-to-naming-filepaths,cf.-Kanzi]])
+    * Replace "filepath" with "base_filepath ([[¡-guide-to-naming-filepaths,vis-Noteshippo]])
   * v1.0.7
     * Replace "filename" with "filepath"  
     * Use the italics/bold ui format

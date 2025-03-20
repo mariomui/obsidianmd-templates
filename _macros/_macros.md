@@ -2,7 +2,7 @@
 Aliases:
   - '__README__Y_templates/_macros'
   - 'Y_templates/_macros'
-tags: _noteshippo/v1/_structural-spec
+tags: _noteshippo/∑≠--v1-spec/_structural
 ---
 
 # -
@@ -25,19 +25,19 @@ tags: _noteshippo/v1/_structural-spec
   - [[macro-for-callout-like-detail]]
 * [[_longform]]
 * [[∑--macro-insert-inlink-heading-api,nb.-titled-with-macro,nb.-v0.0.1]]
-	* [[wip-symbol-∑,bt.-Noteshippo-title-level-flag,]]
+	* [[wip-symbol,uti.-∑,bt.-Noteshippo-title-level-morpheme,]]
 * @ Standard
-* [[macro-for-adding-toc-with-note-name]]
+* [[macro-for-adding-toc-with-note-name,cf.-MUID-1022,nb-v0.0.1]]
 * [[macro-for-automatic-toc,nb.-v0.0.1]]
 * [[macro-for-iherdc-template,vis-Characterization]]
 * [[macro-for-insert-of-all-inlink-endpoint,uti.-inline-dql,cf.-MUID-128]]
-* [[macro-for-inserting-base-filepath-v0.0.3]]
-* [[macro-for-inserting-citum,nb.-v0.0.4]]
-* [[macro-for-inserting-file-basename,nb.-v0.0.3]]
+* [[macro-for-inserting-base-filepath,nb.-v0.0.5]]
+* [[macro-for-inserting-citum,nb.-v0.0.6]]
+* [[macro-for-inserting-file-basename,nb.-v0.0.4]]
 * [[macro-for-lcsh-heading-field-query-and-scrape-v1.0.2]]
 * [[macro-for-prompted-lcsh-specced-note-template]]
 * [[macro-for-rating-books]]
-* [[macro-for-scraping-for-specific-filename-using-embedded-query,nb.-v0.0.1]]
+* [[macro-for-scraping-for-specific-filename-using-embedded-query,nb.-v0.0.1,uti.-MUID-1934A]]
 * [[macro-for-sluicing-out-waypoints]]
 * [[macro-for-stratagem-details]]
 * [[macro-for-targetting-note-seeds]]
@@ -46,7 +46,7 @@ tags: _noteshippo/v1/_structural-spec
 * [[ø--macro-for-commonly-used-file-and-filepaths-inserts]]
 * [[ø--macro-for-inserting-file-basename-into-litnote]]
 * [[ø--macro-for-sluicing-waypoint-links-into-jobs]]
-* [[wip--macro-yaml-update-of-tv-series-frontmatter,nb.-0.0.1]]
+* [[∑--macro-yaml-update-of-tv-series-frontmatter,nb.-0.0.1]]
 
 # ---Transient 010 Jobs
 
@@ -57,21 +57,26 @@ tags: _noteshippo/v1/_structural-spec
 %% Begin Waypoint %%
 - **[[_longform]]**
 - [[∑--macro-insert-inlink-heading-api,nb.-titled-with-macro,nb.-v0.0.1]]
-- [[macro-for-adding-toc-with-note-name]]
+- [[∑--macro-yaml-update-of-tv-series-frontmatter,nb.-0.0.1]]
+- **interim**
+	- [[interim--macro-for-inserting-abstract-emoji-tocs]]
+	- [[interim--macro-for-inserting-organizing-resource-subdivisions,nb.-v0.0.1,vis-Writing]]
+	- [[interim--macro-inserting-query-for-targetted-text-in-h2-links]]
+- [[macro-for-adding-toc-with-note-name,cf.-MUID-1022,nb-v0.0.1]]
 - [[macro-for-automatic-toc,nb.-v0.0.1]]
 - [[macro-for-callout-like-detail]]
 - [[macro-for-citations]]
 - [[macro-for-eec-tline]]
 - [[macro-for-iherdc-template,vis-Characterization]]
 - [[macro-for-insert-of-all-inlink-endpoint,uti.-inline-dql,cf.-MUID-128]]
-- [[macro-for-inserting-base-filepath-v0.0.3]]
-- [[macro-for-inserting-citum,nb.-v0.0.4]]
-- [[macro-for-inserting-file-basename,nb.-v0.0.3]]
-- [[macro-for-lcsh-heading-field-query-and-scrape-v1.0.2]]
+- [[macro-for-inserting-base-filepath,nb.-v0.0.6]]
+- [[macro-for-inserting-citum,nb.-v0.0.6]]
+- [[macro-for-inserting-file-basename,nb.-v0.0.4]]
+- [[macro-for-lcsh-heading-field-query-and-scrape-v1.0.2,uti.-MUID-1934]]
 - [[macro-for-local-page-tasks]]
 - [[macro-for-prompted-lcsh-specced-note-template]]
 - [[macro-for-rating-books]]
-- [[macro-for-scraping-for-specific-filename-using-embedded-query,nb.-v0.0.1]]
+- [[macro-for-scraping-for-specific-filename-using-embedded-query,nb.-v0.0.1,uti.-MUID-1934A]]
 - [[macro-for-sluicing-out-waypoints]]
 - [[macro-for-stratagem-details]]
 - [[macro-for-targetting-note-seeds]]
@@ -81,7 +86,6 @@ tags: _noteshippo/v1/_structural-spec
 - [[ø--macro-for-commonly-used-file-and-filepaths-inserts]]
 - [[ø--macro-for-inserting-file-basename-into-litnote]]
 - [[ø--macro-for-sluicing-waypoint-links-into-jobs]]
-- [[wip--macro-yaml-update-of-tv-series-frontmatter,nb.-0.0.1]]
 
 %% End Waypoint %%
 
