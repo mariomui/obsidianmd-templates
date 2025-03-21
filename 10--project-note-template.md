@@ -5,7 +5,7 @@ MUID: <% await app.insertIncrementalId('MUID') %>
 PROJECT_END_DATE: 
 PROJECT_PARENT: "[[<% await tp.file.title %>]]"
 TEMPLATE_SOURCE: "[[10--project-note-template]]"
-TEMPLATE_VERSION: v1.0.11
+TEMPLATE_VERSION: v1.0.12
 aliases: 
 tags:
   - _misc/_wip
@@ -24,7 +24,7 @@ TASK WHERE file.name = this.file.name AND !completed
 TASK WHERE file.name = this.file.name AND completed
 ```
 
-## 10-About
+### 10-About
 
 > [!info] Hover over me [[~view-for-recent-reference-link-to-note-title-transform,nb.-MUID-115]] and copy normalized note title.
 
@@ -54,6 +54,14 @@ tp.hooks.on_all_templates_executed(async () => {
 
 * †
 
+## 20-Inlink
+
+> [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.5)
+> * ℹ Commit/design logs are located in this [[π-lists-all-inlinks,nb.-MUID-128|experiment note]]. 
+> > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 28, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
+
+
+
 # =
 
 **base_filepath-v0.0.6**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= link(this.heading)`
@@ -79,6 +87,8 @@ tp.hooks.on_all_templates_executed(async () => {
 
 
 <%* /**
+- v1.0.12 *2025-03-20*
+	- add 20 inlink sub endpoint to meta api
 - v1.0.11
 	- PROJEcT PaTh field value must be a link and the title itself
 	- automate the frontmatter link scrape
@@ -104,5 +114,3 @@ tp.hooks.on_all_templates_executed(async () => {
 * v1.0.5 Add a new line after jumpid codelet for better contrast on reflink
 
 **/ -%>
-
-e

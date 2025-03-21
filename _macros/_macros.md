@@ -25,7 +25,7 @@ tags: _noteshippo/∑≠--v1-spec/_structural
   - [[macro-for-callout-like-detail]]
 * [[_longform]]
 * [[∑--macro-insert-inlink-heading-api,nb.-titled-with-macro,nb.-v0.0.1]]
-	* [[wip-symbol,uti.-∑,bt.-Noteshippo-title-level-morpheme,]]
+	* [[wip-symbol,uti.-∑,bt.-Noteshippo-title-level-flag,]]
 * @ Standard
 * [[macro-for-adding-toc-with-note-name,cf.-MUID-1022,nb-v0.0.1]]
 * [[macro-for-automatic-toc,nb.-v0.0.1]]
