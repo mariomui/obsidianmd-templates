@@ -1,16 +1,18 @@
 ---
-CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD") %>
-DOC_VERSION: v0.0.0
-MUID: <% await app.insertIncrementalId('MUID') %>
-TEMPLATE_VERSION: v1.0.3
-TEMPLATE_SOURCE: "[[10--bridge-spec-template]]"
+CREATION_DATE: 2023-06-17
 PROJECT_PARENT: 
+TEMPLATE_VERSION: v1.0.0-folder-page
+aliases:
+  - __README___hard-coded-within-plugin-setting-tab-templates
 tags:
-  - _misc/_wip
+  - _meta
 ---
 
 # -
 
+[[prefer-colocating-frequently-modified-notes-such-as-noteshippo-templates,prima-facie]]
+
+#_noteshippo/prima-facie/prefer
 ## 00-Meta
 
 > [!info]+ Progress Bar
@@ -25,8 +27,6 @@ tags:
 
 ### 10÷About
 
-> [!Goal] %%  %% GOAL
-> This [[,aka-bridge-specced-note]] goal is to 
 
 ## 20-Inlink
 
@@ -35,46 +35,34 @@ tags:
 > > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 28, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
 
 
+
 # =
 
 **base_filepath-v0.0.6**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= link(this.heading)`
 
 
-* [[##10÷About|10÷About]]
-- [[##LR--TOC|TOC]]
-## Prerequisites
+- This folder houses all the templates that need to be manually added into the plugin settings;
 
+- ! Due to limitations of the API, data drift checking can only happen when visiting the note below.
+	* [[note-refactor-template-with-manual-sync-alert]]
+	* [[ø.≠--folder-page-template-with-manual-sync-alert]]
 
+# ---Transient Jobs
 
-## Key Differences
-## Key Similarities
+![[~viewfn-sluicing-out-waypoint-like-unprocessed-links,nb.-MUID-1643#=|?search_term=---Transient Local Waypoint&t=nlk]]
 
-## Analysis
+# ---Transient Local Waypoint
 
+> [!info] Insert Waypoint Marker below using `%%` `Waypoint` `%%`: 
 
+%% Begin Waypoint %%
+- [[note-refactor-template-with-manual-sync-alert]]
+- [[ø.≠--folder-page-template-with-manual-sync-alert]]
+
+%% End Waypoint %%
 
 # ---Transient Local Resources
 
-## LR--TOC
 
-```toc
-maxLevel: 3
-minLevel: 2
-exclude: /^((\d+÷)|÷?(LR--)|÷?(LC--))/
-```
 
 # ---Transient
-
-<%* /** TEMPLATE VERSION LOG
-- v1.0.4 *2025-05-07*
-	- Update meta heading endpoints
-	- update toc
-- v1.0.3 *2025-01-18*
-	- conform to use TOC
-	- Update to use collapsible meta ep
-- v1.0.2
-	- Normalize the public api to standards
-- v1.0.1 
-  - add a template log
-**/ 
--%>

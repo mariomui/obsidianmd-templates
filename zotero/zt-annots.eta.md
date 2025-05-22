@@ -46,8 +46,10 @@
 <%-         const lcTitle = annot?.text?.substring(0,displayLength) || ""; %>
 <%-         const _lcTitle = lcTitle?.split("	")?.filter(Boolean).join(" ") %> 
 <%-         const pageLabel = annot.pageLabel ?? ""; %>
+<%-         const _lcColor = annot.imgEmbed ? "image" : colorName.substring(0,3) %>
+<%-         const _lcParaphrase = _lcTitle || annot.comment || ( annot.docItem.citekey + "-" + annot.imgLink.match(/[A-Za-z0-9]+\.png/) ); %>
 
-## LC--<%= colorName?.substring(0,3)%>-citum--Page-<%= pageLabel?.padStart(4,"0") + "--" + (_lcTitle || annot.comment)%>
+## LC--<%= _lcColor %>-Page-<%= pageLabel?.padStart(4,"0") + "--" + (_lcParaphrase) %>
 
 <%~         include("annotation", annot) %>
 <%        } %>

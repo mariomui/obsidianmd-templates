@@ -1,10 +1,9 @@
 ---
 CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.0
-MUID: <% await app.insertIncrementalId('MUID') %>
 TEMPLATE_SOURCE: "[[10--alias-spec-template]]"
-TEMPLATE_VERSION: v1.1.0
-UMID: 
+TEMPLATE_VERSION: v1.1.2
+PROJECT_PARENT: 
 aliases: 
 tags:
   - _misc/_wip
@@ -14,7 +13,9 @@ tags:
 
 # =
 
-**base_filepath-v0.0.3**: *`= this.file.path`* doc-`= this.DOC_VERSION` / ids: `= this.MUID`,`= this.UMID` / lcsh: `= this.heading`
+**base_filepath-v0.0.6**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= link(this.heading)`
+
+
 
 ---
 
@@ -35,6 +36,10 @@ tags:
 
 <%* /**
 * # ---Transient Template Commit Log
+  * v1.1.2 *2025-04-24*
+    * remove MUID from alias spec
+  * v1.1.1 *2025-04-16*
+    * Update the basefp to v0.0.6
   * v1.1.0 *2025-02-26*
     * update base filepath to v0.0.3
   * v1.0.12 *2025-01-11*

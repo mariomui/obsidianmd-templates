@@ -18,8 +18,8 @@ DOC_VERSION: v0.0.1
 
 
 - @ Folder Pages
-	* [[_macros]]
-	* [[_hard-coded-within-plugin-setting-tab-templates]]
+	* [[+macros]]
+	* [[+hard-coded-within-plugin-setting-tab-templates]]
 
 ---
 * @ 10s Macro-behaving templates
@@ -34,29 +34,29 @@ DOC_VERSION: v0.0.1
   * [[10--blank-no-api-template]]
   * [[10--bridge-spec-template]]
   * [[10--nascent-spec-template]]
-  * [[10--project-note-template]]
+  * [[10--project-note-template,nb.-MUID-192]]
   * [[10--library-spec-template]]
-  * [[10--litnote-template]]
-* @ 20s
+  * [[10--litnote-template,nb.-MUID-155]]
+* @ 20s Templates Used By A Plugin
   * 💁: *these templates are tied to an plugin.*
   * [[20--default-meta-template]]
   * [[20--evergreen_template]]
   * [[20--fleeting-notes-template]]
   * [[20--sourced-book-template]]
-  * [[20--folder-page-template]]
+  * [[20--folder-spec-template]]
 * @ WIP
-  * [[∑--declarative-spec-template]]
+  * [[interim--declarative-spec-template]]
   * [[∑--experiment-template]]
 * @ 90s
   * [[90--bootup]]
 * @ Misc
-	* [[helpercode-to-take-videonotes-using-transcription-and-easy-timestamp-linking]]
+	* [[~view-for-taking-videonotes-using-transcription-and-easy-timestamp-linking,nb.-MUID-154]]
 	* [[try.html]]
 * @ Macros
-  * [[macro-for-callout-like-detail]]
-  * [[macro-for-citations]]
+  * [[macro-inserting-library-entry-bullet-guide]]
+  * [[macro-for-scraping-transient-local-citation-and-resources]]
   * [[macro-for-eec-tline]]
-  * [[macro-for-local-page-tasks]]
+  * [[macro-for-inserting-local-page-tasks,nb.-MUID-147,ver.-v0.0.3]]
   * [[macro-for-vocabulary-details,by-emoji]]
   * [[merge_template]]
 * @ Zotlit
@@ -93,29 +93,33 @@ DOC_VERSION: v0.0.1
 # ---Transient Local Waypoints
 
 %% Begin Waypoint %%
-- **[[_hard-coded-within-plugin-setting-tab-templates]]**
-- **[[_macros]]**
+- **[[+macros]]**
+- **[[+Y30,hard-coded-within-plugin-setting-tab-templates,nb.-MUID-194]]**
 - [[10--alias-spec-template]]
 - [[10--blank-no-api-template]]
 - [[10--bridge-spec-template]]
 - [[10--definition-note-template]]
 - [[10--library-spec-template]]
-- [[10--litnote-template]]
+- [[10--litnote-template,nb.-MUID-155]]
+- [[10--longform-multi-scene-template]]
 - [[10--nascent-spec-template]]
-- [[10--project-note-template]]
+- [[10--project-note-template,nb.-MUID-192]]
 - [[10--youtube-litnote-template]]
 - [[20--default-meta-template]]
-- [[20--evergreen_template]]
 - [[20--fleeting-notes-template]]
-- [[20--folder-page-template]]
+- [[20--folder-spec-template]]
 - [[20--sourced-book-template]]
+- [[20.interim--question-note-template]]
 - [[90--bootup]]
 - **experiments**
 	- [[∑--experiment-template]]
+	- [[≈-project-note-template]]
 - **ø--archive**
-	- [[helpercode-to-take-videonotes-using-transcription-and-easy-timestamp-linking]]
 	- [[merge_template]]
 	- [[ø--hbstemplate-ibook-import-ibook-csv-with-bullet]]
+	- [[ø--macro-for-commonly-used-file-and-filepaths-inserts]]
+	- [[ø--macro-for-inserting-file-basename-into-litnote]]
+	- [[ø--macro-for-sluicing-waypoint-links-into-jobs]]
 	- [[ø--tag-page-template]]
 	- [[try.html]]
 - [[ø--hbstemplate-import-ibook-csv-hbs-with-heading.hbs]]
@@ -123,7 +127,7 @@ DOC_VERSION: v0.0.1
 	- [[seven-pt-structure-plotting-canvas-template.canvas]]
 - **staged**
 	- **wip**
-		- [[∑--declarative-spec-template]]
+		- [[interim--declarative-spec-template]]
 - **zotero**
 	- **archived**
 		- [[zt-annot.eta.prev]]

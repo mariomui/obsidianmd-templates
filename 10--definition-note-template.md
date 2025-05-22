@@ -1,29 +1,39 @@
 ---
-TEMPLATE_VERSION: v1.1.1
+CREATION_DATE: "2024-03-02"
+DOC_VERSION: v0.0.1
 MUID: <% await app.insertIncrementalId('MUID')%>
-CREATION_DATE: 2024-03-02
+PROJECT_PARENT: 
+TEMPLATE_SOURCE: "[[10--definition-note-template]]"
+TEMPLATE_VERSION: v1.1.5
 tags:
   - _misc/_wip
-UMID: 
-TEMPLATE_SOURCE: "[[10--definition-note-template]]"
-DOC_VERSION: v0.0.1
 ---
 
-
 # -
-## 10-About
 
-> [!Goal] %%  %% GOAL
-> This [[,aka-definition-specced-note]] goal is to 
+## 00-Meta
 
+> [!info]+ Progress Bar
+> > ![[~view-for-local-tasks-using-a-progress-bar,nb.-MUID-698#=|olk]]
+> ```dataview
+> task where file.name = this.file.name and !completed
+> ```
+> > 
+> ```dataview
+> task where file.name = this.file.name and completed
+> ```
 
-## 11-Reference
+### 10÷About
+
+- This [[,aka-definition-specced-note]] goal is to,
+
+### 11÷Reference
 
 
 ## 20-Inlink
 
 > [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.5)
-> * ℹ Commit/design logs are located in this [[π-lists-all-inlinks,nb.-MUID-128|experiment note]]. 
+> * ℹ Commit/design logs are located in this [[π-Lists-all-inlinks,nb.-MUID-128,nb.-0.0.5|experiment note]]. 
 > > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 28, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
 
 
@@ -37,11 +47,7 @@ DOC_VERSION: v0.0.1
 
 
 
-
-
-
-
-
+---
 
 
 
@@ -50,7 +56,7 @@ DOC_VERSION: v0.0.1
 # ---Transient
 
 > [!info]- Expand me. Use the following standard H2s as apis.
-> * Additional apis can be found in [[internal-guide-to-definition-note-specification,vis-Noteshippo]]
+> * Additional apis can be found in [[¡-implementing-definition-specced-note,vis-Noteshippo]]
 > > ## Elements 
 > > ## Examples And Counter Examples
 > > ## Implementation
@@ -82,9 +88,17 @@ DOC_VERSION: v0.0.1
 
 <%* /** 
 - # ---Transient Template Commit Log
+  - v1.1.5 *2025-05-19*
+    - Apply [[macro-for-updating-meta-heading-endpoints,vis-Noteshippo,nb.-MUID-152,ver-v0.0.2]] v0.0.2
+  - v1.1.4 *2025-04-25*
+    - Remove the callout inside of the About api; it inadvertently discourages writing due to the inherently difficulty of clicking inside a callout to jot content.
+    - Add collapsible meta tasks
+  - v1.1.3 *2025-03-27*
+    - Remove UMID frontmatter property
+    - add 00 meta api without the tasks codelet and nest about and reference inside it
   - v1.1.2 *2025-03-18*
-  - updte basefp to v0.0.6
-  - update filebasename to v0.0.4
+    - updte basefp to v0.0.6
+    - update filebasename to v0.0.4
   - v1.1.1
     - update basefp to v0.0.4
     - replace wrong emoji pefix on prospects

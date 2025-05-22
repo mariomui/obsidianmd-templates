@@ -4,49 +4,65 @@ DOC_VERSION: v0.0.0
 MUID: <% await app.insertIncrementalId('MUID')%>
 TEMPLATE_VERSION: v1.0.6
 TEMPLATE_SOURCE: "[[10--youtube-litnote-template]]"
-UMID: 
+PROJECT_PARENT: 
 aliases: 
 tags:
   - _misc/_wip
+authors: 
+DEPENDENCIES:
 ---
 
 # -
 
-## 10-About
+## 00-Meta
+
+> [!info]+ Progress Bar
+> > ![[~view-for-local-tasks-using-a-progress-bar,nb.-MUID-698#=|olk]]
+> ```dataview
+> task where file.name = this.file.name and !completed
+> ```
+> > 
+> ```dataview
+> task where file.name = this.file.name and completed
+> ```
+### 10÷About
 
 * This [[,aka-reference-specced-note|aka-literature-specced-note]] collects citations. It is combined with an Analysis portion that works as a temporary [[,aka-index-specced-note]] giving us some context to the information, namely what was collected, and how it relates to other notes, as well as other concepts in the same [[literature-note,etc]]
 
 
 > [!info] Hover over me [[~view-for-recent-reference-link-to-note-title-transform,nb.-MUID-115]] and copy normalized note title.
 
-### 11-Reference
+### 11÷Reference
 
 > [!info] Hover over [[~view-for-referencing-current-jumpid]] for jumpid alias
 
 * √ 
 
-#### TLDR Reference
 
-* 
+## 20-Inlink
+
+> [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.5)
+> * ℹ Commit/design logs are located in this [[π-Lists-all-inlinks,nb.-MUID-128,nb.-0.0.5|experiment note]]. 
+> > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 28, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
+
 
 
 # =
 
-**base_filepath**: *`= this.file.path`* *doc-`=this.DOC_VERSION`*
-
----
+**base_filepath-v0.0.6**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= link(this.heading)`
 
 
 
 ## 00-Control
 
-![[helpercode-to-take-videonotes-using-transcription-and-easy-timestamp-linking#Transcript Control|nlk]]
+![[~view-for-taking-videonotes-using-transcription-and-easy-timestamp-linking,nb.-MUID-154#Transcript Control|nlk]]
 
 
 ## Analysis
 
-**file_basename**: *`= this.file.name`* *doc-`=this.DOC_VERSION`*
-**is-using-latest-template**: `= (([[10--youtube-litnote-template]].TEMPLATE_VERSION)=(this.file.frontmatter.TEMPLATE_VERSION)) `
+**base_filepath-v0.0.6**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= link(this.heading)`
+
+
 
 * # Youtube Link
   * [[10--youtube-litnote-template#LR--Youtube Timestamp Notes Link|LR--Youtube Timestamp Notes Link]]

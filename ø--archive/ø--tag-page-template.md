@@ -29,7 +29,7 @@ TEMPLATE_VERSION: v1.0.8_tag-page
 - ! OBSOLETED CONTENT
 ## Dashboard For Current Tag Only Notes
 
-See [[list-of-codelets,by-x,nb.-Dataview-plugin-powered--ObsidianMD-app#Ways to Create a Cta Button]]
+See [[¬--list-of-code-snippets,by-x,uti.-dataview-plugin-api,vis-Obsidianmd-app#Ways to Create a Cta Button]]
 
 ~~~javascript
 ` // ⚙ Wrap codeblock with single tick to trigger syntax highlights
