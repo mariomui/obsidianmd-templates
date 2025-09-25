@@ -1,11 +1,12 @@
 <%_* /** README 
 * date create: *2025-05-06*
+* #_noteshippo/macro/bumping 
 * MUID: MUID-184
-* Desc: Bumps the filename semver AND the content semver of [[macro-for-inserting-file-basename,nb.-MUID-181,ver.-v0.0.7]]
+* Desc: Bumps the filename semver AND the content semver of [[macro-for-inserting-file-basename,nb.-MUID-181,ver.-v0.0.8]]
 * Definition:
 	* single purpose means it only updates MUID-181
 		* The opposite would be genpop-purpose
-	* holistic means it updates the file contents (filebn v0.0.4) AND the filename
+	* holistic means it bumps the version the file contents (filebn v0.0.4) AND the filename
 **/_%>
 <%_*
 // const { default: obs } = this.app.plugins.plugins["templater-obsidian"].templater.current_functions_object.obsidian;

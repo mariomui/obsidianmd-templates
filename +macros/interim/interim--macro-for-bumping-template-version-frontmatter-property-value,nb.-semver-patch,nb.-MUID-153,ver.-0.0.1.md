@@ -17,6 +17,9 @@ tp.hooks.on_all_templates_executed(() => {
 	tp.app.fileManager.processFrontMatter(
 		tfile, 
 	  (fm) => {
+		  // localized notify tool.
+		  const _notify = createAlertUser(this.app, tp.obsidian.Notice);
+		  
 			const hasFieldname = fm
 				?.hasOwnProperty
 				?.call(fm, FIELD_NAME);
@@ -31,7 +34,8 @@ tp.hooks.on_all_templates_executed(() => {
 			const val = fm[FIELD_NAME]
 			const _val = val.match(rgx)?.first();
 			if (!_val) {
-				new tp.obsidian.Notice("non semver value in " + FIELD_NAME + " field")
+				const message ="non semver value in " + FIELD_NAME + " field";
+				_notify(message);
 				return;
 			}
 			const bumped_val = bump(
@@ -39,11 +43,33 @@ tp.hooks.on_all_templates_executed(() => {
 				bump_style
 			)
 			fm[FIELD_NAME] = prefix(bumped_val, "v")
-			console.log({fm})
+			_notify(`${fm[FIELD_NAME]} has been succ. created.`);
 			return;
 		}
 	)
 	setTimeout(sortfm, 1000)
+
+function createAlertUser(app, Notice) {
+	return function alertUser(message, t = 1000) {
+		const attrFig = {
+			attr: {
+				style: "\
+				background: red;\
+				padding: .5em .2em;\
+				margin: 0;\
+				border-radius: 10px 10px;\
+				"
+			}
+		}
+		const $message = app.dom.appContainerEl.createEl(
+			"p", attrFig
+		);
+		$message.setText(message);
+		new Notice($message, t);
+	}
+}
+
+
 	function prefix(str, affix) {
 		return affix + str;
 	}

@@ -3,7 +3,7 @@
 ```toc
 maxLevel: 3
 minLevel: 2
-exclude: /^((\d+÷)|÷?(LR--)|÷?(LC--))/
+exclude: /^((\d+÷)|÷?(LR--|LV--|LC--))/
 ```
 <%* /** README 
 - 💁 Simple macros don't require a dedicated project/experiment note. 
@@ -16,6 +16,8 @@ _%>
 
 
 - # Commit log
+	- v0.0.4
+		- Also remove LC from tocs
 	- v0.0.3
 		- Reverse adding the version to the header due to dependency hell issues with [[macro-for-adding-toc-with-note-name,cf.-MUID-146,nb.-MUID-147,ver-v0.0.1]]
 	- v0.0.2 *2025-05-01*
