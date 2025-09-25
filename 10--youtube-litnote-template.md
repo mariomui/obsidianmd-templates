@@ -1,22 +1,21 @@
 ---
 CREATION_DATE: <% await tp.file.creation_date("YYYY-MM-DD")%>
+DEPENDENCIES: 
 DOC_VERSION: v0.0.0
 MUID: <% await app.insertIncrementalId('MUID')%>
-TEMPLATE_VERSION: v1.0.6
-TEMPLATE_SOURCE: "[[10--youtube-litnote-template]]"
 PROJECT_PARENT: 
+TEMPLATE_SOURCE: "[[10--youtube-litnote-template]]"
+TEMPLATE_VERSION: v1.0.7
 aliases: 
+authors: 
 tags:
   - _misc/_wip
-authors: 
-DEPENDENCIES:
 ---
 
 # -
-
 ## 00-Meta
 
-> [!info]+ Progress Bar
+> [!info]- Progress Bar v0.0.3
 > > ![[~view-for-local-tasks-using-a-progress-bar,nb.-MUID-698#=|olk]]
 > ```dataview
 > task where file.name = this.file.name and !completed
@@ -25,6 +24,8 @@ DEPENDENCIES:
 > ```dataview
 > task where file.name = this.file.name and completed
 > ```
+
+
 ### 10÷About
 
 * This [[,aka-reference-specced-note|aka-literature-specced-note]] collects citations. It is combined with an Analysis portion that works as a temporary [[,aka-index-specced-note]] giving us some context to the information, namely what was collected, and how it relates to other notes, as well as other concepts in the same [[literature-note,etc]]
@@ -42,16 +43,14 @@ DEPENDENCIES:
 ## 20-Inlink
 
 > [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.5)
-> * ℹ Commit/design logs are located in this [[π-Lists-all-inlinks,nb.-MUID-128,nb.-0.0.5|experiment note]]. 
+> * ℹ Commit/design logs are located in this [[π-design-codelet-that-lists-all-inlinks,nb.-MUID-128,nb.-0.0.5|experiment note]]. 
 > > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 28, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
 
 
 
 # =
 
-**base_filepath-v0.0.6**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= link(this.heading)`
-
-
+**base_filepath-v0.0.9**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT`,alias: *`= this.aliases`*,nb: *`=this.NOTA_BENE`* , authors: *`= this.authors`* / lcsh: `= link(this.heading)`
 
 ## 00-Control
 
@@ -60,8 +59,7 @@ DEPENDENCIES:
 
 ## Analysis
 
-**base_filepath-v0.0.6**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= link(this.heading)`
-
+**base_filepath-v0.0.9**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT`,alias: *`= this.aliases`*,nb: *`=this.NOTA_BENE`* , authors: *`= this.authors`* / lcsh: `= link(this.heading)`
 
 
 * # Youtube Link
@@ -96,6 +94,9 @@ DEPENDENCIES:
 
 <%*
 /* Template Version Commit Log
+* v1.0.7 
+	* update basef to v0.0.9 
+	* udpate tasks api to v0.0.3
 * v1.0.5
   * Replace commonly used file base paths with one that includes doc version
 * "1.0.4"

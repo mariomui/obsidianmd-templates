@@ -4,7 +4,7 @@ DOC_VERSION: v0.0.0
 MUID: <% await app.insertIncrementalId('MUID')%>
 PROJECT_PARENT: 
 TEMPLATE_SOURCE: "[[10--litnote-template,nb.-MUID-155]]"
-TEMPLATE_VERSION: v0.1.7
+TEMPLATE_VERSION: v0.1.9
 aliases: 
 authors: 
 heading: 
@@ -18,7 +18,7 @@ tags:
 
 ## 00-Meta
 
-> [!info]+ Progress Bar
+> [!info]- Progress Bar v0.0.3
 > > ![[~view-for-local-tasks-using-a-progress-bar,nb.-MUID-698#=|olk]]
 > ```dataview
 > task where file.name = this.file.name and !completed
@@ -29,7 +29,7 @@ tags:
 > ```
 
 
-### 10-About
+### 10÷About
 
 - This [[,aka-reference-specced-note|aka-literature-specced-note]]'s contains ...
 
@@ -37,7 +37,7 @@ tags:
 > *Make sure that reference † is populated*
 
 This note should be prefixed with [[†,bt.-Noteshippo-title-level-affix,]]
-### 11-Reference
+### 11÷Reference
 
 > [!info] Hover over me and copy the [[~view-for-referencing-current-jumpid#=|jumpid]]
 
@@ -46,15 +46,13 @@ This note should be prefixed with [[†,bt.-Noteshippo-title-level-affix,]]
 ## 20-Inlink
 
 > [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.5)
-> * ℹ Commit/design logs are located in this [[π-Lists-all-inlinks,nb.-MUID-128,nb.-0.0.5|experiment note]]. 
+> * ℹ Commit/design logs are located in this [[π-design-codelet-that-lists-all-inlinks,nb.-MUID-128,nb.-0.0.5|experiment note]]. 
 > > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 28, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
 
 
 # =
 
-**base_filepath-v0.0.6**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= link(this.heading)`
-
-
+**base_filepath-v0.0.9**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT`,alias: *`= this.aliases`*,nb: *`=this.NOTA_BENE`* , authors: *`= this.authors`* / lcsh: `= link(this.heading)`
 
 
 
@@ -77,6 +75,12 @@ This note should be prefixed with [[†,bt.-Noteshippo-title-level-affix,]]
 # ---Transient
 
 <%* /** Commit Log
+* v0.1.9 *2025-06-09*
+	* Apply [[macro-for-inserting-base-filepath,nb.-MUID-161,ver.-v0.0.9]] (v0.0.7) (v0.0.9)
+	* Apply [[macro-for-updating-meta-heading-endpoints,vis-Noteshippo,nb.-MUID-152,ver-v0.0.2]] (v0.0.2)
+* v0.1.8 *2025-05-27*
+	* Apply [[macro-for-inserting-local-page-tasks,nb.-MUID-147,ver.-v0.0.3]] (v0.0.3)
+	* Bump version to v0.1.8
 * v0.1.6 *2025-04-19*
 	* Add pop-up notice after macro completes reminding Noteshippo user to input the author's name into the litnote's frontmatter
 * v0.1.5 *2025-04-01*
@@ -137,4 +141,4 @@ const $message = this.app.dom.appContainerEl.createEl(
 );
 $message.setText(message);
 new tp.obsidian.Notice($message, 3000)
--%>
+-%

@@ -1,9 +1,9 @@
 ---
 CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.0
-TEMPLATE_SOURCE: "[[10--alias-spec-template]]"
-TEMPLATE_VERSION: v1.1.2
 PROJECT_PARENT: 
+TEMPLATE_SOURCE: "[[10--alias-spec-template]]"
+TEMPLATE_VERSION: v1.1.4
 aliases: 
 tags:
   - _misc/_wip
@@ -13,9 +13,7 @@ tags:
 
 # =
 
-**base_filepath-v0.0.6**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= link(this.heading)`
-
-
+**base_filepath-v0.0.9**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT`,alias: *`= this.aliases`*,nb: *`=this.NOTA_BENE`* , authors: *`= this.authors`* / lcsh: `= link(this.heading)`
 
 ---
 
@@ -36,6 +34,10 @@ tags:
 
 <%* /**
 * # ---Transient Template Commit Log
+  * v1.1.4 *2025-08-22*
+    * update [[base_filepath,bt.-Noteshippo-lingo,]] to v0.0.9
+  * v1.1.3 *2025-07-23*
+    * Update [[base_filepath,bt.-Noteshippo-lingo,]] to v0.0.7
   * v1.1.2 *2025-04-24*
     * remove MUID from alias spec
   * v1.1.1 *2025-04-16*

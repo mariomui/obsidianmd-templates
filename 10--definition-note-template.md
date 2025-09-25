@@ -4,7 +4,8 @@ DOC_VERSION: v0.0.1
 MUID: <% await app.insertIncrementalId('MUID')%>
 PROJECT_PARENT: 
 TEMPLATE_SOURCE: "[[10--definition-note-template]]"
-TEMPLATE_VERSION: v1.1.5
+TEMPLATE_VERSION: v1.1.8
+authors: 
 tags:
   - _misc/_wip
 ---
@@ -13,7 +14,7 @@ tags:
 
 ## 00-Meta
 
-> [!info]+ Progress Bar
+> [!info]- Progress Bar v0.0.3
 > > ![[~view-for-local-tasks-using-a-progress-bar,nb.-MUID-698#=|olk]]
 > ```dataview
 > task where file.name = this.file.name and !completed
@@ -23,31 +24,26 @@ tags:
 > task where file.name = this.file.name and completed
 > ```
 
+
 ### 10÷About
 
-- This [[,aka-definition-specced-note]] goal is to,
+* This [[,aka-definition-specced-note]] goal is to,
 
 ### 11÷Reference
-
 
 ## 20-Inlink
 
 > [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.5)
-> * ℹ Commit/design logs are located in this [[π-Lists-all-inlinks,nb.-MUID-128,nb.-0.0.5|experiment note]]. 
+> * ℹ Commit/design logs are located in this [[π-design-codelet-that-lists-all-inlinks,nb.-MUID-128,nb.-0.0.5|experiment note]].
 > > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 28, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
-
 
 # =
 
-**base_filepath-v0.0.6**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= link(this.heading)`
+**base_filepath-v0.0.9**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT`,alias: *`= this.aliases`*,nb: *`=this.NOTA_BENE`* , authors: *`= this.authors`* / lcsh: `= link(this.heading)`
 
 ## Abstract
 
-**file_bn--v0.0.4**: *`= this.file.name`* doc-`=this.DOC_VERSION` `= this.MUID`/`=this.heading`/`=this.UMID`/
-
-
-
----
+**file_bn--v0.0.8**: *`= this.file.name`* doc-`=this.DOC_VERSION` `= this.MUID`/`=this.heading`/`=this.PROJECT_PARENT`/ `= this.authors`
 
 
 
@@ -55,9 +51,9 @@ tags:
 
 # ---Transient
 
-> [!info]- Expand me. Use the following standard H2s as apis.
+> [!info]- 🪭 Use the enclosed H2s as standard apis.
 > * Additional apis can be found in [[¡-implementing-definition-specced-note,vis-Noteshippo]]
-> > ## Elements 
+> > ## Elements
 > > ## Examples And Counter Examples
 > > ## Implementation
 > > ## Tradeoffs†
@@ -66,75 +62,81 @@ tags:
 ---
 
 ⤵ The following are emoji prefixed helper links to include in the abstract (should the apis exist)
-- ⚛ [[#Elements]]
-- 🔎 [[#Examples And Counter Examples]]
-- ⚙ [[#Implementation]]
-- *TRADEOFFS is an umbrella term housing the two api below. As such, a helper emoji isn't needed for it. Just include the following helpers individually.*
-- 📉 [[#Challenges]]
-- 📈 [[#Prospects]]
+* ⚛ [[#Elements]]
+* 🔎 [[#Examples And Counter Examples]]
+* ⚙ [[#Implementation]]
+* *TRADEOFFS is an umbrella term housing the two api below. As such, a helper emoji isn't needed for it. Just include the following helpers individually.*
+* 📉 [[#Challenges]]
+* 📈 [[#Prospects]]
 ---
 
-
-
-<%* /** 
-- # ---Transient Template About
-  - This commented-out About page is to provide a [[,aka-thinking-surface|aka-thought-surface]] for improvements to the template.
-  - @ *Should I record doc changes?*
-    - [[,aka-definition-specced-note]]s,
-      - changes too frequently for  [[transient-doc-log-endpoint,bt.-Noteshippo-heading-api,]] to be useful. 
-        - 🤔 The note would get very lengthy. The core goal for these notes is to offer its knowledge.
-      - And yet i think doc versions could help provide specific mile stones to a document. A significant knowledge update from its etc or primary source could mean an update.
+<%* /** Thoughtspace
+	* This commented-out About page is to provide a [[,aka-thinking-surface|aka-thought-surface]] for improvements to the template.
+	* @ *Should I record doc changes in the [[,aka-definition-specced-note]]s?* Impl of such would require adding [[transient-doc-log-endpoint,bt.-Noteshippo-heading-api,]] to the template.
+		* [[,aka-definition-specced-note]]s,
+			* changes too frequently for  [[transient-doc-log-endpoint,bt.-Noteshippo-heading-api,]] to be useful.
+				* 🤔 The note would get very lengthy. The core goal for these notes is to offer its knowledge.
+			* And yet i think doc versions could help provide specific mile stones to a document. A significant knowledge update from its etc or primary source could mean an update.
 **/ -%>
 
-<%* /** 
-- # ---Transient Template Commit Log
-  - v1.1.5 *2025-05-19*
-    - Apply [[macro-for-updating-meta-heading-endpoints,vis-Noteshippo,nb.-MUID-152,ver-v0.0.2]] v0.0.2
-  - v1.1.4 *2025-04-25*
-    - Remove the callout inside of the About api; it inadvertently discourages writing due to the inherently difficulty of clicking inside a callout to jot content.
-    - Add collapsible meta tasks
-  - v1.1.3 *2025-03-27*
-    - Remove UMID frontmatter property
-    - add 00 meta api without the tasks codelet and nest about and reference inside it
-  - v1.1.2 *2025-03-18*
-    - updte basefp to v0.0.6
-    - update filebasename to v0.0.4
-  - v1.1.1
-    - update basefp to v0.0.4
-    - replace wrong emoji pefix on prospects
-  - v1.1.0
-    - Change the helper api below transient to include Abstract link helpers (emoji-ed). These helper links serve to notify the user of existing apis. Non existent apis will not be there.
-    - collapse the H2 helper guide by default.
-  - v1.0.12 *2025-02-25*
-    - fix typo on the DOC VERSION
-  - v1.0.11 *2025-02-22*
-    - update 20-inlink api
-    - update base filepath
-  - v1.0.10 *2025-02-08*
-    - Rename Summary api to abstract api
-    - Rename the endpoints under - with prefixed ordinality
-  - v1.0.9 *2025-02-06*
-    - Add Elements link to Summary
-      - Make sure its easy to see using the callouts feature
-  - v1.0.8
-    - Add Transient Scrapwork Api
-    - Add Inlink Api
-  - v1.0.7
-    - change the base_filepath to include doc id, muid, and the lcsh heading
-    - remove the template check because of fragility
-    - make sure the file basename has versioning
-  - v1.0.6 *2024-11-28*
-    - Add Doc version into metadata
-  - v1.0.5 *2024-07-01*
-    - Add JD numbering to the - endpoint resources so that the alphabetic heading ordering doesn't wrongly rearrange them.
-    - Add dql hard coded template version check 
-  - v1.0.4 *2024-06-03*
-    - Graduate interim to official usage
-  - v1.0.3 *2024-05-14*
-    - Change the ui color of the base_filepath value to contrast, giving a visual cue to what is a pathed base and an unpathed base (vis file metadata)
-  - v.1.0.2 *2024-05-13*
-    - Move interim template into interim folder
-    - Add a commit log under Transient Template Commit Log endpoint
-      - templates can't have their own ---Transient header because Transient headers would 
-    - Remove the H1s for the Template About and Template Commit Log and replace with bullet pointed versions.
-**/ -%>
+<%* /**
+* # ---Transient Template Commit Log
+	* v1.1.8 *2025-08-10*
+		* Update [[macro-for-inserting-base-filepath,nb.-MUID-161,ver.-v0.0.9]] ... -> 0.0.9
+	* v1.1.7 *2025-05-31*
+		* Add authors to the frontmatter
+		* Apply [[macro-for-inserting-file-basename,nb.-MUID-181,ver.-v0.0.8]] (v0.0.8)
+		* apply [[macro-for-inserting-local-page-tasks,nb.-MUID-147,ver.-v0.0.3]] (v0.0.3)
+	* v1.1.6 
+		* Apply [[macro-for-inserting-base-filepath,nb.-MUID-161,ver.-v0.0.7]] (0.0.7)
+		* Replace the text inside the API info calloutbox with the 🪭 (indicating fold out ability)
+	* v1.1.5 *2025-05-19*
+		* Apply [[macro-for-updating-meta-heading-endpoints,vis-Noteshippo,nb.-MUID-152,ver-v0.0.2]] v0.0.2
+	* v1.1.4 *2025-04-25*
+		* Remove the callout inside of the About api; it inadvertently discourages writing due to the inherently difficulty of clicking inside a callout to jot content.
+		* Add collapsible meta tasks
+	* v1.1.3 *2025-03-27*
+		* Remove UMID frontmatter property
+		* add 00 meta api without the tasks codelet and nest about and reference inside it
+	* v1.1.2 *2025-03-18*
+		* updte basefp to v0.0.6
+		* update filebasename to v0.0.4
+	* v1.1.1
+		* update basefp to v0.0.4
+		* replace wrong emoji pefix on prospects
+	* v1.1.0
+		* Change the helper api below transient to include Abstract link helpers (emoji-ed). These helper links serve to notify the user of existing apis. Non existent apis will not be there.
+		* collapse the H2 helper guide by default.
+	* v1.0.12 *2025-02-25*
+		* fix typo on the DOC VERSION
+	* v1.0.11 *2025-02-22*
+		* update 20-inlink api
+		* update base filepath
+	* v1.0.10 *2025-02-08*
+		* Rename Summary api to abstract api
+		* Rename the endpoints under - with prefixed ordinality
+	* v1.0.9 *2025-02-06*
+		* Add Elements link to Summary
+			* Make sure its easy to see using the callouts feature
+	* v1.0.8
+		* Add Transient Scrapwork Api
+		* Add Inlink Api
+	* v1.0.7
+		* change the base_filepath to include doc id, muid, and the lcsh heading
+		* remove the template check because of fragility
+		* make sure the file basename has versioning
+	* v1.0.6 *2024-11-28*
+		* Add Doc version into metadata
+	* v1.0.5 *2024-07-01*
+		* Add JD numbering to the - endpoint resources so that the alphabetic heading ordering doesn't wrongly rearrange them.
+		* Add dql hard coded template version check
+	* v1.0.4 *2024-06-03*
+		* Graduate interim to official usage
+	* v1.0.3 *2024-05-14*
+		* Change the ui color of the base_filepath value to contrast, giving a visual cue to what is a pathed base and an unpathed base (vis file metadata)
+	* v.1.0.2 *2024-05-13*
+		* Move interim template into interim folder
+		* Add a commit log under Transient Template Commit Log endpoint
+			* templates can't have their own ---Transient header because Transient headers would
+		* Remove the H1s for the Template About and Template Commit Log and replace with bullet pointed versions.
+**/ _%>

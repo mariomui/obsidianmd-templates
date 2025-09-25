@@ -1,9 +1,10 @@
 ---
 CREATION_DATE: <% await tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.0
-MUID: <% await app.insertIncrementalId('MUID') %>
+MUID: 
 PROJECT_END_DATE: 
-PROJECT_PARENT: "[[<% await tp.file.title %>]]"
+PROJECT_PARENT:
+  - "[[<% await tp.file.title %>]]"
 TEMPLATE_SOURCE: "[[10--project-note-template,nb.-MUID-192]]"
 TEMPLATE_VERSION: v1.0.13
 aliases: 
@@ -37,20 +38,24 @@ tags:
 <%* 
 const title = await tp.file.title;
 
-new tp.obsidian.Notice("Please add an end date. Default is next year.");
 
 // Mutate end date to be 1 year end.
-tp.hooks.on_all_templates_executed(async () => { 
-	const tfile = tp.file.find_tfile(
-		tp.file.path(true)
-	);
-	const fv = tp.app.workspace.getActiveFileView()
-	const fm = fv.metadataEditor.serialize()
-	fm["PROJECT_END_DATE"] = tp.date.now("YYYY-MM-DD", "P1Y");
-	await fv.metadataEditor.synchronize(fm);
-	await fv.save();
-	fv.refreshEditor();
-});
+tp.app.workspace.onLayoutReady(() => {
+
+	new tp.obsidian.Notice("Please add an end date. Default is next year.");
+	
+	tp.hooks.on_all_templates_executed(async () => { 
+		const tfile = tp.file.find_tfile(
+			tp.file.path(true)
+		);
+		const fv = tp.app.workspace.getActiveFileView()
+		const fm = fv.metadataEditor.serialize()
+		fm["PROJECT_END_DATE"] = tp.date.now("YYYY-MM-DD", "P1Y");
+		await fv.metadataEditor.synchronize(fm);
+		await fv.save();
+		fv.editor.refresh();
+	});
+})
 -%>
 ### 11÷Reference
 
@@ -61,20 +66,19 @@ tp.hooks.on_all_templates_executed(async () => {
 ## 20-Inlink
 
 > [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.5)
-> * ℹ Commit/design logs are located in this [[π-Lists-all-inlinks,nb.-MUID-128,nb.-0.0.5|experiment note]]. 
+> * ℹ Commit/design logs are located in this [[π-design-codelet-that-lists-all-inlinks,nb.-MUID-128,nb.-0.0.5|experiment note]]. 
 > > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 28, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
 
 
 
 # =
 
-**base_filepath-v0.0.6**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= link(this.heading)`
-
+**base_filepath-v0.0.7**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT`,alias: *`= this.aliases`* / lcsh: `= link(this.heading)`
 
 
 # ---Transient Jobs
 
-![[interim--~viewfn-for-sluicing-out-embedded-query-into-a-job-queue,nb.-MUID-1934#=|?t=nlk&search_term=[PROJECT_PARENT: <% title %>]]
+![[~viewfn-for-sluicing-out-embedded-query-into-a-job-queue,nb.-MUID-1934#=|?t=nlk&search_term=[PROJECT_PARENT: <% title %>]]
 
 # ---Transient Local Resources
 
@@ -92,7 +96,7 @@ tp.hooks.on_all_templates_executed(async () => {
 <%* /** Journal
 * *2025-05-11* 
 	* 🐛 When applying template to a new note, the expected behavior is that the [[project_end_date,bt.-Noteshippo-frontmatter-property-name,nb.-project-template,]] is populated with the date value 365 days later. The actual behavior and value is blank.
-		* 💫 🔑 [[≈-project-note-template]]
+		* 💫 🔑 [[sandbox--≈-project-note-template]]
 **/_%>
 <%_* /**
 * v
