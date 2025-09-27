@@ -28,7 +28,7 @@ tags:
 ## 20-Inlink
 
 > [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.5)
-> * ℹ Commit/design logs are located in this [[π-design-codelet-that-lists-all-inlinks,nb.-MUID-128,nb.-0.0.5|experiment note]]. 
+> * ℹ Commit/design logs are located in this [[,aka-MUID-150|experiment note]]. 
 > > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 28, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
 
 
@@ -79,7 +79,7 @@ exclude: /^((\d+÷)|÷?(LR--)|÷?(LC--))/
 	* Update basefilepath to v0.0.3
 * v1.0.3 *2025-01-31*
   * remove dynamically populated TOC because it hardcodes
-    * [[macro-for-inserting-toc-with-note-name,nb.-MUID-149,ver-v0.0.1]] is too dynamic.
+    * [[macro-for-inserting-toc-with-note-name,nb.-MUID-149,ver.-v0.0.1]] is too dynamic.
     * [ ] Create indicator that this macro cannot be used in template. Must be manually activated. ➕ 2025-01-31 #_todo/to-add/upon-noteshippo-title-level-affix 
 * v1.0.2 *2025-01-25*
   * Capitalize TOC, basefilepath to v.0.02
