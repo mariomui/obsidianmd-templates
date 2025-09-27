@@ -4,7 +4,7 @@ _%>
 
 # ---Transient Jobs
 
-![[interim--~viewfn-for-sluicing-out-embedded-query-into-a-job-queue,nb.-MUID-1934#=|?t=nlk&search_term=[heading: <% term %>]]
+![[~viewfn-for-sluicing-out-embedded-query-into-a-job-queue,nb.-MUID-1934#=|?t=nlk&search_term=[heading: <% term %>]]
 
 # ---Transient Local Resources
 
