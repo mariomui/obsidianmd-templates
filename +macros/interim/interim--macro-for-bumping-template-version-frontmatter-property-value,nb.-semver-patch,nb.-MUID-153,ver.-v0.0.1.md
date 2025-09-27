@@ -1,6 +1,6 @@
 
 <%_*
-// based off [[interim--macro-update-frontmatter-property-name,nb.-UMID-to-PROJECT_PARENT,nb.-MUID-3118,ver.-0.0.1]]
+// based off [[,aka-macro-MUID-3118]]
 let BumpStyleOptions;
 (function (BumpStyleOptions) {
 	BumpStyleOptions["Patch"] = "Patch";
