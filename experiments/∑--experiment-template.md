@@ -30,7 +30,7 @@ tags:
 ## 20-Inlink
 
 > [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.5)
-> * ℹ Commit/design logs are located in this [[π-Lists-all-inlinks,nb.-MUID-128,nb.-0.0.5|experiment note]]. 
+> * ℹ Commit/design logs are located in this [[,aka-MUID-150|experiment note]]. 
 > > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 28, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
 
 
@@ -53,7 +53,7 @@ tags:
 * v1.0.2 *2025-05-18*
 	* Apply [[macro-for-updating-meta-heading-endpoints,vis-Noteshippo,nb.-MUID-152,ver-v0.0.2]] (v0.0.2)
 	* Apply [[macro-for-inserting-local-page-tasks,nb.-MUID-147,ver.-v0.0.3]] (v0.0.3)
-	* Apply [[interim--macro-update-frontmatter-property-name,nb.-UMID-to-PROJECT_PARENT,nb.-MUID-3118,ver.-0.0.1]] (v0.0.1)
+	* Apply [[,aka-macro-MUID-3118]] (v0.0.1)
 * v1.0.1
 	* 
 **/_%>
