@@ -1,5 +1,0 @@
-* $\color{aqua}{\coloneqq}$ 
-* 🔉
-* ⚙
-* 📛
-* 🔎  
