@@ -1,8 +1,8 @@
 ---
 CREATION_DATE: "{{date:YYYY-MM-DD}}"
-MUID:
-TEMPLATE_VERSION: v1.0.9_note-refactor-template
-UMID: 
+MUID: 
+TEMPLATE_VERSION: v1.0.10_note-refactor-template
+PROJECT_PARENT: 
 tags:
   - _misc/_wip
 ---
@@ -11,29 +11,31 @@ tags:
 
 ## 00-Meta
 
-![[~view-for-local-tasks-using-a-progress-bar,nb.-MUID-698#=|nlk]]
+> [!info]- Progress Bar v0.0.3
+> > ![[~view-for-local-tasks-using-a-progress-bar,nb.-MUID-698#=|olk]]
+> ```dataview
+> task where file.name = this.file.name and !completed
+> ```
+> >
+> ```dataview
+> task where file.name = this.file.name and completed
+> ```
 
-```dataview
-task where file.name = this.file.name and !completed
-```
+### 10÷About
 
-```dataview
-task where file.name = this.file.name and completed
-```
-
-## 10-About
-
-### 11-Reference
-
-![[~view-for-referencing-current-jumpid#=|nlk]]
+### 11÷Reference
 
 * †
 
 ## 20-Inlink
 
+> [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.5)
+> * ℹ Commit/design logs are located in this [[,aka-MUID-150|experiment note]].
+> > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 28, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
+
 # =
 
-**base_filepath-v0.0.2**: *`= this.file.path`* doc-`= this.DOC_VERSION` / ids: `= this.MUID`,`= this.UMID` / lcsh: `= this.heading` / updated on: `= dateformat(this.file.mday, "yyyy-LL-dd")` / file-size: `= round(this.file.size/1024,2)` KB
+**base_filepath-v0.0.9**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT`,alias: *`= this.aliases`*,nb: *`=this.NOTA_BENE`* , authors: *`= this.authors`* / lcsh: `= link(this.heading)`
 
 {{new_note_content}}
 
@@ -156,6 +158,6 @@ function showNotice(el) {
 >The header [[#---Startup Code]] is intrinsic to how the file is extracted. Anything blow that anchor header is ignored in the sync check.
 
 >[!note]
->There is a codelet to sync the content inside of  [[#---Startup Code]] with the content in the settings tab of the [[note-refactor-plugin,bt.-Obsidianmd-app,]].
+>There is a codelet to sync the content inside of  [[#---Startup Code]] with the content in the settings tab of the [[note-refactor-obsidian-plugin,bt.-Obsidianmd-app,]].
 
 > [!warning] Do not use this template with Templater plugin directly. It only serves as an external backup to the internal settings specified in Note Refactor.
