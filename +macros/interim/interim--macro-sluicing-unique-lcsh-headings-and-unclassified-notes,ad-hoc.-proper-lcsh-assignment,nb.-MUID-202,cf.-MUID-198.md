@@ -1,4 +1,4 @@
-> [!info]- 🪭 The following code displays every file's [[,aka-lcsh]]s  as well as any non-classified file. (This [[,aka-codelet]] was written specifically to help [[,aka-index-specced-note]]s deal with lcsh reassignment problems)
+> [!info]- 🪭 The following code displays every file's [[,aka-LCSH]]s  as well as any non-classified file. (This [[,aka-codelet]] was written specifically to help [[,aka-index-specced-note]]s deal with lcsh reassignment problems)
 > > DEPS: [[≈.~viewfn-for-listing-of-lcsh-headings-from-obsidian-query,nb.-MUID-198,ver.-0.0.2]]
 
 <%-*
@@ -50,19 +50,19 @@ function genMain(utils) {
 		const view_basename = tp.app.vault.getAbstractFileByPath(viewpath)?.basename;
 		if (!view_basename) return "broken";
 		const viewfn = `![[${view_basename}#=|?search_term=${keyword}&t=nlk]]`
-		
+	
 		const text = [
 			keyword
 		].join("");
-		
+
 		const wrapped_text = utils.codewrapContent(
 			text, "query"
 		);
-		
+	
 		await tp.file.cursor_append("> " + viewfn)
 		await tp.file.cursor_append("\n")
 		if (choice === false) return;
-		
+	
 		await tp.file.cursor_append(
 			wrapped_text
 		);
