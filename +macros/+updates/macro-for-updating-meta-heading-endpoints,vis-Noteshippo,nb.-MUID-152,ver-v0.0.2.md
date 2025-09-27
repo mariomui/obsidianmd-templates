@@ -1,13 +1,14 @@
-<%_* /** README 
+
+<%_* /** README
 * date create: *2025-05-03*
 * MUID: MUID-152
-* Desc: Updates private header child endpoints to latest api paradigm (see knobs); 
+* Desc: Updates private header child endpoints to latest api paradigm (see knobs);
 	* [[about-header-endpoint,bt.-Noteshippo-heading-api,nb.-common-type]]
 	* [[reference-endpoint,bt.-Noteshippo-heading-api,]]
-**/_%>
+**/ %>
 <%_*
 
-// # TOOLS 
+// # TOOLS
 const afv = tp.app.workspace.getActiveFileView()
 const tfile = tp.file.find_tfile(tp.file.path(true));
 
@@ -40,7 +41,6 @@ const replaceHeadingText = createReplaceHeadingText(
 );
 replaceHeadingText(actions)
 
-
 function createReplaceHeadingText({afv, tfile}) {
 	const factoryFig = {
 		afv, tfile
@@ -52,8 +52,8 @@ function createReplaceHeadingText({afv, tfile}) {
 		}) => {
 			const {start, end} = position;
 			afv.editor.replaceRange.call(afv.editor,
-				replace_text_with, 
-				{ch: start.col + (LEVEL), line: start.line}, 
+				replace_text_with,
+				{ch: start.col + (LEVEL), line: start.line},
 				{ch: end.col, line: end.line}
 			);
 		})
@@ -61,7 +61,7 @@ function createReplaceHeadingText({afv, tfile}) {
 }
 // afv.editor.replaceRange("## 10-Boo", {ch: 0, line: 27}, {ch: 12, line: 27})
 _%>
-<%_* /**
+<%_* /** COMMIT LOG
 * v0.0.2 *2025-05-06*
 	* Rename private header to meta heading endpoints
 * v0.0.1
