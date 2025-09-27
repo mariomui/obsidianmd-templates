@@ -2,7 +2,7 @@
 * date create: *2025-05-06*
 * #_noteshippo/macro/bumping 
 * MUID: MUID-184
-* Desc: Bumps the filename semver AND the content semver of [[macro-for-inserting-file-basename,nb.-MUID-181,ver.-v0.0.8]]
+* Desc: Bumps the filename semver AND the content semver of [[macro-for-inserting-file-basename,nb.-MUID-181,ver.-v0.0.9]]
 * Definition:
 	* single purpose means it only updates MUID-181
 		* The opposite would be genpop-purpose
@@ -158,6 +158,9 @@ function createReplaceText({afv, tfile}) {
 // afv.editor.replaceRange("## 10-Boo", {ch: 0, line: 27}, {ch: 12, line: 27})
 _%>
 <%_* /**
+* .
+	* Change title to more easily understand the purpose of the macro.
+	* Remove Interim
 * v0.0.2 *2025-05-06*
 	* Also rename the file to the new updated bumped version. It is necessary to disable and then renable automover during this process.
 	* Rename private header to meta heading endpoints
