@@ -1,6 +1,7 @@
 ## LC--
 
-**file_bn--v0.0.7**: *`= this.file.name`* doc-`=this.DOC_VERSION` `= this.MUID`/`=this.heading`/`=this.PROJECT_PARENT`/
+**file_bn--v0.0.8**: *`= this.file.name`* doc-`=this.DOC_VERSION` `= this.MUID`/`=this.heading`/`=this.PROJECT_PARENT`/ `= this.authors`
+
 
 <%* /** README
 * MUID: MUID-191
@@ -9,6 +10,7 @@
 <%_* /**
 * v0.0.7 *2025-05-06*
 	* replace this.umid with this.Project_parent
+	* Apply [[macro-for-inserting-file-basename,nb.-MUID-181,ver.-v0.0.9]] (v0.0.8)
 * v0.0.6 *2025-03-11*
 	* remove § :opt: + 6 because i cant remember opt 6 and i dont wnat to fix the lc citums in the zotero templates.
 	* prefix § to LC to further differentiate it when I call for it via bracket search
@@ -26,7 +28,7 @@
 		* tp.file.cursor_append(`\n`)
 * v0.0.4 *2025-02-04*
 	* add muid
-	* change title to use nota bene [[master-list-of-vocabulary,vis-Classical-languages#Nota bene]]
+	* change title to use nota bene [[master-list-of-vocabulary,nb.-word,vis-Classical-languages#Nota bene]]
 * v0.0.3 2025-01-10*
 	* Take out the placeholders as it was getting in the way. i fucking know what i'm doing
 * v0.0.2 *2025-01-10*
