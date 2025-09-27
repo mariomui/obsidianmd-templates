@@ -1,5 +1,5 @@
 <%*
-// based off [[interim--macro-update-frontmatter-property-name,nb.-UMID-to-PROJECT_PARENT,nb.-MUID-3118,ver.-0.0.1]]
+// based off [[,aka-macro-MUID-3118]]
 // |MUID-145|
 const SORT_FRONTMATTER_CMD_ID = "obsidian-one-ring:sort frontmatter";
 
@@ -69,7 +69,8 @@ async function genMain(pkg) {
 	const updateLongformField = (field_name, value) => {
 		longformFig[field_name] = value;
 	}
-	const muid_prefixed_story_title = `${fm[FrontmatterFieldnames.MUID]}--${fm[FrontmatterFieldnames.STORY_TITLE]}`;
+	const muid_prefixed_story_title = fm[FrontmatterFieldnames.STORY_TITLE]
+	//`${fm[FrontmatterFieldnames.MUID]}--${fm[FrontmatterFieldnames.STORY_TITLE]}`;
 
 	updateLongformField(
 		"title",
@@ -104,7 +105,7 @@ async function genMain(pkg) {
   })
   tp.obsidian.Notice(
 	  JSON.stringify(longformFig),
-	  2000
+	  500
 	)
   // ## REFRESH UI
   metadataEditor.save()
