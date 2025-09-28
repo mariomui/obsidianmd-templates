@@ -32,7 +32,7 @@ tags:
 * [[interim--macro-to-toggle-colorgrammar-in-cssclasses-yaml-field,nb.-MUID-3117]]
 * [[interim--macro-update-frontmatter-property-name,nb.-UMID-to-PROJECT_PARENT,nb.-MUID-3118,ver.-0.0.1]]
 * [[macro-for-inserting-noteshippo-private-header-api-endpoint,nb.-MUID-151,ver.-v0.0.2]]
-* [[macro-for-prompted-update-of-longform-drafttitle,nb.-MUID-140]]
+* [[macro-for-prompted-update-of-longform-draft-title,nb.-MUID-140]]
 * [[macro-for-scraping-transient-local-citations-and-resources,nb.-MUID-3123]]
 - ! Use the following to determine the types of folders to create
 * # Tasks

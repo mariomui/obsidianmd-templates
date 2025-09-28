@@ -20,7 +20,7 @@ tags:
 > ```dataview
 > task where file.name = this.file.name and !completed
 > ```
-> > 
+> >
 > ```dataview
 > task where file.name = this.file.name and completed
 > ```
@@ -30,7 +30,7 @@ tags:
 ## 20-Inlink
 
 > [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.5)
-> * ℹ Commit/design logs are located in this [[,aka-MUID-150|experiment note]]. 
+> * ℹ Commit/design logs are located in this [[,aka-MUID-150|experiment note]].
 > > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 28, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
 
 # =
@@ -49,10 +49,10 @@ tags:
 * v0.0.4 *2025-05-16*
 	* Set a flag in the yaml to prevent automover plugin from moving folder notes away from their folder.
 * v0.0.3 *2025-03-16*
-	* Remove meta tag 
+	* Remove meta tag
 * v0.0.2 *2025-02-19*
 	* *2025-02-19* Add folder page template to yml field
 * v1.0.2 *2025-01-06*
-  * This is tied to [[folder-notes-plugin,bt.-ObsidianMD-app,]]
+* This is tied to [[folder-notes-plugin,bt.-ObsidianMD-app,]]
 * v1.0.1 Add commit log
-**/ -%
+**/ -%>

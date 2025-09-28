@@ -19,10 +19,14 @@ function checkHasFieldname(fig = {}, field_name) {
 	return !!fig?.hasOwnProperty?.call(fig, field_name);
 }
 
+/**
+@usage use on existing long form base blank project.
+@description it should stuff the draftTitle into the longform quanta from
+**/
 async function genMain(pkg) {
 	const LONGFORM_FIELD_NAME = "longform"
 	const FIELD_NAME = "draftTitle";
-	
+
   const genSynchronizeYaml = createGenFrontmatterHelper(4000)
 	const genSortYaml = createGenFrontmatterHelper(2000)
   const {
@@ -61,7 +65,7 @@ async function genMain(pkg) {
 
 	// # TASKS PIPELINE
   await genSynchronizeYaml(
-    aboutToBeYaml, 
+    aboutToBeYaml,
     () => {
       synchronizeYaml(aboutToBeYaml)
     }
@@ -161,13 +165,11 @@ async function genMain(pkg) {
 }
 _%>
 <%*
-	/** 
+	/**
 
   const tfile = tp.file.find_tfile(
     tp.file.path(true)
   );
-
-
 
 	tp.app.fileManager.processFrontMatter(
 		tfile, 
@@ -204,4 +206,3 @@ _%>
 	}
 	**/
 _%>
-
