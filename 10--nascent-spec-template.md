@@ -1,6 +1,5 @@
 ---
 CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD") %>
-DEPENDENCIES: []
 DOC_VERSION: v0.0.0
 MUID: 
 PROJECT_PARENT: 
