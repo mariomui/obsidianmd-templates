@@ -4,7 +4,7 @@ CREATION_DATE: <% tp.date.now("YYYY-MM-DD") %>
 DOC_VERSION: v0.0.0
 PROJECT_PARENT: 
 TEMPLATE_SOURCE: "[[20--folder-spec-template]]"
-TEMPLATE_VERSION: v0.0.4
+TEMPLATE_VERSION: v0.0.6
 aliases:
   - __README__<%tp.file.title%>
 tags:
@@ -35,6 +35,9 @@ tags:
 
 # =
 
+**base_filepath-v0.0.9**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT`,alias: *`= this.aliases`*,nb: *`=this.NOTA_BENE`* , authors: *`= this.authors`* / lcsh: `= link(this.heading)`
+
+
 # --Transient Jobs
 
 ![[~viewfn-sluicing-out-waypoint-like-unprocessed-links,nb.-MUID-1643#=|?search_term=---Transient Local Waypoints#=|nlk]]
@@ -46,6 +49,9 @@ tags:
 # ---Transient
 
 <%* /**
+- v0.0.6 *2025-10-01*
+	- bump template VERSION
+	- apply [[macro-for-inserting-base-filepath,nb.-MUID-161,ver.-v0.0.9]]
 * v0.0.4 *2025-05-16*
 	* Set a flag in the yaml to prevent automover plugin from moving folder notes away from their folder.
 * v0.0.3 *2025-03-16*
@@ -53,6 +59,6 @@ tags:
 * v0.0.2 *2025-02-19*
 	* *2025-02-19* Add folder page template to yml field
 * v1.0.2 *2025-01-06*
-* This is tied to [[folder-notes-plugin,bt.-ObsidianMD-app,]]
+	* This is tied to [[folder-notes-plugin,bt.-ObsidianMD-app,]]
 * v1.0.1 Add commit log
 **/ -%>
