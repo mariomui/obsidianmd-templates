@@ -3,8 +3,9 @@ CREATION_DATE: <% tp.file.creation_date("YYYY-MM-DD")%>
 DOC_VERSION: v0.0.0
 MUID: <% await app.insertIncrementalId('MUID')%>
 PROJECT_PARENT: 
+QUICK_TITLE: 
 TEMPLATE_SOURCE: "[[10--litnote-template,nb.-MUID-155]]"
-TEMPLATE_VERSION: v0.1.9
+TEMPLATE_VERSION: v0.1.10
 aliases: 
 authors: 
 heading: 
@@ -64,17 +65,18 @@ This note should be prefixed with [[†,bt.-Noteshippo-title-level-affix,]]
 
 # ---Transient Local Citations
 
-## LC--
-
-**file_bn--v0.0.7**: *`= this.file.name`* doc-`=this.DOC_VERSION` `= this.MUID`/`=this.heading`/`=this.PROJECT_PARENT`/
-
-
+ > [!Info]- 🪭 Citum Guide
+ > > Use [[,aka-MUID-191]] for normal citations 
+ > > Use [[,aka-MUID-227]] for citations that aren't for general downstream access/consumption..
 
 
 
 # ---Transient
 
 <%* /** Commit Log
+* v0.1.10 *2025-10-13*
+	* Replace Citum placeholder with folded up citum guide. 
+	* Add [[quick_title,bt.-Noteshippo-frontmatter-property-name,]] to frontmatter
 * v0.1.9 *2025-06-09*
 	* Apply [[macro-for-inserting-base-filepath,nb.-MUID-161,ver.-v0.0.9]] (v0.0.7) (v0.0.9)
 	* Apply [[macro-for-updating-meta-heading-endpoints,vis-Noteshippo,nb.-MUID-152,ver-v0.0.2]] (v0.0.2)
@@ -141,4 +143,4 @@ const $message = this.app.dom.appContainerEl.createEl(
 );
 $message.setText(message);
 new tp.obsidian.Notice($message, 3000)
--%
+-%>
