@@ -1,13 +1,13 @@
 ## 20-Inlink
 
 > [!abstract]- %%  %% Automated List of Reference Inlinks (v0.0.5)
-> * ℹ Commit/design logs are located in this [[,aka-MUID-150|experiment note]]. 
+> * ℹ Commit/design logs are located in this [[,aka-MUID-150|experiment note]].
 > > `= join( map( sort( map( filter(this.file.inlinks, (link) => meta(link).path != this.file.path), (x) => [ split(meta(x).path, "/")[length(split(meta(x).path, "/")) - 1], x ] ) ), (b) => "• " + choice( length(b[0]) > 28, link( b[1], truncate( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", ""), length( regexreplace(b[0], "(-of|of|the|-the|-for|-that|https-|ee)", "") ) * 0.75 ) ), link(b[1], regexreplace(b[0], "\.md$", "")) ) ), "<br>" )`
 
 <%*/** COMMIT LOG.
 
-* v 
-	* Adjusted all template files to point to the alias specced note rather than directly to avoid vault-wide note title propagation. 
+* v
+	* Adjusted all template files to point to the alias specced note rather than directly to avoid vault-wide note title propagation.
 		* [[taxon-templates-must-not-consume-versioned-note-titles-or-suffer-numerous-title-propagation-which-results-in-uncontrollable-sync-update,vis-Noteshippo,prima-facie]]
 	* Add MUID to title.
 	* Add version to title.
