@@ -1,6 +1,5 @@
 > [!info]- 🪭 The following code displays every file's [[,aka-LCSH]]s  as well as any non-classified file. (This [[,aka-codelet]] was written specifically to help [[,aka-index-specced-note]]s deal with lcsh reassignment problems)
-> > DEPS: [[≈.~viewfn-for-listing-of-lcsh-headings-from-obsidian-query,nb.-MUID-198,ver.-0.0.2]]
-
+> > Partialview applied by: [[,aka-macro-MUID-202]]
 <%-*
 tp.app.workspace.onLayoutReady(bootup.bind(this))
 
@@ -83,3 +82,9 @@ function codewrapContent(content, wrapType) {
 	].join("")
 }
 _%>
+
+<%* /** VERSION
+* v0.0.1 
+	* Removed [[coupling,vis-Coding,]] to other partials by using [[,aka-alias-specced-note]]s
+		* 
+**/_%>

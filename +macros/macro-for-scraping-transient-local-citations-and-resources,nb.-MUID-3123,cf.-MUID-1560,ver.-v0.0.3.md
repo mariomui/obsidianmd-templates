@@ -1,8 +1,8 @@
 
 # ---Transient Jobs
 
-- @ [[macro-for-scraping-transient-local-citations-and-resources,nb.-MUID-3123,cf.-MUID-1560,ver.-0.0.3]] 
-	- ![[~viewfn-for-sluicing-header-links-for-citations,nb.-MUID-1560#=|?search_term=---Transient Local&t=nlknoui-scroll]]
+* @ 🔗 Applied with [[,aka-macro-MUID-3123]] <% tp.file.title.match(/ver\.-(v\d+\.\d+\.\d+)/)?.[1] ?? "N/A" %>
+	* ![[~viewfn-for-sluicing-header-links-for-citations,nb.-MUID-1560#=|?search_term=---Transient Local&t=nlknoui-scroll]]
 
 # ---Transient Local Citations
 
