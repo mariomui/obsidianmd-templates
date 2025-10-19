@@ -1,12 +1,10 @@
 ---
 CREATION_DATE: <% tp.date.now("YYYY-MM-DD") %>
-DEPENDENCIES:
-  - "[[,aka-dependencies,cf.-MUID-142]]"
 DOC_VERSION: v0.0.0
 MUID: 
 PROJECT_PARENT: 
-TEMPLATE_SOURCE: "[[macro-for-prompted-lcsh-specced-note-template,nb.-MUID-142]]"
-TEMPLATE_VERSION: v0.0.13
+TEMPLATE_SOURCE: "[[,aka-macro+template-MUID-142]]"
+TEMPLATE_VERSION: v0.0.14
 tags:
   - _misc/_wip
 ---
@@ -52,8 +50,9 @@ _%>
 
 **base_filepath-v0.0.9**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT`,alias: *`= this.aliases`*,nb: *`=this.NOTA_BENE`* , authors: *`= this.authors`* / lcsh: `= link(this.heading)`
 
-* [[##10÷About|10÷About--nlk]]
-	* ![[##10÷About|10÷About--nlk]]
+ > [!Tip]+ 🪭 About 
+ > > ![[<%tp.file.title%>#10÷About|10÷Aboutnlk]]
+
 
 ---
 
@@ -77,9 +76,10 @@ _%>
 **/_%>
 <%* /** Transient Template Doc Log
 [[transient-doc-log-endpoint,bt.-Noteshippo-heading-api,]]
-- v0.0.14
-	- update u/[[macro-for-inserting-base-filepath,nb.-MUID-161,ver.-v0.0.9]] v0.0.7-v0.0.9
-* v0.0.13 
+* v0.0.14
+	* Remove [[ø--,aka-dependencies,cf.-MUID-142]] from [[≠.ø--dependencies,bt.-Noteshippo-frontmatter-property-name,]]
+	* update u/[[macro-for-inserting-base-filepath,nb.-MUID-161,ver.-v0.0.9]] v0.0.7-v0.0.9
+* v0.0.13
 	* add link to heading of lcsh in meta
 * v0.0.12 *2025-05-27*
 	* apply [[macro-for-inserting-local-page-tasks,nb.-MUID-147,ver.-v0.0.3]] * -> v0.0.3
