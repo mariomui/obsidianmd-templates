@@ -1,5 +1,8 @@
 <%*
 // based off [[,aka-macro-MUID-3118]]
+// if longform.draftTitle isn't there, add v0.0.1,
+// if it is , bump to the next version.
+// because the manual way is to duplicate it.
 tp.hooks.on_all_templates_executed(async () => {
 
 	const fileView = tp.app.workspace.getActiveFileView()
@@ -27,8 +30,8 @@ async function genMain(pkg) {
 	const LONGFORM_FIELD_NAME = "longform"
 	const FIELD_NAME = "draftTitle";
 
-  const genSynchronizeYaml = createGenFrontmatterHelper(4000)
-	const genSortYaml = createGenFrontmatterHelper(2000)
+  const genSynchronizeYaml = createGenFrontmatterHelper(500)
+	const genSortYaml = createGenFrontmatterHelper(200)
   const {
       fileView, serializeYaml, metadataEditor, synchronizeYaml, checkHasFieldname
   } = pkg;
