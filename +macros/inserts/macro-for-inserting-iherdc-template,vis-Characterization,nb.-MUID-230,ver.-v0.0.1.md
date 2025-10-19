@@ -1,0 +1,13 @@
+
+| [[list-of-virtue-vice-trait-tuple,vis-Characterization,vis-IHERDC#Inteliigence/indolence\|I]] | [[list-of-virtue-vice-trait-tuple,vis-Characterization,vis-IHERDC#Honest/hacky\|h]] | [[list-of-virtue-vice-trait-tuple,vis-Characterization,vis-IHERDC#Entegrity/ez-loyalty\|e]] | [[list-of-virtue-vice-trait-tuple,vis-Characterization,vis-IHERDC#Reliability/rookie\|r]] | [[list-of-virtue-vice-trait-tuple,vis-Characterization,vis-IHERDC#Determination/doubt-selfer\|d]] | [[list-of-virtue-vice-trait-tuple,vis-Characterization,vis-IHERDC#Competence/controlled-by-emotion\|c]] |     |
+| --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | --- |
+| 0                                                                                             | 0                                                                                   | 0                                                                                           | 0                                                                                         | 0                                                                                                 | 0                                                                                                       |     |
+|                                                                                               |                                                                                     |                                                                                             |                                                                                           |                                                                                                   |                                                                                                         |     |
+
+<%* /**Readme
+MUID-230	
+**/_%>
+<%* /** Commit
+* v0.0.1
+	* replace the headings with links to describe them.
+**/_%>
