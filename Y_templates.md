@@ -1,12 +1,16 @@
 ---
-Aliases: ["__README__templates", templates]
-tags: _noteshippo/∑≠--v1-spec/∑≠_structural-note
+aliases:
+  - __README__templates
+  - templates
+tags:
+  - _meta
 DOC_VERSION: v0.0.1
 ---
 
+
 # -
 
-## About
+### About
 
 * This note is a:
 	* [[folder-page,vis-Noteshippo,]]
@@ -14,12 +18,11 @@ DOC_VERSION: v0.0.1
 
 # =
 
-**base_filepath-v0.0.5**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT` / lcsh: `= this.heading`
+**base_filepath-v0.0.9**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT`,alias: *`= this.aliases`*,nb: *`=this.NOTA_BENE`* , authors: *`= this.authors`* / lcsh: `= link(this.heading)`
 
 * @ Folder Pages
 	* [[+macros]]
-	* [[+hard-coded-within-plugin-setting-tab-templates]]
-
+	- [[+Y30,hard-coded-within-plugin-setting-tab-templates,nb.-MUID-194]]
 ---
 * @ 10s Macro-behaving templates
 	* 💁These templates:
@@ -33,18 +36,20 @@ DOC_VERSION: v0.0.1
 	* [[10--blank-no-api-template]]
 	* [[10--bridge-spec-template]]
 	* [[10--nascent-spec-template]]
-	* [[10--project-note-template,nb.-MUID-192]]
+	* [[10--project-spec-template,nb.-MUID-192]]
+		* [[should-template-note-titles-include-MUIDs-like-their-other-macro-brethren,vis-Noteshippo?]]
 	* [[10--library-spec-template]]
 	* [[10--litnote-template,nb.-MUID-155]]
+	* [[10--longform-multi-scene-template,ad-hoc-Longform-Index]]
 * @ 20s Templates Used By A Plugin
 	* 💁: *these templates are tied to an plugin.*
 	* [[20--default-meta-template]]
-	* [[20--evergreen_template]]
 	* [[20--fleeting-notes-template]]
 	* [[20--sourced-book-template]]
 	* [[20--folder-spec-template]]
 * @ WIP
-	* [[interim--declarative-spec-template]]
+	* [[∑--declarative-spec-template]]
+	* [[20.interim--question-note-template]]
 	* [[∑--experiment-template]]
 * @ 90s
 	* [[90--bootup]]
@@ -52,12 +57,12 @@ DOC_VERSION: v0.0.1
 	* [[~view-for-taking-videonotes-using-transcription-and-easy-timestamp-linking,nb.-MUID-154]]
 	* [[try.html]]
 * @ Macros
-	* [[macro-inserting-library-entry-bullet-guide]]
-	* [[macro-for-scraping-transient-local-citation-and-resources]]
-	* [[macro-for-eec-tline]]
+	* [[∑.macro-for-inserting-library-entry-bullet-guide,vis-Writeshippo]]
+	* [[,aka-macro-MUID-3123]]
+	* [[∑.≠.ø--macro-for-eec-tline]]
 	* [[macro-for-inserting-local-page-tasks,nb.-MUID-147,ver.-v0.0.3]]
-	* [[macro-for-vocabulary-details,by-emoji]]
-	* [[merge_template]]
+	* [[macro-for-vocabulary-details,uti.-emoji]]
+	* [[sandbox--≈-macro-to-add-end-date-to-existing-project-specced-note]]
 * @ Zotlit
 	* # Archive
 		* [[zt-annot.eta.prev]]
@@ -84,7 +89,10 @@ DOC_VERSION: v0.0.1
 * @ Obsoleted Content
 	* [[ø--hbstemplate-import-ibook-csv-hbs-with-heading.hbs]]
 	* [[ø--tag-page-template]]
-
+* [[ø--hbstemplate-ibook-import-ibook-csv-with-bullet]]
+* [[ø--macro-for-commonly-used-file-and-filepaths-inserts]]
+* [[ø--macro-for-sluicing-waypoint-links-into-jobs]]
+* [[readme]]
 # ---Transient Jobs
 
 ![[~viewfn-sluicing-out-waypoint-like-unprocessed-links,nb.-MUID-1643#=|?search_term=---Transient Local Waypoints&t=nlk]]
@@ -93,6 +101,7 @@ DOC_VERSION: v0.0.1
 
 %% Begin Waypoint %%
 - **[[+macros]]**
+- **+note-specs**
 - **[[+Y30,hard-coded-within-plugin-setting-tab-templates,nb.-MUID-194]]**
 - [[10--alias-spec-template]]
 - [[10--blank-no-api-template]]
@@ -100,9 +109,8 @@ DOC_VERSION: v0.0.1
 - [[10--definition-note-template]]
 - [[10--library-spec-template]]
 - [[10--litnote-template,nb.-MUID-155]]
-- [[10--longform-multi-scene-template]]
 - [[10--nascent-spec-template]]
-- [[10--project-note-template,nb.-MUID-192]]
+- [[10--project-spec-template,nb.-MUID-192]]
 - [[10--youtube-litnote-template]]
 - [[20--default-meta-template]]
 - [[20--fleeting-notes-template]]
@@ -112,9 +120,8 @@ DOC_VERSION: v0.0.1
 - [[90--bootup]]
 - **experiments**
 	- [[∑--experiment-template]]
-	- [[sandbox--≈-project-note-template]]
+	- [[sandbox--≈-macro-to-add-end-date-to-existing-project-specced-note]]
 - **ø--archive**
-	- [[merge_template]]
 	- [[ø--hbstemplate-ibook-import-ibook-csv-with-bullet]]
 	- [[ø--macro-for-commonly-used-file-and-filepaths-inserts]]
 	- [[ø--macro-for-sluicing-waypoint-links-into-jobs]]
@@ -124,8 +131,9 @@ DOC_VERSION: v0.0.1
 - **obsidian-canvas**
 	- [[seven-pt-structure-plotting-canvas-template.canvas]]
 - **staged**
+	- **interim**
+		- [[∑--declarative-spec-template]]
 	- **wip**
-		- [[interim--declarative-spec-template]]
 - **zotero**
 	- **archived**
 		- [[zt-annot.eta.prev]]
@@ -138,7 +146,7 @@ DOC_VERSION: v0.0.1
 		- [[zt-cite2.eta]]
 		- [[zt-note.etab]]
 	- [[orange.eta]]
-	- [[Y_templates/zotero/readme]]
+	- [[readme]]
 	- [[zt-annot.eta]]
 	- [[zt-annots.eta]]
 	- [[zt-cite.eta]]

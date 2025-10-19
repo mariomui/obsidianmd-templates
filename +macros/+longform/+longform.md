@@ -57,11 +57,13 @@ tags:
 
 %% Begin Waypoint %%
 - [[≠.∑--macro-for-character-sheet-template,vis-Writing,cf.-Luke]]
+- [[10--longform-multi-scene-template,ad-hoc-Longform-Index]]
+- [[10--longform-multi-scene-template,ad-hoc-Longform-Project-folder]]
 - [[macro-for-abacus-seeds]]
 - [[macro-for-april-automatic-timelines-required-fields-only]]
 - [[macro-for-emotional-wound-bullet-list-template]]
 - [[macro-for-emotional-wound-citums]]
-- [[macro-for-prompted-update-of-longform-draft-title,nb.-MUID-140]]
+- [[macro-for-prompted-update-of-longform-draft-title,nb.-MUID-140,ad-hoc-Longform-Index]]
 - [[macro-for-tewaz-broader-query]]
 - [[macro-for-tewaz-chapter-template]]
 - [[macro-for-tewaz-metadata]]
