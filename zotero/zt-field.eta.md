@@ -4,8 +4,9 @@ authors: <%- it.authors.forEach(author => { %>
   - <%= author -%> 
 <% }) %>
 itemType: "<%= it.itemType %>"
+manuscriptType: "<%= it?.manuscriptType %>"
+abstract: "<%= it?.abstractNote %>"
 numPages: "<%= it.numPages || it.pages %>"
-extra: "<%= [] %>"
 isbn: "<%= it?.ISBN_ %>"
 DOI: "<%= it?.DOI %>"
 publisher: "<%= it.publisher %>"
