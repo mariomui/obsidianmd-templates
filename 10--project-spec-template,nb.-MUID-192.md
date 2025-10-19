@@ -5,7 +5,7 @@ MUID:
 PROJECT_END_DATE: 
 PROJECT_PARENT:
   - "[[<% await tp.file.title %>]]"
-TEMPLATE_SOURCE: "[[10--project-note-template,nb.-MUID-192]]"
+TEMPLATE_SOURCE: "[[10--project-spec-template,nb.-MUID-192]]"
 TEMPLATE_VERSION: v1.0.13
 aliases: 
 tags:
@@ -73,7 +73,7 @@ tp.app.workspace.onLayoutReady(() => {
 
 # =
 
-**base_filepath-v0.0.7**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT`,alias: *`= this.aliases`* / lcsh: `= link(this.heading)`
+**base_filepath-v0.0.9**: `= choice( contains(this.file.folder, this.file.name), link(this.file.path), join(["*",this.file.path,"*"], ""))` doc-`= this.DOC_VERSION` / ids: `= this.MUID`,PP:`= this.PROJECT_PARENT`,alias: *`= this.aliases`*,nb: *`=this.NOTA_BENE`* , authors: *`= this.authors`* / lcsh: `= link(this.heading)`
 
 
 # ---Transient Jobs
@@ -96,7 +96,7 @@ tp.app.workspace.onLayoutReady(() => {
 <%* /** Journal
 * *2025-05-11* 
 	* 🐛 When applying template to a new note, the expected behavior is that the [[project_end_date,bt.-Noteshippo-frontmatter-property-name,nb.-project-template,]] is populated with the date value 365 days later. The actual behavior and value is blank.
-		* 💫 🔑 [[sandbox--≈-project-note-template]]
+		* 💫 🔑 [[sandbox--≈-macro-to-add-end-date-to-existing-project-specced-note]]
 **/_%>
 <%_* /**
 * v
